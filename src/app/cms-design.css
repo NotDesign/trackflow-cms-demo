@@ -71,3 +71,15 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 .cms-shell .visitor-summary .kpi-grid{display:contents}
 @media(max-width:1100px){.cms-shell .visitor-summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.cms-shell .visitor-summary{grid-template-columns:1fr;gap:12px}}
+
+/* Compact campaign comparison: a multi-select and its apply action share one row. */
+.cms-shell .comparison-config {padding:20px;display:flex;flex-direction:column;gap:12px}
+.comparison-controls {display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.cms-shell .campaign-multiselect {width:320px;max-width:100%;justify-content:space-between;white-space:normal;text-align:left}
+.cms-shell .comparison-scope-note {margin:0}
+.campaign-multiselect-menu {width:var(--radix-dropdown-menu-trigger-width);min-width:260px;max-width:calc(100vw - 32px);max-height:min(420px,var(--radix-dropdown-menu-content-available-height));overflow-y:auto;padding:8px}
+.campaign-multiselect-menu [role=menuitemcheckbox] {display:flex;align-items:center;gap:10px;min-height:44px;padding:10px 12px;white-space:normal;line-height:1.5}
+.campaign-multiselect-menu [role=menuitemcheckbox][data-disabled] {opacity:.45}
+.campaign-option-check {display:grid;place-items:center;flex:none;width:18px;height:18px;border:1px solid var(--border);border-radius:4px}
+.campaign-multiselect-menu [data-state=checked] .campaign-option-check {background:var(--accent);border-color:var(--accent);color:var(--bg)}
+@media(max-width:520px){.cms-shell .comparison-config{padding:16px}.cms-shell .campaign-multiselect{width:100%}.comparison-controls>.button{width:100%}}
