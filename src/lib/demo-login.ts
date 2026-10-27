@@ -9,7 +9,7 @@ export const demoAdmins:DemoIdentity[]=[
  {id:"ADM-1001",role:"admin",name:"Diane Wang",email:"diane@example.com"},
  {id:"ADM-1002",role:"admin",name:"Operations Admin",email:"operations@example.com"},
 ];
-export function demoAccounts(agents:readonly Agent[]):DemoIdentity[]{return [...demoAdmins,...agents.filter(a=>a.status==="Active").map(a=>({id:a.id,role:"agent" as const,name:a.name,email:a.email}))]}
+export function demoAccounts(agents:readonly Agent[]):DemoIdentity[]{return [...demoAdmins,...agents.filter(a=>a.status==="Active"&&!a.deletedAt).map(a=>({id:a.id,role:"agent" as const,name:a.name,email:a.email}))]}
 export function authenticateDemo(role:LoginRole,email:string,password:string,agents:readonly Agent[]):DemoIdentity|null{
  if(password!==DEMO_PASSWORD)return null;
  return demoAccounts(agents).find(a=>a.role===role&&a.email.toLowerCase()===email.trim().toLowerCase())||null;
