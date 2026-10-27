@@ -1,0 +1,2 @@
+export const games=[{id:"GAME-OR-01",brand:"Orbit",name:"Orbit Runner"},{id:"GAME-OR-02",brand:"Orbit",name:"Orbit Quest"},{id:"GAME-NO-01",brand:"Nova",name:"Nova Puzzle"},{id:"GAME-NO-02",brand:"Nova",name:"Nova Racing"},{id:"GAME-VE-01",brand:"Vertex",name:"Vertex Adventure"},{id:"GAME-VE-02",brand:"Vertex",name:"Vertex Builder"},{id:"GAME-AT-01",brand:"Atlas",name:"Atlas Explorer"},{id:"GAME-AT-02",brand:"Atlas",name:"Atlas Match"}];
+export function validBrandGame(brand:string,gameId:string){return !gameId||games.some(g=>g.brand===brand&&g.id===gameId)}

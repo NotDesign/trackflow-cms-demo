@@ -1,0 +1,32 @@
+import { TextSizeProvider } from "@/components/text-size";
+import { DemoAuthProvider } from "@/components/demo-auth";
+import "./login.css";
+import "./interface-polish.css";
+import "./client-reports.css";
+import "./telegram-report.css";
+import type { Metadata } from "next";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource-variable/noto-sans-tc";
+import { LocaleProvider } from "@/components/localization";
+import "./globals.css";
+import "./v2.css";
+import "./v3.css";
+import "./v4.css";
+import "./v5.css";
+import "./v6.css";
+import "./v7.css";
+import "./v8.css";
+import "./review-workspace.css";
+import "./record-items.css";
+import "./cms-design.css";
+import "./cms-tabs.css";
+import "./cms-info-cards.css";
+import "./cms-controls.css";
+import "./cms-dialogs.css";
+import Script from "next/script";
+export const metadata: Metadata = { title: "TRACKFLOW — 遊戲廣告成效平台", description: "Affiliate and promotion management UI prototype. All data is simulated." };
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="zh-Hant" suppressHydrationWarning><body><Script id="trackflow-theme-init" strategy="beforeInteractive">{`try{const saved=localStorage.getItem("trackflow-theme");if(saved==="light"||saved==="dark")document.documentElement.dataset.theme=saved}catch{}`}</Script><LocaleProvider><TextSizeProvider><DemoAuthProvider>{children}</DemoAuthProvider></TextSizeProvider></LocaleProvider></body></html>; }
+

@@ -1,0 +1,138 @@
+/* Shared controls across pages, dialogs and the agent workspace. */
+:root {
+  --cms-control-height: 40px;
+  --cms-control-radius: 11px;
+  --cms-control-gap: 12px;
+}
+
+:root :is(.cms-shell, .agent-portal, .dialog-content) select,
+:root :is(.cms-shell, .agent-portal, .dialog-content) .table-toolbar select {
+  box-sizing: border-box;
+  height: var(--cms-control-height);
+  min-height: var(--cms-control-height);
+  max-width: 100%;
+  padding: 0 44px 0 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--cms-control-radius);
+  background-color: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: calc(12px * var(--text-scale, 1));
+  line-height: 1.5;
+}
+
+:root :is(.search-input, .cms-table-search, .cms-command-input) {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--cms-control-height);
+  min-height: var(--cms-control-height);
+  min-width: 0;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--cms-control-radius);
+  background: var(--surface);
+  color: var(--muted);
+}
+
+:root :is(.search-input, .cms-table-search, .cms-command-input) input {
+  width: 100%;
+  min-width: 0;
+  height: calc(var(--cms-control-height) - 2px);
+  flex: 1;
+  min-height: 0 !important;
+  margin: 0;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--text);
+  font: inherit;
+  font-size: calc(12px * var(--text-scale, 1));
+  line-height: 1.5;
+  outline: none;
+}
+
+:root :is(.search-input, .cms-table-search, .cms-command-input):focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+:is(.search-input, .cms-table-search, .cms-command-input, .cms-command-trigger) > svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.cms-column-filter .search-input { margin-top: 6px; }
+.cms-column-menu { max-width: calc(100vw - 32px); }
+.cms-column-range input {
+  height: var(--cms-control-height);
+  border-radius: var(--cms-control-radius);
+}
+
+:root .language-switcher {
+  height: var(--cms-control-height);
+  min-height: var(--cms-control-height);
+  padding: 0 12px;
+  border-radius: var(--cms-control-radius);
+  gap: 10px;
+  font-size: calc(12px * var(--text-scale, 1));
+}
+:root .language-switcher > svg { width: 16px; height: 16px; }
+:root :is(.login-header, .agent-portal-header) .theme-switcher {
+  width: var(--cms-control-height);
+  height: var(--cms-control-height);
+  min-height: var(--cms-control-height);
+  padding: 8px;
+  border-radius: var(--cms-control-radius);
+}
+
+:root :is(.cms-shell, .dialog-content, .agent-portal) .form-grid {
+  gap: 16px;
+}
+.form-grid > .field { min-width: 0; }
+.form-grid .field > :is(input, select, textarea) { max-width: 100%; }
+:root :is(.cms-shell, .dialog-content, .agent-portal) .field > input:not([type=checkbox]):not([type=radio]) {
+  box-sizing: border-box;
+  height: var(--cms-control-height);
+  min-height: var(--cms-control-height);
+  padding: 0 16px;
+  border-radius: var(--cms-control-radius);
+}
+
+@media (max-width: 700px) {
+  :root :is(.cms-shell, .dialog-content, .agent-portal) .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .cms-shell .cms-page-actions {
+    width: 100%;
+    gap: var(--cms-control-gap);
+    flex-wrap: wrap;
+  }
+  .cms-shell .cms-page-actions .cms-table-search {
+    width: 100%;
+    flex: 1 0 100%;
+  }
+  .agent-portal-header {
+    height: auto;
+    min-height: 68px;
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .agent-portal-header > div:last-child {
+    margin-left: auto;
+    max-width: 100%;
+  }
+  .login-header {
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .login-header > div:last-child { margin-left: auto; gap: 8px; }
+  .agent-portal main { padding-inline: 16px; gap: 20px; }
+}

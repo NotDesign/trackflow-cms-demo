@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen",
+  "created": "2026-10-22",
+  "purpose": "Fictional game advertising samples",
+  "assets": [
+    {
+      "file": "orbit-fantasy.png",
+      "prompt": "Use case: ads-marketing. Asset type: polished wide 16:9 game advertising key art for a fictional game named Orbit in a CMS demo. Primary request: epic fantasy game promotion for an adult audience. A clearly adult armored female knight and majestic emerald dragon on a ruined mountain fortress at sunset, richly detailed AAA game concept art, dramatic golden rim light, cinematic green and gold palette. Compose characters and dragon on the right 65%, keep dark atmospheric left 35% for existing HTML advertising headline. No text, logos, UI, watermark, currency, winnings, or profit promises. Fully clothed armor, no real game IP."
+    },
+    {
+      "file": "nova-racing.png",
+      "prompt": "Use case: ads-marketing. Asset type: wide 16:9 game advertising key art for fictional Nova in a CMS demo. Primary request: neon sci-fi racing game promotion for adult gamers. A futuristic violet and silver racing vehicle drifting through an electric neon city circuit, flying sparks and dynamic motion, distant holographic structures, premium photorealistic game render. Vehicle and action predominantly right 65%; dark violet left 35% for existing HTML headline. No text, logos, UI, watermark, currency, winnings, or profit promises. Original fictional designs."
+    },
+    {
+      "file": "atlas-adventure.png",
+      "prompt": "Use case: ads-marketing. Asset type: wide 16:9 game advertising key art for fictional Atlas in a CMS demo. Primary request: polished fantasy adventure game advertising image for adult gamers. A clearly adult fully clothed adventurer with a luminous blue blade entering an ancient blue-gold temple, huge ornate doorway, glowing magical runes, floating stone islands and dragon statues in depth, high detail cinematic game render. Hero and main scene right 65%, dark deep blue left35% for existing HTML headline. No readable text, logos, UI, watermark, cash, winnings, or profit promises. Original fictional designs."
+    }
+  ]
+}

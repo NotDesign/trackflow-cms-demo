@@ -1,0 +1,127 @@
+/* Shared content tabs. Keep page navigation in workspace-tabs separate. */
+:root {
+  --cms-tab-height: 42px;
+  --cms-tab-gap: 6px;
+  --cms-tab-padding: 6px;
+}
+
+.cms-tab-bar,
+.dialog-content .cms-tab-bar,
+.cms-shell .cms-content-stack .cms-tab-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--cms-tab-gap);
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  padding: var(--cms-tab-padding);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  scroll-padding-inline: var(--cms-tab-padding);
+}
+
+.cms-tab-bar > button,
+.dialog-content .cms-tab-bar > button,
+.cms-shell .cms-content-stack .cms-tab-bar > button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 8px;
+  min-width: var(--cms-tab-height);
+  height: var(--cms-tab-height);
+  min-height: var(--cms-tab-height);
+  margin: 0;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+  font-family: inherit;
+  font-size: calc(13px * var(--text-scale, 1));
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 140ms, color 140ms, border-color 140ms;
+}
+
+.cms-tab-bar > button:hover,
+.dialog-content .cms-tab-bar > button:hover,
+.cms-shell .cms-content-stack .cms-tab-bar > button:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.cms-tab-bar > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]),
+.dialog-content .cms-tab-bar > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]),
+.cms-shell .cms-content-stack .cms-tab-bar > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]) {
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+  background: var(--accent-dim);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+.cms-tab-bar > button:focus-visible,
+.dialog-content .cms-tab-bar > button:focus-visible,
+.cms-shell .cms-content-stack .cms-tab-bar > button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+}
+
+.cms-tab-bar > button::after,
+.cms-tab-bar > button::before {
+  /* Legacy underline indicators are replaced by the selected surface. */
+  content: none;
+}
+
+:is(.campaign-view-tabs, .inbox-tabs, .agent-home-tabs).cms-tab-bar > button > :is(span, strong) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  margin: 0;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: var(--surface-hover);
+  color: inherit;
+  font-size: calc(11px * var(--text-scale, 1));
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.cms-shell .cms-content-stack .driver-tabs.cms-tab-bar {
+  margin: 0 24px 18px;
+  max-width: calc(100% - 48px);
+}
+
+.login-role-tabs.cms-tab-bar {
+  width: 100%;
+}
+
+.login-role-tabs.cms-tab-bar > button {
+  flex: 1 0 auto;
+}
+
+@media (max-width: 700px) {
+  .cms-shell .cms-content-stack .driver-tabs.cms-tab-bar {
+    margin-inline: 18px;
+    max-width: calc(100% - 36px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cms-tab-bar > button {
+    transition: none;
+  }
+}

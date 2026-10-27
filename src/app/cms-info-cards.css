@@ -1,0 +1,100 @@
+/* Every summary metric uses this card and spacing system. */
+.cms-info-grid,
+.cms-shell .cms-info-grid,
+.dialog-content .cms-info-grid {
+  display:grid;
+  grid-template-columns:repeat(var(--info-columns,4),minmax(0,1fr));
+  grid-auto-rows:1fr;
+  gap:16px;
+  min-width:0;
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+}
+
+.cms-info-card,
+.cms-shell .cms-info-card,
+.dialog-content .cms-info-card {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:10px;
+  min-width:0;
+  min-height:calc(200px * var(--text-scale,1));
+  height:100%;
+  margin:0;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--surface);
+  color:var(--text);
+  text-align:left;
+}
+.cms-info-card.cms-info-card-accent {
+  background:linear-gradient(115deg,var(--accent-dim),var(--surface));
+  border-color:color-mix(in srgb,var(--accent) 28%,var(--border));
+}
+.cms-info-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px}
+.cms-info-label {display:flex;align-items:center;gap:6px;min-width:0;color:var(--muted);font-size:calc(12px * var(--text-scale,1));line-height:1.6;overflow-wrap:anywhere}
+.cms-info-label>svg {flex:none}
+.cms-info-heading>.cms-metric-icon {position:static;width:48px;height:48px;border-radius:13px}
+.cms-info-heading>.cms-metric-icon>svg {width:28px;height:28px}
+.cms-info-card .cms-info-value {
+  display:block;
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+  color:var(--text);
+  font:inherit;
+  font-size:calc(30px * var(--text-scale,1));
+  font-weight:600;
+  line-height:1.35;
+  letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;
+  text-align:left;
+  overflow-wrap:anywhere;
+}
+.cms-info-value-link {align-self:flex-start;cursor:pointer;border-radius:4px!important}
+.cms-info-value-link:hover {color:var(--accent)}
+.cms-info-detail {margin-top:auto;color:var(--muted);font-size:calc(11px * var(--text-scale,1));line-height:1.6;overflow-wrap:anywhere}
+.cms-info-detail .trend {display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px;margin-right:6px}
+.cms-info-detail .negative {color:var(--danger)}
+.cms-info-card-with-spark .cms-info-detail {padding-right:34%}
+.cms-info-card-with-spark .cms-spark-interactive {right:20px;bottom:20px;width:29%}
+
+.cms-content-stack,.dialog-content {container-type:inline-size}
+.cms-shell .visitor-summary>.cms-info-grid,.cms-shell .visitor-summary>.audience-cards {display:contents}
+.dialog-content .cms-info-grid {margin-block:20px}
+.cms-shell .creative-stats.cms-info-grid {margin-top:20px}
+.cms-shell .creative-grid {grid-template-columns:1fr;gap:24px}
+.cms-creative-item {display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,2fr);gap:16px;align-items:center;min-width:0}
+.cms-shell .cms-creative-item .creative-stats {margin:0}
+.cms-creative-item .creative-card {overflow:hidden;height:100%}
+.cms-creative-item .creative-info {padding:16px}
+.cms-creative-item .creative-info h3 {margin-top:12px}
+@container(max-width:960px){.cms-creative-item{grid-template-columns:1fr}.cms-creative-item .creative-card{display:grid;grid-template-columns:1fr 1fr;align-items:center}}
+@container(max-width:520px){.cms-creative-item .creative-card{grid-template-columns:1fr}}
+.cms-shell .cost-coverage {margin-top:0}
+
+@media(max-width:1500px){
+  .cms-info-heading {min-height:36px}
+  .cms-info-heading>.cms-metric-icon {width:36px;height:36px;border-radius:11px}
+  .cms-info-heading>.cms-metric-icon>svg {width:26px;height:26px}
+}
+@container(max-width:960px){
+  .cms-info-grid,.cms-shell .cms-info-grid,.dialog-content .cms-info-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@container(max-width:520px){
+  .cms-info-grid,.cms-shell .cms-info-grid,.dialog-content .cms-info-grid {grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .cms-info-grid,.cms-shell .cms-info-grid,.dialog-content .cms-info-grid {gap:12px}
+  .cms-info-card,.cms-shell .cms-info-card,.dialog-content .cms-info-card {min-height:calc(190px * var(--text-scale,1));padding:16px}
+  .cms-info-heading {min-height:30px}
+  .cms-info-heading>.cms-metric-icon {width:30px;height:30px;border-radius:8px}
+  .cms-info-heading>.cms-metric-icon>svg {width:20px;height:20px}
+  .cms-info-card .cms-info-value {font-size:calc(26px * var(--text-scale,1))}
+}
