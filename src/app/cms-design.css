@@ -111,3 +111,6 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 @media(max-width:600px){.agent-permissions{grid-template-columns:1fr}.cms-shell .agent-row-actions>.button{min-height:40px}}
 
 .settings-admin-details>summary{cursor:pointer;color:var(--muted);min-height:40px;align-content:center}.settings-admin-details[open]>.settings-admin-grid{margin-top:12px}
+
+/* New-record location feedback must not share the total-row fill. */
+.cms-shell .highlight-record,.cms-shell .highlight-record .pinned-first,.cms-shell .highlight-record .pinned-actions{background:var(--surface)!important}

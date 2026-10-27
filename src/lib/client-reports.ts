@@ -2,7 +2,7 @@ import * as A from "./analytics";
 export const clientMetrics=["clicks","unique","register","ftd","cvr","revenue"] as const;
 export type ClientMetric=typeof clientMetrics[number];
 export const clientMetricLabels:Record<ClientMetric,string>={clicks:"Clicks",unique:"Unique visitors",register:"Registrations",ftd:"FTD",cvr:"CVR",revenue:"Revenue"};
-export const clientGroups={campaign:"Campaign",source:"Source",country:"Country",day:"Date"};
+export const clientGroups={campaign:"Campaign",platform:"Ad platform",trafficType:"Traffic type",source:"Actual traffic source",country:"Country",day:"Date"};
 export type ClientGroup=keyof typeof clientGroups;
 export type ReportConfig={client:string;title:string;brand:string;note:string;locale:"zh-TW"|"en";scope:A.Scope;group:ClientGroup;metrics:ClientMetric[]};
 export type ClientRow={name:string;values:Partial<Record<ClientMetric,number>>};
@@ -12,7 +12,7 @@ export function clientValue(key:ClientMetric,value:number,locale:"zh-TW"|"en"){r
 export function makeClientSnapshot(c:ReportConfig,visits:readonly A.Visit[],events:readonly A.Event[],names:Record<string,string>,scopeLabels:string[],label:(s:string)=>string,id:string,created:string):ClientSnapshot{
  if(!validReportConfig(c))throw Error("Invalid customer report configuration");
  const config=JSON.parse(JSON.stringify({...c,client:c.client.trim(),title:c.title.trim(),brand:c.brand.trim(),note:c.note.trim()})) as ReportConfig;
- const v=A.inScope(visits,c.scope),e=A.inScope(events,c.scope),dimension={campaign:"campaignId",source:"source",country:"country",day:"date"} as const;
+ const v=A.inScope(visits,c.scope),e=A.inScope(events,c.scope),dimension={campaign:"campaignId",platform:"platform",trafficType:"trafficType",source:"source",country:"country",day:"date"} as const;
  const values=(m:A.Metrics)=>Object.fromEntries(c.metrics.map(k=>[k,m[k]]));
  const rows=A.groupRows(v,e,dimension[c.group],names).map(row=>({name:label(row.name),values:values(row)}));
  if(c.group==="day")rows.sort((a,b)=>a.name.localeCompare(b.name));

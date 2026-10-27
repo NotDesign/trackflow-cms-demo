@@ -36,3 +36,16 @@ export const cmsCopy:Record<string,string>={
  "Mock creative preview · No asset upload or hosting is connected.":"遊戲廣告示意預覽 · 尚未串接素材上傳與託管。",
  "Settings sections":"設定項目","Workspace":"工作區"
 };
+
+Object.assign(cmsCopy,{
+ "Google Ads":"Google Ads","Meta Ads":"Meta Ads","TikTok Ads":"TikTok Ads","X Ads":"X Ads",
+ "All planned platforms":"活動投放平台（全部）","Planned ad platforms":"投放平台","Ad platform":"投放平台","Actual traffic source":"實際流量來源","Traffic type":"流量類型",
+ "Paid":"付費流量","Organic":"自然流量","Referral":"推薦流量","Unclassified":"未分類","Not applicable":"非廣告投放","Other Ads":"其他廣告平台","Unknown":"未知來源","Other":"其他來源",
+ "Search engine (unspecified)":"未指明的搜尋引擎","All ad platforms":"所有投放平台","All actual sources":"所有實際來源","All traffic types":"所有流量類型",
+ "No platform planned":"未設定投放平台","None selected":"尚未選擇","Clear selection":"清除選取","Report ad platforms":"報表投放平台","Report actual traffic source":"報表實際流量來源","Report traffic type":"報表流量類型",
+ "Planning only. Actual traffic is classified per tracking link and visit.":"此處為投放規劃；實際成效依每筆追蹤連結與造訪紀錄分類。",
+ "Link settings apply to future visits. Historical traffic keeps its recorded classification.":"連結設定套用於後續流量；歷史紀錄保留當時的來源與分類。",
+ "Source and medium tags are synchronized with the traffic classification above.":"UTM 來源與媒介將依上方分類同步產生；活動與素材標記可自行設定。",
+ "Legacy traffic without paid or organic evidence remains unclassified. Platform reports use recorded traffic, not campaign plans.":"舊資料無法判定付費或自然時保留為未分類。平台報表依實際流量紀錄計算；不套用活動的規劃平台。",
+ "Country, device, landing page and partner filters are inherited from the current analysis scope.":"國家、裝置、落地頁與合作夥伴條件沿用目前的全站篩選。"
+});

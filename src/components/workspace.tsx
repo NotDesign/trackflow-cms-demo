@@ -23,9 +23,10 @@ export function useWorkspaceState(){
  const profile=storedProfile;
  const [isPending,startTransition]=useTransition();const router=useRouter(),pathname=usePathname(),params=useSearchParams(),{locale}=useLocale();
  const scope=useMemo(()=>A.readScope(new URLSearchParams(params.toString())),[params]);
- const [campaigns,setCampaigns]=useStored("trackflow-v2-campaigns",A.seedCampaigns);
+ const [storedCampaigns,setCampaigns]=useStored("trackflow-v2-campaigns",A.seedCampaigns);
+ const campaigns=useMemo(()=>storedCampaigns.map(c=>({...c,platforms:A.normalizePlatforms(c.platforms)})),[storedCampaigns]);
  const [storedLinks,setLinks]=useStored("trackflow-v2-links",A.seedLinks);
- const links=useMemo(()=>storedLinks.map(l=>({...l,landingPageId:l.landingPageId??"unassigned"})),[storedLinks]);
+ const links=useMemo(()=>storedLinks.map(l=>({...l,...A.normalizeTraffic(l),landingPageId:l.landingPageId??"unassigned"})),[storedLinks]);
  const [creatives,setCreatives]=useStored("trackflow-v2-creatives",A.seedCreatives);
  const [agents,setAgents]=useStored("trackflow-agents-v8",seedAgents);
  const [agentTasks,setAgentTasks]=useStored("trackflow-agent-tasks-v8",seedAgentTasks);
@@ -51,8 +52,8 @@ export function useWorkspaceState(){
  const visits=useMemo(()=>A.inScope(A.allVisits,scope),[scope]);
  const events=useMemo(()=>A.inScope(allEvents,scope),[scope,allEvents]);
  const previous=A.previousScope(scope);
- const previousVisits=useMemo(()=>A.inScope(A.allVisits,previous),[scope.from,scope.to,scope.country,scope.source,scope.campaign,scope.creative,scope.device,scope.affiliate,scope.landing]);
- const previousEvents=useMemo(()=>A.inScope(allEvents,previous),[allEvents,scope.from,scope.to,scope.country,scope.source,scope.campaign,scope.creative,scope.device,scope.affiliate,scope.landing]);
+ const previousVisits=useMemo(()=>A.inScope(A.allVisits,previous),[scope.from,scope.to,scope.country,scope.source,scope.platform,scope.trafficType,scope.campaign,scope.creative,scope.device,scope.affiliate,scope.landing]);
+ const previousEvents=useMemo(()=>A.inScope(allEvents,previous),[allEvents,scope.from,scope.to,scope.country,scope.source,scope.platform,scope.trafficType,scope.campaign,scope.creative,scope.device,scope.affiliate,scope.landing]);
  const totals=useMemo(()=>A.metrics(visits,events),[visits,events]),before=useMemo(()=>A.metrics(previousVisits,previousEvents),[previousVisits,previousEvents]);
  const nameOf=(kind:"campaign"|"creative"|"affiliate"|"link",id:string)=>(kind==="campaign"?campaigns:kind==="creative"?creatives:kind==="link"?links:A.affiliates).find(item=>item.id===id)?.name||id;
  const statsFor=(dimension:keyof A.Dimensions,id:string)=>A.metrics(visits.filter(v=>v[dimension]===id),events.filter(e=>e[dimension]===id));

@@ -7,7 +7,7 @@ export type CampaignInsight=A.Campaign&A.Metrics&{
 };
 export function campaignInsights(campaigns:readonly A.Campaign[],links:readonly A.TrackingLink[],visits:readonly A.Visit[],events:readonly A.Event[],previousVisits:readonly A.Visit[],previousEvents:readonly A.Event[],scope:A.Scope):CampaignInsight[]{
  const portfolio=A.metrics(visits,events);
- const relatedLinks=links.filter(l=>(!scope.campaign||l.campaignId===scope.campaign)&&(!scope.country||l.country===scope.country)&&(!scope.source||l.source===scope.source)&&(!scope.creative||l.creativeId===scope.creative)&&(!scope.affiliate||l.affiliateId===scope.affiliate)&&(!scope.device||visits.some(v=>v.linkId===l.id))&&(!scope.landing||l.landingPageId===scope.landing||visits.some(v=>v.linkId===l.id)));
+ const relatedLinks=links.filter(l=>(!scope.campaign||l.campaignId===scope.campaign)&&(!scope.country||l.country===scope.country)&&A.trafficMatches(l,scope)&&(!scope.creative||l.creativeId===scope.creative)&&(!scope.affiliate||l.affiliateId===scope.affiliate)&&(!scope.device||visits.some(v=>v.linkId===l.id))&&(!scope.landing||l.landingPageId===scope.landing||visits.some(v=>v.linkId===l.id)));
  const health=O.healthFindings(relatedLinks);
  return campaigns.filter(c=>(!scope.campaign||c.id===scope.campaign)).map(c=>{
   const mine=visits.filter(v=>v.campaignId===c.id),current=A.metrics(mine,events.filter(e=>e.campaignId===c.id));
@@ -24,10 +24,10 @@ export function campaignInsights(campaigns:readonly A.Campaign[],links:readonly 
   const needsReview=reasons.length>0;
   const signal=c.status!=="Active"?"Inactive":needsReview?"Review needed":current.clicks===0?"No activity":current.clicks<100?"Learning":portfolio.epc>0&&current.epc>=portfolio.epc*1.1?"Above reference":"Within reference";
   return {...c,...current,markets:[...new Set(mine.map(v=>v.country))].join(", ")||c.country,rpc:current.clicks?current.revenue/current.clicks:0,previousRevenue:before.revenue,revenueDifference:current.revenue-before.revenue,revenueChange,previousClicks:before.clicks,issues,signal,needsReview,reasons,related:relatedLinks.some(l=>l.campaignId===c.id)};
- }).filter(c=>(!scope.country&&!scope.source&&!scope.creative&&!scope.affiliate&&!scope.device&&!scope.landing||c.related||c.clicks>0)&&(!scope.device||c.clicks>0));
+ }).filter(c=>(!scope.platform&&!scope.trafficType&&!scope.country&&!scope.source&&!scope.creative&&!scope.affiliate&&!scope.device&&!scope.landing||c.related||c.clicks>0)&&(!scope.device||c.clicks>0));
 }
 
-export function revenueDrivers(visits:readonly A.Visit[],events:readonly A.Event[],dimension:"source"|"country"|"affiliateId"|"landingPageId",metric:"revenue"|"commission"){
+export function revenueDrivers(visits:readonly A.Visit[],events:readonly A.Event[],dimension:"platform"|"trafficType"|"source"|"country"|"affiliateId"|"landingPageId",metric:"revenue"|"commission"){
  const total=A.metrics(visits,events)[metric];
  return A.groupRows(visits,events,dimension).sort((a,b)=>b[metric]-a[metric]||a.id.localeCompare(b.id)).map(row=>({...row,share:total?row[metric]/total*100:0}));
 }

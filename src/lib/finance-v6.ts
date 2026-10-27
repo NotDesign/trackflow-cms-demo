@@ -12,7 +12,7 @@ export function reviewTargets(events:readonly A.Event[],ids:readonly string[]):A
  const visits=new Set(chosen.filter(e=>e.type==="Deposit"||e.type==="Revenue").map(e=>e.visitId));
  return events.filter(e=>e.status==="Pending"&&(chosen.some(c=>c.id===e.id)||(visits.has(e.visitId)&&["Deposit","Revenue"].includes(e.type))));
 }
-export function costDimensionsSupported(scope:A.Scope){return ![scope.landing,scope.country,scope.source,scope.device,scope.creative,scope.affiliate].some(Boolean)}
+export function costDimensionsSupported(scope:A.Scope){return ![scope.platform,scope.trafficType,scope.landing,scope.country,scope.source,scope.device,scope.creative,scope.affiliate].some(Boolean)}
 export function scopedCosts(costs:readonly Cost[],scope:A.Scope,role:BusinessRole){return costs.filter(c=>c.role===role&&c.date>=scope.from&&c.date<=scope.to&&(!scope.campaign||c.campaignId===scope.campaign))}
 export function financialSummary(events:readonly A.Event[],costs:readonly Cost[],scope:A.Scope,role:BusinessRole){
  const revenueEvents=A.inScope(events,scope).filter(e=>e.status==="Approved"&&e.type==="Revenue");

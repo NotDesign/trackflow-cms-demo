@@ -6,7 +6,7 @@ import {cmsCopy} from "./cms-copy";
 import zh from "@/lib/zh-TW.json";
 type Locale="zh-TW"|"en";
 const dictionary:Record<string,string>={...zh,...cmsCopy};
-const translatedTerms=[...new Set(Object.values(dictionary))].filter(value=>/[A-Za-z]/.test(value)&&/[^\x00-\x7F]/.test(value)).sort((a,b)=>b.length-a.length);
+const translatedTerms=[...new Set(Object.values(dictionary))].filter(value=>(/[A-Za-z]/.test(value)&&/[^\x00-\x7F]/.test(value))||/^(Google|Meta|TikTok|X) Ads$/.test(value)).sort((a,b)=>b.length-a.length);
 const LocaleContext=createContext<{locale:Locale;setLocale:(value:Locale)=>void}>({locale:"zh-TW",setLocale:()=>{}});
 function translate(value:string){if(dictionary[value])return dictionary[value];const lead=(value.match(/^\s*/)||[""])[0],tail=(value.match(/\s*$/)||[""])[0],clean=value.trim();if(dictionary[clean])return lead+dictionary[clean]+tail;let result=clean;
 result=result.replace(/^Performance by (.+)$/i,(_,g)=>'依'+(dictionary[g]||dictionary[g[0].toUpperCase()+g.slice(1)]||g)+'分析成效');
