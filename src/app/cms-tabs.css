@@ -65,8 +65,8 @@
 .dialog-content .cms-tab-bar > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]),
 .cms-shell .cms-content-stack .cms-tab-bar > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]) {
   border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
-  background: var(--brand);
-  color: var(--on-brand);
+  background: var(--accent-dim);
+  color: var(--text);
   box-shadow: none;
 }
 

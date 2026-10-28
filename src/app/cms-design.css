@@ -126,5 +126,5 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 .cms-shell .trend,.cms-shell .revenue-change:not(.negative){color:var(--success)}
 .cms-shell .trend.down,.cms-shell .negative{color:var(--negative)}
 
-/* Selected controls show the exact brand navy, without a lavender tint or gradient. */
-.cms-navigation .nav-item.active{background:var(--brand);border-color:color-mix(in srgb,var(--brand) 65%,#fff);color:var(--on-brand)}
+/* Selected navigation shares the cool blue material used by workspace tabs. */
+.cms-navigation .nav-item.active{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 42%,var(--border));color:var(--text)}
