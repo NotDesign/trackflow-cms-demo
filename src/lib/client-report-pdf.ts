@@ -4,19 +4,19 @@ export async function clientReportPDF(s:ClientSnapshot,label:(s:string)=>string)
  await document.fonts.ready;
  const pages:Uint8Array[]=[],W=1240,H=1754,M=80,font='"Noto Sans TC Variable", "Noto Sans TC", sans-serif';
  let canvas!:HTMLCanvasElement,ctx!:CanvasRenderingContext2D,y=0,page=0;
- const text=(value:string,x:number,yy:number,size=21,color="#213a2d",weight=400)=>{ctx.font=`${weight} ${size}px ${font}`;ctx.fillStyle=color;ctx.fillText(value,x,yy)};
- const finish=()=>{text(`${label("Demo report")} · USD · Asia/Taipei`,M,H-65,17,"#64776c");ctx.textAlign="right";text(String(page),W-M,H-65,17,"#64776c");ctx.textAlign="left";const raw=atob(canvas.toDataURL("image/jpeg",.94).split(",")[1]);pages.push(Uint8Array.from(raw,c=>c.charCodeAt(0)))};
- const start=()=>{canvas=document.createElement("canvas");canvas.width=W;canvas.height=H;ctx=canvas.getContext("2d")!;ctx.fillStyle="#fff";ctx.fillRect(0,0,W,H);page++;text(s.config.brand,M,85,27,"#28694b",700);ctx.textAlign="right";text(label("Demo report"),W-M,85,19,"#88632e");ctx.textAlign="left";y=135};
+ const text=(value:string,x:number,yy:number,size=21,color="#20243c",weight=400)=>{ctx.font=`${weight} ${size}px ${font}`;ctx.fillStyle=color;ctx.fillText(value,x,yy)};
+ const finish=()=>{text(`${label("Demo report")} · USD · Asia/Taipei`,M,H-65,17,"#626d84");ctx.textAlign="right";text(String(page),W-M,H-65,17,"#626d84");ctx.textAlign="left";const raw=atob(canvas.toDataURL("image/jpeg",.94).split(",")[1]);pages.push(Uint8Array.from(raw,c=>c.charCodeAt(0)))};
+ const start=()=>{canvas=document.createElement("canvas");canvas.width=W;canvas.height=H;ctx=canvas.getContext("2d")!;ctx.fillStyle="#fff";ctx.fillRect(0,0,W,H);page++;text(s.config.brand,M,85,27,"#1d1d5a",700);ctx.textAlign="right";text(label("Demo report"),W-M,85,19,"#88632e");ctx.textAlign="left";y=135};
  const wrapped=(value:string,size=23,width=W-M*2)=>{ctx.font=`400 ${size}px ${font}`;let line="";for(const ch of value){if(ch==="\n"||ctx.measureText(line+ch).width>width){if(y>H-135){finish();start()}text(line,M,y,size);y+=size*1.7;line=ch==="\n"?"":ch}else line+=ch}if(line){if(y>H-135){finish();start()}text(line,M,y,size);y+=size*1.7}};
  const cols=s.config.metrics.length,first=300,cw=(W-2*M-first)/cols;
- const header=()=>{ctx.fillStyle="#e9f2ec";ctx.fillRect(M,y-25,W-2*M,52);text(label(clientGroups[s.config.group]),M+12,y+7,18);s.config.metrics.forEach((k,i)=>{ctx.textAlign="right";text(label(clientMetricLabels[k]),M+first+cw*(i+1)-12,y+7,18)});ctx.textAlign="left";y+=62};
+ const header=()=>{ctx.fillStyle="#ebedf8";ctx.fillRect(M,y-25,W-2*M,52);text(label(clientGroups[s.config.group]),M+12,y+7,18);s.config.metrics.forEach((k,i)=>{ctx.textAlign="right";text(label(clientMetricLabels[k]),M+first+cw*(i+1)-12,y+7,18)});ctx.textAlign="left";y+=62};
  start();wrapped(s.config.title,35);wrapped(`${label("Client")}: ${s.config.client}`,23);wrapped(`${s.config.scope.from} — ${s.config.scope.to}`,22);wrapped(`${label("Snapshot time")}: ${new Date(s.created).toLocaleString(s.config.locale,{timeZone:"Asia/Taipei"})}`,18);for(const filter of s.scopeLabels)wrapped(filter,18);y+=15;
  wrapped(label("Demonstration data only. Not a live performance report."),20);if(s.config.note){y+=10;wrapped(s.config.note,22)}y+=20;
  if(y>H-280){finish();start()}header();
  for(const row of [...s.rows,s.total]){
   ctx.font=`400 19px ${font}`;const lines:string[]=[];let line="";for(const ch of row.name){if(ctx.measureText(line+ch).width>first-25){lines.push(line);line=ch}else line+=ch}if(line)lines.push(line);
   const height=Math.max(56,lines.length*28+18);if(y+height>H-140){finish();start();header()}
-  if(row===s.total){ctx.fillStyle="#f1f6f3";ctx.fillRect(M,y-17,W-2*M,height)}lines.forEach((line,i)=>text(line,M+12,y+12+i*28,19));s.config.metrics.forEach((k,i)=>{ctx.textAlign="right";text(clientValue(k,row.values[k]||0,s.config.locale),M+first+cw*(i+1)-12,y+12,19)});ctx.textAlign="left";y+=height;ctx.strokeStyle="#e0e8e2";ctx.beginPath();ctx.moveTo(M,y-14);ctx.lineTo(W-M,y-14);ctx.stroke();
+  if(row===s.total){ctx.fillStyle="#f1f3fa";ctx.fillRect(M,y-17,W-2*M,height)}lines.forEach((line,i)=>text(line,M+12,y+12+i*28,19));s.config.metrics.forEach((k,i)=>{ctx.textAlign="right";text(clientValue(k,row.values[k]||0,s.config.locale),M+first+cw*(i+1)-12,y+12,19)});ctx.textAlign="left";y+=height;ctx.strokeStyle="#dae0ee";ctx.beginPath();ctx.moveTo(M,y-14);ctx.lineTo(W-M,y-14);ctx.stroke();
  }
  y+=24;wrapped(label("Unique visitors may overlap across groups. Totals are deduplicated; conversion rates are recalculated. Approved conversions only."),18);finish();
  const encoder=new TextEncoder(),parts:Uint8Array[]=[],offsets:number[]=[0];let size=0;const push=(v:string|Uint8Array)=>{const b=typeof v==="string"?encoder.encode(v):v;parts.push(b);size+=b.length};

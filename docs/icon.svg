@@ -14,8 +14,8 @@
   WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
   ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. -->
-  <rect width="48" height="48" rx="15" fill="#a6ebc3"/>
-  <g transform="translate(8 8) scale(1.333333)" fill="none" stroke="#11291b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="48" height="48" rx="15" fill="#1D1D5A"/>
+  <g transform="translate(8 8) scale(1.333333)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>
   </g>
 </svg>
