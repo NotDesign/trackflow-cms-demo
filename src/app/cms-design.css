@@ -221,3 +221,7 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 
 .cms-shell .table-panel,.agent-portal .table-panel{min-width:0;max-width:100%}
 .agent-portal .agent-row-actions{display:flex;flex-wrap:nowrap;gap:6px;white-space:nowrap}
+
+/* Hide only the workspace tab rail's native scrollbar; scrolling stays enabled. */
+.cms-workspace-tabs{scrollbar-width:none;-ms-overflow-style:none}
+.cms-workspace-tabs::-webkit-scrollbar{display:none;width:0;height:0}
