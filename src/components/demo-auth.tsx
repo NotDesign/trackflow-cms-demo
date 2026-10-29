@@ -1,4 +1,5 @@
 "use client";
+import {agentAvailable} from "@/lib/agents-v8";
 import {createContext,useContext,useEffect,useState,useRef,type ReactNode} from "react";
 import * as Dropdown from "@radix-ui/react-dropdown-menu";
 import {Settings2,ChevronDown,Activity,ArrowRight,Check,ClipboardCheck,Eye,EyeOff,LogOut,Mail,ShieldCheck,UserRound,Users} from "lucide-react";
@@ -24,7 +25,7 @@ export function useDemoAuth(){const value=useContext(AuthContext);if(!value)thro
 export function LoginGate({route,children}:{route:string;children:ReactNode}){
  const auth=useDemoAuth(),w=useWorkspace(),identity=auth.session?.identity;
  const agent=identity?.role==="agent"?w.agents.find(a=>a.id===identity.id):null;
- const invalidAgent=identity?.role==="agent"&&w.reviewReady&&(!agent||agent.status!=="Active"||!!agent.deletedAt);
+ const invalidAgent=identity?.role==="agent"&&w.reviewReady&&(!agentAvailable(agent,w.agents));
  const redirect=auth.ready&&w.reviewReady?(!identity?route!=="login"?"/login":null:invalidAgent?"/login":identity.role==="agent"?(route!=="agent"||w.params.get("agent")!==identity.id)?"/agent?agent="+encodeURIComponent(identity.id):null:route==="login"?"/overview":null):null;
  useEffect(()=>{if(invalidAgent)auth.signOut("This demo account is unavailable. Contact the administrator.");if(redirect)w.router.replace(redirect)},[invalidAgent,redirect,w.router]);
  if(!auth.ready||!w.reviewReady||redirect)return <Localize><div className="app-loading" role="status">Loading workspace…</div></Localize>;

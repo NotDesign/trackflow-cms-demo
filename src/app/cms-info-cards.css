@@ -98,3 +98,19 @@
   .cms-info-heading>.cms-metric-icon>svg {width:20px;height:20px}
   .cms-info-card .cms-info-value {font-size:calc(26px * var(--text-scale,1))}
 }
+
+/* Creative metrics belong to their asset card. */
+.cms-shell .creative-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.cms-shell .cms-creative-item{display:block;min-width:0}
+.cms-shell .cms-creative-item .creative-card{display:flex;flex-direction:column;align-items:stretch;width:100%;height:100%;padding:0;text-align:left}
+.cms-shell .cms-creative-item .cms-game-art{min-height:0;width:100%;aspect-ratio:1.6;flex:none}
+.cms-shell .cms-creative-item .creative-info{padding:14px 16px 10px;flex:1;min-width:0}
+.cms-shell .cms-creative-item .creative-info h3{margin-top:10px;font-size:calc(14px * var(--text-scale,1))}
+.cms-shell .cms-creative-item .creative-info p{font-size:calc(11px * var(--text-scale,1))}
+.creative-inline-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 16px;padding:12px 0 14px;border-top:1px solid var(--border)}
+.creative-inline-stats>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.creative-inline-stats span{color:var(--muted);font-size:calc(10px * var(--text-scale,1));line-height:1.5}
+.creative-inline-stats strong{font-size:calc(16px * var(--text-scale,1));font-variant-numeric:tabular-nums}
+@container(max-width:1200px){.cms-shell .creative-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@container(max-width:900px){.cms-shell .creative-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container(max-width:540px){.cms-shell .creative-grid{grid-template-columns:1fr}}

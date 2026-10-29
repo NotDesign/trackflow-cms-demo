@@ -144,14 +144,80 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 .cms-shell .traffic-panel .recharts-tooltip-wrapper{z-index:10;pointer-events:none}
 .cms-shell .traffic-panel .recharts-sector:focus{outline:none;stroke:var(--text);stroke-width:2px}
 
-/* Fit traffic tabs to their card, including a narrow right-hand column. */
+/* Keep chart navigation on one line and use the legend space efficiently. */
 .cms-shell .traffic-panel{container-type:inline-size;container-name:traffic-card}
 .cms-shell .traffic-panel .panel-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:12px}
 .cms-shell .traffic-panel .panel-heading>div{min-width:0;grid-column:1 / -1;grid-row:1}
 .cms-shell .traffic-panel .panel-heading h2{padding-right:40px}
 .cms-shell .traffic-panel .mini-label{grid-column:2;grid-row:1;margin:0;align-self:start}
-.cms-shell .traffic-panel .landing-toggle.cms-tab-bar{display:grid;align-items:stretch;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);grid-auto-rows:1fr;width:100%;max-width:100%;overflow:visible}
-.cms-shell .traffic-panel .landing-toggle.cms-tab-bar>button{min-width:0;width:100%;height:auto;min-height:var(--cms-tab-height);padding:10px 12px;white-space:normal;overflow-wrap:anywhere;text-wrap:balance;line-height:1.5}
-@container traffic-card (max-width:620px){
- .cms-shell .traffic-panel .landing-toggle.cms-tab-bar{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}
+.cms-shell .traffic-panel .landing-toggle.cms-tab-bar{display:flex;flex-wrap:nowrap;gap:4px;padding:4px;width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scroll-snap-type:x proximity}
+.cms-shell .traffic-panel .landing-toggle.cms-tab-bar>button{flex:1 0 auto;min-width:max-content;width:auto;height:42px;min-height:42px;padding:0 8px;white-space:nowrap;overflow-wrap:normal;line-height:1.5;scroll-snap-align:start}
+.cms-shell .traffic-panel .traffic-content{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;align-items:center;gap:16px;padding:12px 24px 24px}
+.cms-shell .traffic-panel .donut{width:192px;height:192px;margin:0 auto}
+.cms-shell .traffic-panel .empty-donut{position:absolute;inset:8%;border:18px solid var(--border);border-radius:50%}
+.traffic-legend{width:100%;min-width:0}
+.cms-shell .traffic-panel .source-list{width:100%;max-width:none;min-width:0}
+.cms-shell .traffic-panel .source-list button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;min-height:42px;padding:10px 0;text-align:left}
+.cms-shell .traffic-panel .source-list button>span{display:flex;align-items:center;gap:9px;min-width:0}
+.cms-shell .traffic-panel .source-list button>strong{display:flex;align-items:center;gap:10px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cms-shell .traffic-panel .traffic-source-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.cms-shell .traffic-panel .source-muted{opacity:.45}
+.cms-shell .traffic-panel .source-muted .traffic-source-name{text-decoration:line-through}
+.cms-shell .traffic-panel .source-muted i{background:var(--muted)!important}
+.traffic-reset{display:block;margin:10px 0 0 auto;min-height:32px;border:0;background:none;padding:5px 0 5px 12px;font-size:calc(11px * var(--text-scale,1));color:var(--accent)}
+@container traffic-card (min-width:500px){
+ .cms-shell .traffic-panel .traffic-content{grid-template-columns:180px minmax(0,1fr);gap:20px}
+ .cms-shell .traffic-panel .donut{width:180px;height:180px}
 }
+
+/* Compact, single-row summary regions throughout the CMS. */
+.cms-info-carousel{container-type:inline-size;min-width:0;position:relative}
+.cms-info-carousel-controls{display:flex;justify-content:flex-end;gap:4px;margin:0 0 6px;min-height:26px}
+.cms-info-carousel-controls button{display:grid;place-items:center;width:28px;height:26px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--muted)}
+.cms-info-carousel-viewport{width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;overscroll-behavior-x:contain;touch-action:pan-x pan-y;cursor:grab;padding:2px 0 6px}
+.cms-info-carousel-viewport:active{cursor:grabbing}
+.cms-info-carousel .cms-info-grid{display:flex!important;flex-wrap:nowrap;gap:12px!important;align-items:stretch;grid-template-columns:none!important}
+.cms-nested-info-grid,.cms-info-carousel .audience-cards{display:contents!important}
+.cms-info-carousel .cms-info-card,.cms-shell .cms-info-carousel .cms-info-card,.dialog-content .cms-info-carousel .cms-info-card{flex:0 0 var(--metric-card-width);height:auto;min-height:136px;padding:16px;gap:8px;border-radius:12px}
+.cms-info-carousel .cms-info-heading{min-height:32px;gap:8px}
+.cms-info-carousel .cms-info-heading>.cms-metric-icon{width:32px;height:32px;border-radius:9px}
+.cms-info-carousel .cms-info-heading>.cms-metric-icon>svg{width:22px;height:22px}
+.cms-info-carousel .cms-info-value{font-size:calc(24px * var(--text-scale,1));line-height:1.3}
+.cms-info-carousel .cms-info-detail{font-size:calc(10px * var(--text-scale,1));line-height:1.5}
+.cms-info-carousel .cms-info-card-with-spark .cms-info-detail{padding:0}
+.cms-info-carousel .cms-info-card-with-spark .cms-spark-interactive{position:relative;inset:auto;width:58%;height:24px;align-self:flex-end;margin-top:0}
+.cms-info-carousel .cms-spark-interactive svg{height:24px}
+/* Tab counts retain a high-contrast foreground in every selected state. */
+.cms-tab-bar>button>:is(span,strong):not(:only-child){--count-color:#fff}
+:is(.campaign-view-tabs,.inbox-tabs,.agent-home-tabs).cms-tab-bar>button>:is(span,strong){color:#fff!important;background:#31495F!important}
+/* Readable tables scroll within the panel instead of squeezing columns. */
+.cms-shell .table-scroll,.agent-portal .table-scroll{max-width:100%;min-width:0;overflow:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.cms-shell .table-v2 .desktop-data,.agent-portal .table-v2 .desktop-data{display:block!important}
+.cms-shell .table-v2 .mobile-records,.agent-portal .table-v2 .mobile-records{display:none!important}
+.table-v2 table{table-layout:auto}
+.cms-shell .table-v2 :is(th,td){height:auto;min-height:44px;padding:10px 16px;vertical-align:middle}
+.cms-shell .table-v2 :is(th,td).pinned-actions{width:max-content;min-width:76px;white-space:nowrap}
+.cms-shell .table-v2 .agent-row-actions{flex-wrap:nowrap;gap:6px;justify-content:flex-start;white-space:nowrap}
+.cms-shell .table-v2 .th-content,.cms-shell .table-v2 th.numeric .th-content{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:5px;width:max-content;max-width:none;margin:0}
+.cms-shell .table-v2 th.numeric .th-content>button:first-child{flex-direction:row}
+.cms-shell .table-v2 .th-content>.cms-column-trigger{margin:0 0 0 2px}
+.cms-shell .table-v2 .summary-row td{height:42px}
+/* Compact work queue and summary cards; let text determine row height. */
+.cms-shell .task-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cms-shell .task-card{padding:16px;gap:12px;align-items:flex-start;min-width:0}
+.cms-shell .task-content h3{margin:7px 0 5px;font-size:calc(14px * var(--text-scale,1))}
+.cms-shell .task-content p{font-size:calc(11px * var(--text-scale,1));line-height:1.6}
+.cms-shell .task-evidence{margin-top:8px;gap:7px}
+.cms-shell .task-evidence>strong{font-size:calc(19px * var(--text-scale,1))}
+.cms-shell .task-icon{padding:9px}
+.cms-shell .task-card>.button{margin-top:0;align-self:center}
+@container(max-width:1000px){.cms-shell .task-list{grid-template-columns:1fr}}
+@media(max-width:600px){.cms-shell .task-card{display:grid;grid-template-columns:34px minmax(0,1fr)}.cms-shell .task-card>.button{grid-column:2;margin-left:0;justify-self:start}}
+
+.cms-shell .table-toolbar{flex-wrap:nowrap;overflow-x:auto;align-items:center;scrollbar-width:thin;padding:14px 16px}
+.cms-shell .table-toolbar .search-input{flex:0 0 260px;min-width:220px}
+.cms-shell .table-toolbar .filter-list{flex:none;display:flex;flex-wrap:nowrap;white-space:nowrap}
+.subagent-management{display:flex;flex-direction:column;gap:16px;margin-top:24px}
+
+.cms-shell .table-panel,.agent-portal .table-panel{min-width:0;max-width:100%}
+.agent-portal .agent-row-actions{display:flex;flex-wrap:nowrap;gap:6px;white-space:nowrap}

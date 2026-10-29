@@ -1,11 +1,13 @@
 "use client";
-import type {CSSProperties, ReactNode} from "react";
+import {useContext,type ReactNode} from "react";
+import {InfoCarousel,InfoGridContext} from "./info-carousel";
 import {ArrowUpRight} from "lucide-react";
 import {MetricIcon} from "./metric-icon";
 import {Localize} from "./localization";
 
 export function InfoCardGrid({children,columns=4,className=""}:{children:ReactNode;columns?:number;className?:string}) {
-  return <div className={`cms-info-grid ${className}`} style={{"--info-columns":columns} as CSSProperties}>{children}</div>;
+  const nested=useContext(InfoGridContext);
+  return nested?<div className="cms-nested-info-grid">{children}</div>:<InfoCarousel className={className}>{children}</InfoCarousel>;
 }
 
 export function InfoCard({label,iconName,value,detail,onClick,disabled,actionLabel,accent=false,children,className=""}:{
