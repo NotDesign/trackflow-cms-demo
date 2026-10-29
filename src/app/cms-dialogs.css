@@ -6,7 +6,7 @@
   flex-direction: column;
   width: min(640px, calc(100vw - 32px));
   max-width: calc(100vw - 32px);
-  max-height: calc(100dvh - 32px);
+  max-height: min(900px, calc(100dvh - 96px));
   padding: 0;
   overflow: hidden;
 }
@@ -130,6 +130,7 @@
   .dialog-content.dialog-standard {
     --dialog-padding: 20px;
     --dialog-gap: 20px;
+    max-height: calc(100dvh - 48px);
     border-radius: 16px;
   }
   .dialog-content.dialog-standard.drawer { border-radius: 0; }
@@ -150,3 +151,14 @@
 }
 
 .dialog-standard textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Optional link details stay out of the primary creation flow. */
+.tracking-link-advanced { grid-column: 1 / -1; min-width: 0; border-top: 1px solid var(--border); padding-top: 16px; }
+.tracking-link-advanced > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 40px; cursor: pointer; list-style: none; font-weight: 500; }
+.tracking-link-advanced > summary::-webkit-details-marker { display: none; }
+.tracking-link-advanced > summary small { margin-left: 8px; font-size: calc(11px * var(--text-scale, 1)); font-weight: 400; color: var(--muted); }
+.tracking-link-advanced > summary svg { flex-shrink: 0; transition: transform .15s; }
+.tracking-link-advanced[open] > summary svg { transform: rotate(180deg); }
+.tracking-link-advanced > .form-grid { margin-top: 16px; }
+.tracking-link-advanced input[readonly] { color: var(--muted); background: var(--bg); }
+.tracking-link-advanced > summary:focus-visible { outline: 2px solid var(--action); outline-offset: 3px; border-radius: 4px; }
