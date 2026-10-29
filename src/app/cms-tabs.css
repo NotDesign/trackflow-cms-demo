@@ -64,9 +64,9 @@
 .cms-tab-bar > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]),
 .dialog-content .cms-tab-bar > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]),
 .cms-shell .cms-content-stack .cms-tab-bar > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]) {
-  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
-  background: var(--accent-dim);
-  color: var(--text);
+  border-color: var(--action);
+  background: var(--action);
+  color: var(--on-action);
   box-shadow: none;
 }
 
