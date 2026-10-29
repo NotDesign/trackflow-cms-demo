@@ -129,22 +129,17 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 /* Selected navigation shares the cool blue material used by workspace tabs. */
 .cms-navigation .nav-item.active{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 42%,var(--border));color:var(--text)}
 
-/* Traffic details occupy their own row; they never float over the center total. */
-.cms-shell .traffic-chart-group{display:flex;flex-direction:column;align-items:center;gap:12px;flex:none;width:240px;max-width:100%;min-width:0}
-.cms-shell .traffic-chart-group .donut{margin:0 auto;position:relative;isolation:isolate}
-.cms-shell .traffic-chart-group .donut-label{pointer-events:none}
-.cms-shell .traffic-point-detail{width:100%;min-height:76px;padding:10px 12px;display:flex;flex-direction:column;justify-content:center;gap:6px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:calc(12px * var(--text-scale,1));line-height:1.6;overflow-wrap:anywhere}
-.traffic-point-name{display:flex;align-items:center;gap:8px;min-width:0;font-weight:600}
-.traffic-point-name i{width:8px;height:8px;border-radius:3px;flex:none}
-.traffic-point-value{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;color:var(--muted);font-size:calc(11px * var(--text-scale,1))}
-.traffic-point-value strong{font-size:calc(15px * var(--text-scale,1));font-variant-numeric:tabular-nums;color:var(--text)}
-.traffic-point-hint{font-size:calc(11px * var(--text-scale,1));color:var(--muted)}
-.cms-shell .source-list button[data-previewed=true]{color:var(--accent)}
-@media(max-width:600px){.cms-shell .traffic-panel .traffic-content{flex-direction:column;align-items:center}.cms-shell .traffic-chart-group{width:100%;max-width:280px}}
 
 /* Theme-adaptive action surfaces match the current Sites demo. */
 :root{--action:#79B8FF;--action-hover:#A5D0FF;--on-action:#102039}
 :root[data-theme=light]{--action:var(--brand);--action-hover:var(--brand-hover);--on-action:var(--on-brand)}
 .cms-bot-launcher:hover{background:var(--action-hover);border-color:var(--action-hover)}
 
-.cms-shell .traffic-chart-group .recharts-sector:focus{outline:none;stroke:var(--text);stroke-width:2px}
+
+
+/* Chart and tooltip sit above the center label, without changing the layout. */
+.cms-shell .traffic-panel .donut{isolation:isolate;overflow:visible}
+.cms-shell .traffic-panel .donut-label{z-index:1;pointer-events:none}
+.cms-shell .traffic-panel .recharts-wrapper{z-index:2}
+.cms-shell .traffic-panel .recharts-tooltip-wrapper{z-index:10;pointer-events:none}
+.cms-shell .traffic-panel .recharts-sector:focus{outline:none;stroke:var(--text);stroke-width:2px}
