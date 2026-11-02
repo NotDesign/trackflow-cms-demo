@@ -114,3 +114,22 @@
 @container(max-width:1200px){.cms-shell .creative-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @container(max-width:900px){.cms-shell .creative-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @container(max-width:540px){.cms-shell .creative-grid{grid-template-columns:1fr}}
+
+/* Compact summaries: full values and labels remain readable in narrow cards. */
+.cms-info-carousel .cms-info-card,
+.cms-shell .cms-info-carousel .cms-info-card,
+.dialog-content .cms-info-carousel .cms-info-card {
+  min-height: 120px; padding: 12px 14px; gap: 6px;
+}
+.cms-info-carousel .cms-info-heading { min-height: 32px; align-items: flex-start; gap: 8px; }
+.cms-info-carousel .cms-info-label { font-size: calc(11px * var(--text-scale,1)); line-height: 1.4; overflow-wrap: normal; word-break: normal; }
+.cms-info-carousel .cms-info-label .metric-label { min-width: 0; white-space: normal; flex-wrap: wrap; }
+.cms-info-carousel .cms-info-label .metric-help { flex: none; }
+.cms-info-carousel .cms-info-heading > .cms-metric-icon { flex: none; width: 32px; height: 32px; border-radius: 9px; }
+.cms-info-carousel .cms-info-heading > .cms-metric-icon > svg { width: 22px; height: 22px; }
+.cms-info-card .cms-info-value {
+  width: 100%; min-width: 0; font-size: min(calc(26px * var(--text-scale,1)), var(--info-value-fit,100px)); line-height: 1.2;
+  letter-spacing: -.02em; white-space: nowrap; overflow: visible; overflow-wrap: normal;
+}
+.cms-info-value-content { display: inline-block; white-space: nowrap; }
+.cms-info-carousel .cms-info-detail { margin-top: 0; font-size: calc(10px * var(--text-scale,1)); line-height: 1.4; }
