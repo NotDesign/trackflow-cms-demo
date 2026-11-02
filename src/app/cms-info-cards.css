@@ -121,9 +121,10 @@
 .dialog-content .cms-info-carousel .cms-info-card {
   min-height: 120px; padding: 12px 14px; gap: 6px;
 }
-.cms-info-carousel .cms-info-heading { min-height: 32px; align-items: flex-start; gap: 8px; }
-.cms-info-carousel .cms-info-label { font-size: calc(11px * var(--text-scale,1)); line-height: 1.4; overflow-wrap: normal; word-break: normal; }
-.cms-info-carousel .cms-info-label .metric-label { min-width: 0; white-space: normal; flex-wrap: wrap; }
+.cms-info-carousel .cms-info-heading { height: 32px; min-height: 32px; flex: none; align-items: center; gap: 8px; }
+.cms-info-carousel .cms-info-label { flex: 1; min-width: 0; align-items: center; font-size: min(calc(11px * var(--text-scale,1)),var(--info-label-fit,100px)); line-height: 1.4; white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+.cms-info-title { display: inline-flex; flex: none; align-items: center; white-space: nowrap; }
+.cms-info-carousel .cms-info-label .metric-label { min-width: 0; align-items: center; white-space: nowrap; flex-wrap: nowrap; }
 .cms-info-carousel .cms-info-label .metric-help { flex: none; }
 .cms-info-carousel .cms-info-heading > .cms-metric-icon { flex: none; width: 32px; height: 32px; border-radius: 9px; }
 .cms-info-carousel .cms-info-heading > .cms-metric-icon > svg { width: 22px; height: 22px; }
