@@ -134,3 +134,25 @@
 }
 .cms-info-value-content { display: inline-block; white-space: nowrap; }
 .cms-info-carousel .cms-info-detail { margin-top: 0; font-size: calc(10px * var(--text-scale,1)); line-height: 1.4; }
+
+/* Preview copy and footer have their own flow rows instead of overlapping. */
+.cms-game-art,
+.cms-shell .cms-creative-item .cms-game-art {
+  display: flex; flex-direction: column; gap: 12px; container-type: inline-size;
+  height: auto; min-height: calc(220px * var(--text-scale,1)); aspect-ratio: auto; padding: 16px;
+}
+.cms-game-art .art-brand { flex: none; line-height: 1.5; }
+.cms-game-art .art-copy { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.cms-game-art .art-headline {
+  max-width: 100%; margin: 0; font-size: min(calc(24px * var(--text-scale,1)),8cqi); line-height: 1.3;
+  letter-spacing: -.02em; overflow-wrap: anywhere;
+}
+.cms-game-art .art-description { margin: 0; color: #edf4ff; font-size: calc(10px * var(--text-scale,1)); line-height: 1.5; text-shadow: 0 1px 6px #000; }
+.cms-game-art .art-footer { position: relative; display: flex; flex: none; align-items: center; justify-content: space-between; gap: 12px; min-width: 0; }
+.cms-game-art .art-footer > .art-cta,
+.cms-game-art .art-footer > .art-format {
+  position: static; opacity: 1; flex: none; white-space: nowrap; font-size: calc(9px * var(--text-scale,1)); line-height: 1.4;
+  color: #fff; background: #08121ce6; border: 1px solid #ffffff80; border-radius: 5px; padding: 5px 8px;
+}
+.creative-inline-stats > div { container-type: inline-size; }
+.creative-inline-stats span { white-space: nowrap; font-size: min(calc(10px * var(--text-scale,1)),13cqi); }
