@@ -11,6 +11,7 @@ import {Costs} from "./costs-v6";
 import {DailyWork} from "./daily-work";
 import {NotificationCenter,CmsAssistant} from "./cms-assistant";
 import {WorkspaceTabs} from "./workspace-tabs";
+import {TimezoneControl} from "./timezone-control";
 import {ThemeSwitcher} from "./theme-switcher";
 import {Localize,LanguageSwitcher,translateText} from "./localization";
 import {useWorkspaceState,WorkspaceProvider,useWorkspace,NavigationGuard} from "./workspace";
@@ -79,7 +80,7 @@ function AppShell({route}:{route:string}){
     <div className="header-actions">
      <button className="cms-command-trigger" onClick={()=>setCommand(true)} aria-label={label("Quick search","快速搜尋")}><Search size={16}/><span>{label("Quick search…","快速搜尋…")}</span><kbd>⌘ K</kbd></button>
      <span className="cms-header-separator"/>
-     <ThemeSwitcher theme={theme} onChange={setTheme} ready={themeReady}/>
+     <TimezoneControl/><ThemeSwitcher theme={theme} onChange={setTheme} ready={themeReady}/>
      <NotificationCenter/><SessionMenu/>
     </div>
    </header>
