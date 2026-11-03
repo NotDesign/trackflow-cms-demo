@@ -199,3 +199,15 @@
 .cms-timezone-select:hover{border-color:var(--accent)}
 .agent-portal-version{padding:20px 5vw;color:var(--muted);font-size:calc(11px * var(--text-scale,1));border-top:1px solid var(--border)}
 @media(max-width:760px){.cms-timezone-menu{max-height:calc(100dvh - 90px)}.cms-timezone-menu .cms-timezone-search{min-height:44px;height:44px}}
+
+/* Keep language with the global header controls at every screen size. */
+.cms-header .header-actions>.language-switcher{flex:none;white-space:nowrap}
+@media(max-width:1250px){
+ :root .cms-header .language-switcher{width:40px;min-width:40px;height:40px;padding:8px;justify-content:center}
+ .cms-header .language-switcher>span,.cms-header .language-switcher>svg:last-child{display:none}
+ .cms-header .language-switcher>svg:first-child{display:block}
+}
+@media(max-width:430px){
+ .cms-shell .cms-header{padding-inline:12px;gap:4px}
+ .cms-header .header-actions{gap:2px}
+}
