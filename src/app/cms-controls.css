@@ -172,3 +172,30 @@
 @media(max-width:1150px){.cms-header .cms-command-trigger{width:40px;justify-content:center;padding:8px}.cms-header .cms-command-trigger>span,.cms-header .cms-command-trigger kbd{display:none}}
 @media(max-width:1000px){.cms-timezone-trigger{width:40px;min-width:40px;padding:8px}.cms-timezone-trigger-copy,.cms-timezone-chevron{display:none}}
 @media(max-width:760px){.cms-header .header-actions{gap:4px}}
+
+/* Searchable international time zone picker; list scrolls independently of clock and search. */
+.cms-timezone-menu{width:380px;max-width:calc(100vw - 32px);max-height:min(660px,calc(100dvh - 96px));display:flex;flex-direction:column;overflow:hidden}
+.cms-timezone-trigger-copy{max-width:145px}
+.cms-timezone-trigger-copy>strong{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cms-timezone-current{flex:none}
+.cms-timezone-menu .cms-timezone-search{display:flex;align-items:center;gap:8px;height:40px;min-height:40px;margin:0 8px;padding:0 10px;border:1px solid var(--border);border-radius:10px;background:var(--bg);flex:none;color:var(--muted)}
+.cms-timezone-menu .cms-timezone-search:focus-within{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.cms-timezone-search>input{flex:1;min-width:0;width:100%;height:100%;padding:0;border:0;outline:0;background:transparent;color:var(--text);font-size:calc(12px * var(--text-scale,1))}
+.cms-timezone-search>button{display:grid;place-items:center;flex:none;width:24px;height:28px;padding:0;border:0;background:transparent;border-radius:5px;color:var(--muted)}
+.cms-timezone-search>button:hover{background:var(--surface-hover);color:var(--text)}
+.cms-timezone-count{padding:8px 12px 4px;font-size:calc(10px * var(--text-scale,1));color:var(--muted);flex:none}
+.cms-timezone-list{min-height:0;overflow-y:auto;overscroll-behavior:contain;scroll-padding-block:8px;flex:1;padding:0 4px}
+.cms-timezone-region{padding:8px 8px 4px;font-size:calc(10px * var(--text-scale,1));font-weight:600;color:var(--muted)}
+.cms-timezone-option{min-height:54px;padding:8px;gap:8px}
+.cms-timezone-city{display:flex;flex-direction:column;gap:2px}
+.cms-timezone-city>strong{font-weight:500;font-size:calc(12px * var(--text-scale,1));line-height:1.4;overflow-wrap:anywhere}
+.cms-timezone-city>strong>small{font-size:calc(10px * var(--text-scale,1));color:var(--muted);font-weight:400}
+.cms-timezone-city>code{font-family:inherit;font-size:calc(10px * var(--text-scale,1));color:var(--muted);overflow-wrap:anywhere}
+.cms-timezone-menu>.cms-timezone-note{flex:none;font-size:calc(10px * var(--text-scale,1))}
+.cms-timezone-empty{padding:20px 12px;font-size:calc(12px * var(--text-scale,1));color:var(--muted)}
+.cms-timezone-select{display:flex;align-items:center;gap:8px;width:100%;height:40px;padding:0 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-size:inherit;text-align:left}
+.cms-timezone-select>span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cms-timezone-select>svg{flex:none}
+.cms-timezone-select:hover{border-color:var(--accent)}
+.agent-portal-version{padding:20px 5vw;color:var(--muted);font-size:calc(11px * var(--text-scale,1));border-top:1px solid var(--border)}
+@media(max-width:760px){.cms-timezone-menu{max-height:calc(100dvh - 90px)}.cms-timezone-menu .cms-timezone-search{min-height:44px;height:44px}}

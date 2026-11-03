@@ -1,4 +1,5 @@
 "use client";
+import {APP_VERSION} from "@/lib/release";
 import {useEffect,useState} from "react";
 import Link from "next/link";
 import {LoginGate,SessionMenu} from "./demo-auth";
@@ -68,7 +69,7 @@ function AppShell({route}:{route:string}){
   <aside className="sidebar cms-sidebar">
    <Link className="brand" href={w.href("/overview")}><span className="brand-icon"><Activity size={23}/></span><strong>TRACKFLOW<span>Promotion intelligence</span></strong></Link>
    <Navigation/>
-   <div className="sidebar-bottom cms-sidebar-footer"><LanguageSwitcher/><small translate="no">TRACKFLOW · v0.1.0</small></div>
+   <div className="sidebar-bottom cms-sidebar-footer"><LanguageSwitcher/><small translate="no">TRACKFLOW · v{APP_VERSION}</small></div>
   </aside>
   <div className="main-shell">
    <header className="header cms-header">
@@ -96,7 +97,7 @@ function AppShell({route}:{route:string}){
   </div>
   {w.editor&&<Editor key={w.editor.type+(w.editor.id||"new")}/>}{w.itemEditor&&<RecordItemsEditor key={w.itemEditor.kind+w.itemEditor.id}/>}
   <NavigationGuard/>
-  <Dialog open={menu} onOpenChange={setMenu} title="TRACKFLOW" className="cms-mobile-navigation"><Navigation mobile/><div className="cms-sidebar-footer"><LanguageSwitcher/><small translate="no">TRACKFLOW · v0.1.0</small></div></Dialog>
+  <Dialog open={menu} onOpenChange={setMenu} title="TRACKFLOW" className="cms-mobile-navigation"><Navigation mobile/><div className="cms-sidebar-footer"><LanguageSwitcher/><small translate="no">TRACKFLOW · v{APP_VERSION}</small></div></Dialog>
   <Dialog open={command} onOpenChange={value=>{setCommand(value);if(!value)setNavQuery("")}} title={label("Quick search","快速搜尋")} description={label("Search pages and campaigns in this workspace.","搜尋工作區頁面與推廣活動。")} className="cms-command-dialog">
    <label className="cms-command-input"><Search size={19}/><input autoFocus aria-label={label("Search navigation","搜尋導覽")} placeholder={label("Search pages or campaigns…","搜尋頁面或活動名稱…")} value={navQuery} onChange={e=>setNavQuery(e.target.value)}/><kbd>ESC</kbd></label>
    <div className="cms-command-results">{filteredNavigation.map(item=><button key={item.id} onClick={()=>{setCommand(false);w.go("/"+item.id)}}><item.icon size={18}/><span>{item.name}</span>{page===item.id?<Check size={16}/>:<ChevronRight size={16}/>}</button>)}{matchedCampaigns.map(c=><button key={c.id} onClick={()=>{setCommand(false);w.go("/campaigns/"+c.id,{campaign:c.id})}}><Target size={18}/><span>{c.name}<small className="cms-search-type"> · {c.id}</small></span><ChevronRight size={16}/></button>)}{!filteredNavigation.length&&!matchedCampaigns.length&&<p className="empty-state">{label("No matching pages","找不到符合的頁面")}</p>}</div>

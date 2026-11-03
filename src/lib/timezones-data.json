@@ -1,0 +1,2192 @@
+{
+ "Africa/Abidjan": [
+  "阿比讓",
+  "CI",
+  "1"
+ ],
+ "Africa/Accra": [
+  "阿克拉",
+  "GH",
+  "1"
+ ],
+ "Africa/Addis_Ababa": [
+  "阿迪斯阿貝巴",
+  "ET",
+  "1"
+ ],
+ "Africa/Algiers": [
+  "阿爾及爾",
+  "DZ",
+  "1"
+ ],
+ "Africa/Asmara": [
+  "阿斯瑪拉",
+  "ER",
+  "1"
+ ],
+ "Africa/Asmera": [
+  "阿斯瑪拉",
+  "ER",
+  "0"
+ ],
+ "Africa/Bamako": [
+  "巴馬科",
+  "ML",
+  "1"
+ ],
+ "Africa/Bangui": [
+  "班吉",
+  "CF",
+  "1"
+ ],
+ "Africa/Banjul": [
+  "班竹",
+  "GM",
+  "1"
+ ],
+ "Africa/Bissau": [
+  "比紹",
+  "GW",
+  "1"
+ ],
+ "Africa/Blantyre": [
+  "布蘭太爾",
+  "MW",
+  "1"
+ ],
+ "Africa/Brazzaville": [
+  "布拉柴維爾",
+  "CG",
+  "1"
+ ],
+ "Africa/Bujumbura": [
+  "布松布拉",
+  "BI",
+  "1"
+ ],
+ "Africa/Cairo": [
+  "開羅",
+  "EG",
+  "1"
+ ],
+ "Africa/Casablanca": [
+  "卡薩布蘭卡",
+  "MA",
+  "1"
+ ],
+ "Africa/Ceuta": [
+  "休達",
+  "ES",
+  "1"
+ ],
+ "Africa/Conakry": [
+  "柯那克里",
+  "GN",
+  "1"
+ ],
+ "Africa/Dakar": [
+  "達喀爾",
+  "SN",
+  "1"
+ ],
+ "Africa/Dar_es_Salaam": [
+  "沙蘭港",
+  "TZ",
+  "1"
+ ],
+ "Africa/Djibouti": [
+  "吉布地",
+  "DJ",
+  "1"
+ ],
+ "Africa/Douala": [
+  "杜阿拉",
+  "CM",
+  "1"
+ ],
+ "Africa/El_Aaiun": [
+  "阿尤恩",
+  "EH",
+  "1"
+ ],
+ "Africa/Freetown": [
+  "自由城",
+  "SL",
+  "1"
+ ],
+ "Africa/Gaborone": [
+  "嘉柏隆里",
+  "BW",
+  "1"
+ ],
+ "Africa/Harare": [
+  "哈拉雷",
+  "ZW",
+  "1"
+ ],
+ "Africa/Johannesburg": [
+  "約翰尼斯堡",
+  "ZA",
+  "1"
+ ],
+ "Africa/Juba": [
+  "朱巴",
+  "SS",
+  "1"
+ ],
+ "Africa/Kampala": [
+  "坎帕拉",
+  "UG",
+  "1"
+ ],
+ "Africa/Khartoum": [
+  "喀土穆",
+  "SD",
+  "1"
+ ],
+ "Africa/Kigali": [
+  "基加利",
+  "RW",
+  "1"
+ ],
+ "Africa/Kinshasa": [
+  "金夏沙",
+  "CD",
+  "1"
+ ],
+ "Africa/Lagos": [
+  "拉哥斯",
+  "NG",
+  "1"
+ ],
+ "Africa/Libreville": [
+  "自由市",
+  "GA",
+  "1"
+ ],
+ "Africa/Lome": [
+  "洛美",
+  "TG",
+  "1"
+ ],
+ "Africa/Luanda": [
+  "羅安達",
+  "AO",
+  "1"
+ ],
+ "Africa/Lubumbashi": [
+  "盧本巴希",
+  "CD",
+  "1"
+ ],
+ "Africa/Lusaka": [
+  "路沙卡",
+  "ZM",
+  "1"
+ ],
+ "Africa/Malabo": [
+  "馬拉博",
+  "GQ",
+  "1"
+ ],
+ "Africa/Maputo": [
+  "馬普托",
+  "MZ",
+  "1"
+ ],
+ "Africa/Maseru": [
+  "馬賽魯",
+  "LS",
+  "1"
+ ],
+ "Africa/Mbabane": [
+  "墨巴本",
+  "SZ",
+  "1"
+ ],
+ "Africa/Mogadishu": [
+  "摩加迪休",
+  "SO",
+  "1"
+ ],
+ "Africa/Monrovia": [
+  "蒙羅維亞",
+  "LR",
+  "1"
+ ],
+ "Africa/Nairobi": [
+  "奈洛比",
+  "KE",
+  "1"
+ ],
+ "Africa/Ndjamena": [
+  "恩賈梅納",
+  "TD",
+  "1"
+ ],
+ "Africa/Niamey": [
+  "尼亞美",
+  "NE",
+  "1"
+ ],
+ "Africa/Nouakchott": [
+  "諾克少",
+  "MR",
+  "1"
+ ],
+ "Africa/Ouagadougou": [
+  "瓦加杜古",
+  "BF",
+  "1"
+ ],
+ "Africa/Porto-Novo": [
+  "波多諾佛",
+  "BJ",
+  "1"
+ ],
+ "Africa/Sao_Tome": [
+  "聖多美",
+  "ST",
+  "1"
+ ],
+ "Africa/Tripoli": [
+  "的黎波里",
+  "LY",
+  "1"
+ ],
+ "Africa/Tunis": [
+  "突尼斯",
+  "TN",
+  "1"
+ ],
+ "Africa/Windhoek": [
+  "溫得和克",
+  "NA",
+  "1"
+ ],
+ "America/Adak": [
+  "艾達克",
+  "US",
+  "1"
+ ],
+ "America/Anchorage": [
+  "安克拉治",
+  "US",
+  "1"
+ ],
+ "America/Anguilla": [
+  "安奎拉",
+  "AI",
+  "1"
+ ],
+ "America/Antigua": [
+  "安地卡",
+  "AG",
+  "1"
+ ],
+ "America/Araguaina": [
+  "阿拉圭那",
+  "BR",
+  "1"
+ ],
+ "America/Argentina/Buenos_Aires": [
+  "布宜諾斯艾利斯",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/Catamarca": [
+  "卡塔馬卡",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/Cordoba": [
+  "哥多華",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/Jujuy": [
+  "胡胡伊",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/La_Rioja": [
+  "拉略哈",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/Mendoza": [
+  "門多薩",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/Rio_Gallegos": [
+  "里奧加耶戈斯",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/Salta": [
+  "薩爾塔",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/San_Juan": [
+  "聖胡安",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/San_Luis": [
+  "聖路易",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/Tucuman": [
+  "吐庫曼",
+  "AR",
+  "1"
+ ],
+ "America/Argentina/Ushuaia": [
+  "烏斯懷亞",
+  "AR",
+  "1"
+ ],
+ "America/Aruba": [
+  "荷屬阿魯巴",
+  "AW",
+  "1"
+ ],
+ "America/Asuncion": [
+  "亞松森",
+  "PY",
+  "1"
+ ],
+ "America/Atikokan": [
+  "阿蒂科肯",
+  "CA",
+  "1"
+ ],
+ "America/Bahia": [
+  "巴伊阿",
+  "BR",
+  "1"
+ ],
+ "America/Bahia_Banderas": [
+  "巴伊亞班德拉斯",
+  "MX",
+  "1"
+ ],
+ "America/Barbados": [
+  "巴貝多",
+  "BB",
+  "1"
+ ],
+ "America/Belem": [
+  "貝倫",
+  "BR",
+  "1"
+ ],
+ "America/Belize": [
+  "貝里斯",
+  "BZ",
+  "1"
+ ],
+ "America/Blanc-Sablon": [
+  "白朗薩布隆",
+  "CA",
+  "1"
+ ],
+ "America/Boa_Vista": [
+  "保維斯塔",
+  "BR",
+  "1"
+ ],
+ "America/Bogota": [
+  "波哥大",
+  "CO",
+  "1"
+ ],
+ "America/Boise": [
+  "波夕",
+  "US",
+  "1"
+ ],
+ "America/Buenos_Aires": [
+  "布宜諾斯艾利斯",
+  "AR",
+  "0"
+ ],
+ "America/Cambridge_Bay": [
+  "劍橋灣",
+  "CA",
+  "1"
+ ],
+ "America/Campo_Grande": [
+  "格蘭場",
+  "BR",
+  "1"
+ ],
+ "America/Cancun": [
+  "坎昆",
+  "MX",
+  "1"
+ ],
+ "America/Caracas": [
+  "卡拉卡斯",
+  "VE",
+  "1"
+ ],
+ "America/Catamarca": [
+  "卡塔馬卡",
+  "AR",
+  "0"
+ ],
+ "America/Cayenne": [
+  "開雲",
+  "GF",
+  "1"
+ ],
+ "America/Cayman": [
+  "開曼群島",
+  "KY",
+  "1"
+ ],
+ "America/Chicago": [
+  "芝加哥",
+  "US",
+  "1"
+ ],
+ "America/Chihuahua": [
+  "奇華華",
+  "MX",
+  "1"
+ ],
+ "America/Ciudad_Juarez": [
+  "華雷斯",
+  "MX",
+  "1"
+ ],
+ "America/Coral_Harbour": [
+  "阿蒂科肯",
+  "CA",
+  "0"
+ ],
+ "America/Cordoba": [
+  "哥多華",
+  "AR",
+  "0"
+ ],
+ "America/Costa_Rica": [
+  "哥斯大黎加",
+  "CR",
+  "1"
+ ],
+ "America/Coyhaique": [
+  "科伊艾克",
+  "CL",
+  "1"
+ ],
+ "America/Creston": [
+  "克雷斯頓",
+  "CA",
+  "1"
+ ],
+ "America/Cuiaba": [
+  "古雅巴",
+  "BR",
+  "1"
+ ],
+ "America/Curacao": [
+  "庫拉索",
+  "CW",
+  "1"
+ ],
+ "America/Danmarkshavn": [
+  "丹馬沙文",
+  "GL",
+  "1"
+ ],
+ "America/Dawson": [
+  "道森",
+  "CA",
+  "1"
+ ],
+ "America/Dawson_Creek": [
+  "道森克里克",
+  "CA",
+  "1"
+ ],
+ "America/Denver": [
+  "丹佛",
+  "US",
+  "1"
+ ],
+ "America/Detroit": [
+  "底特律",
+  "US",
+  "1"
+ ],
+ "America/Dominica": [
+  "多米尼克",
+  "DM",
+  "1"
+ ],
+ "America/Edmonton": [
+  "艾德蒙吞",
+  "CA",
+  "1"
+ ],
+ "America/Eirunepe": [
+  "艾魯內佩",
+  "BR",
+  "1"
+ ],
+ "America/El_Salvador": [
+  "薩爾瓦多",
+  "SV",
+  "1"
+ ],
+ "America/Fort_Nelson": [
+  "納爾遜堡",
+  "CA",
+  "1"
+ ],
+ "America/Fortaleza": [
+  "福塔力莎",
+  "BR",
+  "1"
+ ],
+ "America/Glace_Bay": [
+  "格雷斯貝",
+  "CA",
+  "1"
+ ],
+ "America/Godthab": [
+  "努克",
+  "GL",
+  "0"
+ ],
+ "America/Goose_Bay": [
+  "鵝灣",
+  "CA",
+  "1"
+ ],
+ "America/Grand_Turk": [
+  "大特克島",
+  "TC",
+  "1"
+ ],
+ "America/Grenada": [
+  "格瑞納達",
+  "GD",
+  "1"
+ ],
+ "America/Guadeloupe": [
+  "瓜地洛普",
+  "GP",
+  "1"
+ ],
+ "America/Guatemala": [
+  "瓜地馬拉",
+  "GT",
+  "1"
+ ],
+ "America/Guayaquil": [
+  "瓜亞基爾",
+  "EC",
+  "1"
+ ],
+ "America/Guyana": [
+  "蓋亞那",
+  "GY",
+  "1"
+ ],
+ "America/Halifax": [
+  "哈里法克斯",
+  "CA",
+  "1"
+ ],
+ "America/Havana": [
+  "哈瓦那",
+  "CU",
+  "1"
+ ],
+ "America/Hermosillo": [
+  "埃莫西約",
+  "MX",
+  "1"
+ ],
+ "America/Indiana/Indianapolis": [
+  "印第安那波里斯",
+  "US",
+  "1"
+ ],
+ "America/Indiana/Knox": [
+  "印第安那州諾克斯",
+  "US",
+  "1"
+ ],
+ "America/Indiana/Marengo": [
+  "印第安那州馬倫哥",
+  "US",
+  "1"
+ ],
+ "America/Indiana/Petersburg": [
+  "印第安那州彼得堡",
+  "US",
+  "1"
+ ],
+ "America/Indiana/Tell_City": [
+  "印第安那州泰爾城",
+  "US",
+  "1"
+ ],
+ "America/Indiana/Vevay": [
+  "印第安那州維威",
+  "US",
+  "1"
+ ],
+ "America/Indiana/Vincennes": [
+  "印第安那州溫森斯",
+  "US",
+  "1"
+ ],
+ "America/Indiana/Winamac": [
+  "印第安那州威納馬克",
+  "US",
+  "1"
+ ],
+ "America/Indianapolis": [
+  "印第安那波里斯",
+  "US",
+  "0"
+ ],
+ "America/Inuvik": [
+  "伊奴維克",
+  "CA",
+  "1"
+ ],
+ "America/Iqaluit": [
+  "伊魁特",
+  "CA",
+  "1"
+ ],
+ "America/Jamaica": [
+  "牙買加",
+  "JM",
+  "1"
+ ],
+ "America/Jujuy": [
+  "胡胡伊",
+  "AR",
+  "0"
+ ],
+ "America/Juneau": [
+  "朱諾",
+  "US",
+  "1"
+ ],
+ "America/Kentucky/Louisville": [
+  "路易斯維爾",
+  "US",
+  "1"
+ ],
+ "America/Kentucky/Monticello": [
+  "肯塔基州蒙地卻羅",
+  "US",
+  "1"
+ ],
+ "America/Kralendijk": [
+  "克拉倫代克",
+  "BQ",
+  "1"
+ ],
+ "America/La_Paz": [
+  "拉巴斯",
+  "BO",
+  "1"
+ ],
+ "America/Lima": [
+  "利馬",
+  "PE",
+  "1"
+ ],
+ "America/Los_Angeles": [
+  "洛杉磯",
+  "US",
+  "1"
+ ],
+ "America/Louisville": [
+  "路易斯維爾",
+  "US",
+  "0"
+ ],
+ "America/Lower_Princes": [
+  "下太子區",
+  "SX",
+  "1"
+ ],
+ "America/Maceio": [
+  "馬瑟歐",
+  "BR",
+  "1"
+ ],
+ "America/Managua": [
+  "馬拿瓜",
+  "NI",
+  "1"
+ ],
+ "America/Manaus": [
+  "瑪瑙斯",
+  "BR",
+  "1"
+ ],
+ "America/Marigot": [
+  "馬里戈特",
+  "MF",
+  "1"
+ ],
+ "America/Martinique": [
+  "馬丁尼克",
+  "MQ",
+  "1"
+ ],
+ "America/Matamoros": [
+  "馬塔莫羅斯",
+  "MX",
+  "1"
+ ],
+ "America/Mazatlan": [
+  "馬薩特蘭",
+  "MX",
+  "1"
+ ],
+ "America/Mendoza": [
+  "門多薩",
+  "AR",
+  "0"
+ ],
+ "America/Menominee": [
+  "美諾米尼",
+  "US",
+  "1"
+ ],
+ "America/Merida": [
+  "梅里達",
+  "MX",
+  "1"
+ ],
+ "America/Metlakatla": [
+  "梅特拉卡特拉",
+  "US",
+  "1"
+ ],
+ "America/Mexico_City": [
+  "墨西哥市",
+  "MX",
+  "1"
+ ],
+ "America/Miquelon": [
+  "密啟崙",
+  "PM",
+  "1"
+ ],
+ "America/Moncton": [
+  "蒙克頓",
+  "CA",
+  "1"
+ ],
+ "America/Monterrey": [
+  "蒙特瑞",
+  "MX",
+  "1"
+ ],
+ "America/Montevideo": [
+  "蒙特維多",
+  "UY",
+  "1"
+ ],
+ "America/Montserrat": [
+  "蒙哲臘",
+  "MS",
+  "1"
+ ],
+ "America/Nassau": [
+  "拿索",
+  "BS",
+  "1"
+ ],
+ "America/New_York": [
+  "紐約",
+  "US",
+  "1"
+ ],
+ "America/Nome": [
+  "諾姆",
+  "US",
+  "1"
+ ],
+ "America/Noronha": [
+  "諾倫哈",
+  "BR",
+  "1"
+ ],
+ "America/North_Dakota/Beulah": [
+  "北達科他州布由拉",
+  "US",
+  "1"
+ ],
+ "America/North_Dakota/Center": [
+  "北達科他州中心",
+  "US",
+  "1"
+ ],
+ "America/North_Dakota/New_Salem": [
+  "北達科他州紐沙倫",
+  "US",
+  "1"
+ ],
+ "America/Nuuk": [
+  "努克",
+  "GL",
+  "1"
+ ],
+ "America/Ojinaga": [
+  "奧希納加",
+  "MX",
+  "1"
+ ],
+ "America/Panama": [
+  "巴拿馬",
+  "PA",
+  "1"
+ ],
+ "America/Paramaribo": [
+  "巴拉馬利波",
+  "SR",
+  "1"
+ ],
+ "America/Phoenix": [
+  "鳳凰城",
+  "US",
+  "1"
+ ],
+ "America/Port-au-Prince": [
+  "太子港",
+  "HT",
+  "1"
+ ],
+ "America/Port_of_Spain": [
+  "西班牙港",
+  "TT",
+  "1"
+ ],
+ "America/Porto_Velho": [
+  "維留港",
+  "BR",
+  "1"
+ ],
+ "America/Puerto_Rico": [
+  "波多黎各",
+  "PR",
+  "1"
+ ],
+ "America/Punta_Arenas": [
+  "蓬塔阿雷納斯",
+  "CL",
+  "1"
+ ],
+ "America/Rankin_Inlet": [
+  "蘭今灣",
+  "CA",
+  "1"
+ ],
+ "America/Recife": [
+  "雷西非",
+  "BR",
+  "1"
+ ],
+ "America/Regina": [
+  "里賈納",
+  "CA",
+  "1"
+ ],
+ "America/Resolute": [
+  "羅斯魯特",
+  "CA",
+  "1"
+ ],
+ "America/Rio_Branco": [
+  "里約布蘭",
+  "BR",
+  "1"
+ ],
+ "America/Santarem": [
+  "聖塔倫",
+  "BR",
+  "1"
+ ],
+ "America/Santiago": [
+  "聖地牙哥",
+  "CL",
+  "1"
+ ],
+ "America/Santo_Domingo": [
+  "聖多明哥",
+  "DO",
+  "1"
+ ],
+ "America/Sao_Paulo": [
+  "聖保羅",
+  "BR",
+  "1"
+ ],
+ "America/Scoresbysund": [
+  "伊托科爾托米特",
+  "GL",
+  "1"
+ ],
+ "America/Sitka": [
+  "錫特卡",
+  "US",
+  "1"
+ ],
+ "America/St_Barthelemy": [
+  "聖巴托洛繆島",
+  "BL",
+  "1"
+ ],
+ "America/St_Johns": [
+  "聖約翰",
+  "CA",
+  "1"
+ ],
+ "America/St_Kitts": [
+  "聖基茨",
+  "KN",
+  "1"
+ ],
+ "America/St_Lucia": [
+  "聖露西亞",
+  "LC",
+  "1"
+ ],
+ "America/St_Thomas": [
+  "聖托馬斯",
+  "VI",
+  "1"
+ ],
+ "America/St_Vincent": [
+  "聖文森",
+  "VC",
+  "1"
+ ],
+ "America/Swift_Current": [
+  "斯威夫特卡倫特",
+  "CA",
+  "1"
+ ],
+ "America/Tegucigalpa": [
+  "德古斯加巴",
+  "HN",
+  "1"
+ ],
+ "America/Thule": [
+  "杜里",
+  "GL",
+  "1"
+ ],
+ "America/Tijuana": [
+  "提華納",
+  "MX",
+  "1"
+ ],
+ "America/Toronto": [
+  "多倫多",
+  "CA",
+  "1"
+ ],
+ "America/Tortola": [
+  "托爾托拉",
+  "VG",
+  "1"
+ ],
+ "America/Vancouver": [
+  "溫哥華",
+  "CA",
+  "1"
+ ],
+ "America/Whitehorse": [
+  "懷特霍斯",
+  "CA",
+  "1"
+ ],
+ "America/Winnipeg": [
+  "溫尼伯",
+  "CA",
+  "1"
+ ],
+ "America/Yakutat": [
+  "雅庫塔",
+  "US",
+  "1"
+ ],
+ "Antarctica/Casey": [
+  "凱西",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/Davis": [
+  "戴維斯",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/DumontDUrville": [
+  "杜蒙杜比爾",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/Macquarie": [
+  "麥覺理",
+  "AU",
+  "1"
+ ],
+ "Antarctica/Mawson": [
+  "莫森",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/McMurdo": [
+  "麥克默多",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/Palmer": [
+  "帕麥",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/Rothera": [
+  "羅瑟拉",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/Syowa": [
+  "昭和基地",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/Troll": [
+  "綽爾",
+  "AQ",
+  "1"
+ ],
+ "Antarctica/Vostok": [
+  "沃斯托克",
+  "AQ",
+  "1"
+ ],
+ "Arctic/Longyearbyen": [
+  "隆意耳拜恩",
+  "SJ",
+  "1"
+ ],
+ "Asia/Aden": [
+  "亞丁",
+  "YE",
+  "1"
+ ],
+ "Asia/Almaty": [
+  "阿拉木圖",
+  "KZ",
+  "1"
+ ],
+ "Asia/Amman": [
+  "安曼",
+  "JO",
+  "1"
+ ],
+ "Asia/Anadyr": [
+  "阿那底",
+  "RU",
+  "1"
+ ],
+ "Asia/Aqtau": [
+  "阿克套",
+  "KZ",
+  "1"
+ ],
+ "Asia/Aqtobe": [
+  "阿克托比",
+  "KZ",
+  "1"
+ ],
+ "Asia/Ashgabat": [
+  "阿什哈巴特",
+  "TM",
+  "1"
+ ],
+ "Asia/Atyrau": [
+  "阿特勞",
+  "KZ",
+  "1"
+ ],
+ "Asia/Baghdad": [
+  "巴格達",
+  "IQ",
+  "1"
+ ],
+ "Asia/Bahrain": [
+  "巴林",
+  "BH",
+  "1"
+ ],
+ "Asia/Baku": [
+  "巴庫",
+  "AZ",
+  "1"
+ ],
+ "Asia/Bangkok": [
+  "曼谷",
+  "TH",
+  "1"
+ ],
+ "Asia/Barnaul": [
+  "巴爾瑙爾",
+  "RU",
+  "1"
+ ],
+ "Asia/Beirut": [
+  "貝魯特",
+  "LB",
+  "1"
+ ],
+ "Asia/Bishkek": [
+  "比什凱克",
+  "KG",
+  "1"
+ ],
+ "Asia/Brunei": [
+  "汶萊",
+  "BN",
+  "1"
+ ],
+ "Asia/Calcutta": [
+  "加爾各答",
+  "IN",
+  "0"
+ ],
+ "Asia/Chita": [
+  "赤塔",
+  "RU",
+  "1"
+ ],
+ "Asia/Colombo": [
+  "可倫坡",
+  "LK",
+  "1"
+ ],
+ "Asia/Damascus": [
+  "大馬士革",
+  "SY",
+  "1"
+ ],
+ "Asia/Dhaka": [
+  "達卡",
+  "BD",
+  "1"
+ ],
+ "Asia/Dili": [
+  "帝力",
+  "TL",
+  "1"
+ ],
+ "Asia/Dubai": [
+  "杜拜",
+  "AE",
+  "1"
+ ],
+ "Asia/Dushanbe": [
+  "杜桑貝",
+  "TJ",
+  "1"
+ ],
+ "Asia/Famagusta": [
+  "法馬古斯塔",
+  "CY",
+  "1"
+ ],
+ "Asia/Gaza": [
+  "加薩",
+  "PS",
+  "1"
+ ],
+ "Asia/Hebron": [
+  "赫布隆",
+  "PS",
+  "1"
+ ],
+ "Asia/Ho_Chi_Minh": [
+  "胡志明市",
+  "VN",
+  "1"
+ ],
+ "Asia/Hong_Kong": [
+  "香港",
+  "HK",
+  "1"
+ ],
+ "Asia/Hovd": [
+  "科布多",
+  "MN",
+  "1"
+ ],
+ "Asia/Irkutsk": [
+  "伊爾庫次克",
+  "RU",
+  "1"
+ ],
+ "Asia/Jakarta": [
+  "雅加達",
+  "ID",
+  "1"
+ ],
+ "Asia/Jayapura": [
+  "加亞布拉",
+  "ID",
+  "1"
+ ],
+ "Asia/Jerusalem": [
+  "耶路撒冷",
+  "IL",
+  "1"
+ ],
+ "Asia/Kabul": [
+  "喀布爾",
+  "AF",
+  "1"
+ ],
+ "Asia/Kamchatka": [
+  "堪察加",
+  "RU",
+  "1"
+ ],
+ "Asia/Karachi": [
+  "喀拉蚩",
+  "PK",
+  "1"
+ ],
+ "Asia/Kathmandu": [
+  "加德滿都",
+  "NP",
+  "1"
+ ],
+ "Asia/Katmandu": [
+  "加德滿都",
+  "NP",
+  "0"
+ ],
+ "Asia/Khandyga": [
+  "堪地加",
+  "RU",
+  "1"
+ ],
+ "Asia/Kolkata": [
+  "加爾各答",
+  "IN",
+  "1"
+ ],
+ "Asia/Krasnoyarsk": [
+  "克拉斯諾亞爾斯克",
+  "RU",
+  "1"
+ ],
+ "Asia/Kuala_Lumpur": [
+  "吉隆坡",
+  "MY",
+  "1"
+ ],
+ "Asia/Kuching": [
+  "古晉",
+  "MY",
+  "1"
+ ],
+ "Asia/Kuwait": [
+  "科威特",
+  "KW",
+  "1"
+ ],
+ "Asia/Macau": [
+  "澳門",
+  "MO",
+  "1"
+ ],
+ "Asia/Magadan": [
+  "馬加丹",
+  "RU",
+  "1"
+ ],
+ "Asia/Makassar": [
+  "馬卡沙爾",
+  "ID",
+  "1"
+ ],
+ "Asia/Manila": [
+  "馬尼拉",
+  "PH",
+  "1"
+ ],
+ "Asia/Muscat": [
+  "馬斯開特",
+  "OM",
+  "1"
+ ],
+ "Asia/Nicosia": [
+  "尼古西亞",
+  "CY",
+  "1"
+ ],
+ "Asia/Novokuznetsk": [
+  "新庫茲涅茨克",
+  "RU",
+  "1"
+ ],
+ "Asia/Novosibirsk": [
+  "新西伯利亞",
+  "RU",
+  "1"
+ ],
+ "Asia/Omsk": [
+  "鄂木斯克",
+  "RU",
+  "1"
+ ],
+ "Asia/Oral": [
+  "烏拉爾",
+  "KZ",
+  "1"
+ ],
+ "Asia/Phnom_Penh": [
+  "金邊",
+  "KH",
+  "1"
+ ],
+ "Asia/Pontianak": [
+  "坤甸",
+  "ID",
+  "1"
+ ],
+ "Asia/Pyongyang": [
+  "平壤",
+  "KP",
+  "1"
+ ],
+ "Asia/Qatar": [
+  "卡達",
+  "QA",
+  "1"
+ ],
+ "Asia/Qostanay": [
+  "庫斯塔奈",
+  "KZ",
+  "1"
+ ],
+ "Asia/Qyzylorda": [
+  "克孜勒奧爾達",
+  "KZ",
+  "1"
+ ],
+ "Asia/Rangoon": [
+  "仰光",
+  "MM",
+  "0"
+ ],
+ "Asia/Riyadh": [
+  "利雅德",
+  "SA",
+  "1"
+ ],
+ "Asia/Saigon": [
+  "胡志明市",
+  "VN",
+  "0"
+ ],
+ "Asia/Sakhalin": [
+  "庫頁島",
+  "RU",
+  "1"
+ ],
+ "Asia/Samarkand": [
+  "撒馬爾罕",
+  "UZ",
+  "1"
+ ],
+ "Asia/Seoul": [
+  "首爾",
+  "KR",
+  "1"
+ ],
+ "Asia/Shanghai": [
+  "上海",
+  "CN",
+  "1"
+ ],
+ "Asia/Singapore": [
+  "新加坡",
+  "SG",
+  "1"
+ ],
+ "Asia/Srednekolymsk": [
+  "中科雷姆斯克",
+  "RU",
+  "1"
+ ],
+ "Asia/Taipei": [
+  "台北",
+  "TW",
+  "1"
+ ],
+ "Asia/Tashkent": [
+  "塔什干",
+  "UZ",
+  "1"
+ ],
+ "Asia/Tbilisi": [
+  "第比利斯",
+  "GE",
+  "1"
+ ],
+ "Asia/Tehran": [
+  "德黑蘭",
+  "IR",
+  "1"
+ ],
+ "Asia/Thimphu": [
+  "廷布",
+  "BT",
+  "1"
+ ],
+ "Asia/Tokyo": [
+  "東京",
+  "JP",
+  "1"
+ ],
+ "Asia/Tomsk": [
+  "托木斯克",
+  "RU",
+  "1"
+ ],
+ "Asia/Ulaanbaatar": [
+  "烏蘭巴托",
+  "MN",
+  "1"
+ ],
+ "Asia/Urumqi": [
+  "烏魯木齊",
+  "CN",
+  "1"
+ ],
+ "Asia/Ust-Nera": [
+  "烏斯內拉",
+  "RU",
+  "1"
+ ],
+ "Asia/Vientiane": [
+  "永珍",
+  "LA",
+  "1"
+ ],
+ "Asia/Vladivostok": [
+  "海參崴",
+  "RU",
+  "1"
+ ],
+ "Asia/Yakutsk": [
+  "雅庫次克",
+  "RU",
+  "1"
+ ],
+ "Asia/Yangon": [
+  "仰光",
+  "MM",
+  "1"
+ ],
+ "Asia/Yekaterinburg": [
+  "葉卡捷林堡",
+  "RU",
+  "1"
+ ],
+ "Asia/Yerevan": [
+  "葉里溫",
+  "AM",
+  "1"
+ ],
+ "Atlantic/Azores": [
+  "亞速爾群島",
+  "PT",
+  "1"
+ ],
+ "Atlantic/Bermuda": [
+  "百慕達",
+  "BM",
+  "1"
+ ],
+ "Atlantic/Canary": [
+  "加納利",
+  "ES",
+  "1"
+ ],
+ "Atlantic/Cape_Verde": [
+  "維德角",
+  "CV",
+  "1"
+ ],
+ "Atlantic/Faeroe": [
+  "法羅群島",
+  "FO",
+  "0"
+ ],
+ "Atlantic/Faroe": [
+  "法羅群島",
+  "FO",
+  "1"
+ ],
+ "Atlantic/Madeira": [
+  "馬得拉群島",
+  "PT",
+  "1"
+ ],
+ "Atlantic/Reykjavik": [
+  "雷克雅維克",
+  "IS",
+  "1"
+ ],
+ "Atlantic/South_Georgia": [
+  "南喬治亞",
+  "GS",
+  "1"
+ ],
+ "Atlantic/St_Helena": [
+  "聖赫勒拿島",
+  "SH",
+  "1"
+ ],
+ "Atlantic/Stanley": [
+  "史坦利",
+  "FK",
+  "1"
+ ],
+ "Australia/Adelaide": [
+  "阿得雷德",
+  "AU",
+  "1"
+ ],
+ "Australia/Brisbane": [
+  "布利斯班",
+  "AU",
+  "1"
+ ],
+ "Australia/Broken_Hill": [
+  "布羅肯希爾",
+  "AU",
+  "1"
+ ],
+ "Australia/Darwin": [
+  "達爾文",
+  "AU",
+  "1"
+ ],
+ "Australia/Eucla": [
+  "尤克拉",
+  "AU",
+  "1"
+ ],
+ "Australia/Hobart": [
+  "荷巴特",
+  "AU",
+  "1"
+ ],
+ "Australia/Lindeman": [
+  "林德曼",
+  "AU",
+  "1"
+ ],
+ "Australia/Lord_Howe": [
+  "豪勳爵島",
+  "AU",
+  "1"
+ ],
+ "Australia/Melbourne": [
+  "墨爾本",
+  "AU",
+  "1"
+ ],
+ "Australia/Perth": [
+  "伯斯",
+  "AU",
+  "1"
+ ],
+ "Australia/Sydney": [
+  "雪梨",
+  "AU",
+  "1"
+ ],
+ "Europe/Amsterdam": [
+  "阿姆斯特丹",
+  "NL",
+  "1"
+ ],
+ "Europe/Andorra": [
+  "安道爾",
+  "AD",
+  "1"
+ ],
+ "Europe/Astrakhan": [
+  "阿斯特拉罕",
+  "RU",
+  "1"
+ ],
+ "Europe/Athens": [
+  "雅典",
+  "GR",
+  "1"
+ ],
+ "Europe/Belgrade": [
+  "貝爾格勒",
+  "RS",
+  "1"
+ ],
+ "Europe/Berlin": [
+  "柏林",
+  "DE",
+  "1"
+ ],
+ "Europe/Bratislava": [
+  "布拉提斯拉瓦",
+  "SK",
+  "1"
+ ],
+ "Europe/Brussels": [
+  "布魯塞爾",
+  "BE",
+  "1"
+ ],
+ "Europe/Bucharest": [
+  "布加勒斯特",
+  "RO",
+  "1"
+ ],
+ "Europe/Budapest": [
+  "布達佩斯",
+  "HU",
+  "1"
+ ],
+ "Europe/Busingen": [
+  "布辛根",
+  "DE",
+  "1"
+ ],
+ "Europe/Chisinau": [
+  "基西紐",
+  "MD",
+  "1"
+ ],
+ "Europe/Copenhagen": [
+  "哥本哈根",
+  "DK",
+  "1"
+ ],
+ "Europe/Dublin": [
+  "都柏林",
+  "IE",
+  "1"
+ ],
+ "Europe/Gibraltar": [
+  "直布羅陀",
+  "GI",
+  "1"
+ ],
+ "Europe/Guernsey": [
+  "根息島",
+  "GG",
+  "1"
+ ],
+ "Europe/Helsinki": [
+  "赫爾辛基",
+  "FI",
+  "1"
+ ],
+ "Europe/Isle_of_Man": [
+  "曼島",
+  "IM",
+  "1"
+ ],
+ "Europe/Istanbul": [
+  "伊斯坦堡",
+  "TR",
+  "1"
+ ],
+ "Europe/Jersey": [
+  "澤西島",
+  "JE",
+  "1"
+ ],
+ "Europe/Kaliningrad": [
+  "加里寧格勒",
+  "RU",
+  "1"
+ ],
+ "Europe/Kiev": [
+  "基輔",
+  "UA",
+  "0"
+ ],
+ "Europe/Kirov": [
+  "基洛夫",
+  "RU",
+  "1"
+ ],
+ "Europe/Kyiv": [
+  "基輔",
+  "UA",
+  "1"
+ ],
+ "Europe/Lisbon": [
+  "里斯本",
+  "PT",
+  "1"
+ ],
+ "Europe/Ljubljana": [
+  "盧比安納",
+  "SI",
+  "1"
+ ],
+ "Europe/London": [
+  "倫敦",
+  "GB",
+  "1"
+ ],
+ "Europe/Luxembourg": [
+  "盧森堡",
+  "LU",
+  "1"
+ ],
+ "Europe/Madrid": [
+  "馬德里",
+  "ES",
+  "1"
+ ],
+ "Europe/Malta": [
+  "馬爾他",
+  "MT",
+  "1"
+ ],
+ "Europe/Mariehamn": [
+  "瑪麗港",
+  "AX",
+  "1"
+ ],
+ "Europe/Minsk": [
+  "明斯克",
+  "BY",
+  "1"
+ ],
+ "Europe/Monaco": [
+  "摩納哥",
+  "MC",
+  "1"
+ ],
+ "Europe/Moscow": [
+  "莫斯科",
+  "RU",
+  "1"
+ ],
+ "Europe/Oslo": [
+  "奧斯陸",
+  "NO",
+  "1"
+ ],
+ "Europe/Paris": [
+  "巴黎",
+  "FR",
+  "1"
+ ],
+ "Europe/Podgorica": [
+  "波多里察",
+  "ME",
+  "1"
+ ],
+ "Europe/Prague": [
+  "布拉格",
+  "CZ",
+  "1"
+ ],
+ "Europe/Riga": [
+  "里加",
+  "LV",
+  "1"
+ ],
+ "Europe/Rome": [
+  "羅馬",
+  "IT",
+  "1"
+ ],
+ "Europe/Samara": [
+  "沙馬拉",
+  "RU",
+  "1"
+ ],
+ "Europe/San_Marino": [
+  "聖馬利諾",
+  "SM",
+  "1"
+ ],
+ "Europe/Sarajevo": [
+  "塞拉耶佛",
+  "BA",
+  "1"
+ ],
+ "Europe/Saratov": [
+  "薩拉托夫",
+  "RU",
+  "1"
+ ],
+ "Europe/Simferopol": [
+  "辛非洛浦",
+  "UA",
+  "1"
+ ],
+ "Europe/Skopje": [
+  "史高比耶",
+  "MK",
+  "1"
+ ],
+ "Europe/Sofia": [
+  "索菲亞",
+  "BG",
+  "1"
+ ],
+ "Europe/Stockholm": [
+  "斯德哥爾摩",
+  "SE",
+  "1"
+ ],
+ "Europe/Tallinn": [
+  "塔林",
+  "EE",
+  "1"
+ ],
+ "Europe/Tirane": [
+  "地拉那",
+  "AL",
+  "1"
+ ],
+ "Europe/Ulyanovsk": [
+  "烏里揚諾夫斯克",
+  "RU",
+  "1"
+ ],
+ "Europe/Vaduz": [
+  "瓦都茲",
+  "LI",
+  "1"
+ ],
+ "Europe/Vatican": [
+  "梵蒂岡",
+  "VA",
+  "1"
+ ],
+ "Europe/Vienna": [
+  "維也納",
+  "AT",
+  "1"
+ ],
+ "Europe/Vilnius": [
+  "維爾紐斯",
+  "LT",
+  "1"
+ ],
+ "Europe/Volgograd": [
+  "伏爾加格勒",
+  "RU",
+  "1"
+ ],
+ "Europe/Warsaw": [
+  "華沙",
+  "PL",
+  "1"
+ ],
+ "Europe/Zagreb": [
+  "札格瑞布",
+  "HR",
+  "1"
+ ],
+ "Europe/Zurich": [
+  "蘇黎世",
+  "CH",
+  "1"
+ ],
+ "Indian/Antananarivo": [
+  "安塔那那利弗",
+  "MG",
+  "1"
+ ],
+ "Indian/Chagos": [
+  "查戈斯",
+  "IO",
+  "1"
+ ],
+ "Indian/Christmas": [
+  "聖誕島",
+  "CX",
+  "1"
+ ],
+ "Indian/Cocos": [
+  "科科斯群島",
+  "CC",
+  "1"
+ ],
+ "Indian/Comoro": [
+  "科摩羅群島",
+  "KM",
+  "1"
+ ],
+ "Indian/Kerguelen": [
+  "凱爾蓋朗島",
+  "TF",
+  "1"
+ ],
+ "Indian/Mahe": [
+  "馬埃島",
+  "SC",
+  "1"
+ ],
+ "Indian/Maldives": [
+  "馬爾地夫",
+  "MV",
+  "1"
+ ],
+ "Indian/Mauritius": [
+  "模里西斯",
+  "MU",
+  "1"
+ ],
+ "Indian/Mayotte": [
+  "馬約特島",
+  "YT",
+  "1"
+ ],
+ "Indian/Reunion": [
+  "留尼旺島",
+  "RE",
+  "1"
+ ],
+ "Pacific/Apia": [
+  "阿皮亞",
+  "WS",
+  "1"
+ ],
+ "Pacific/Auckland": [
+  "奧克蘭",
+  "NZ",
+  "1"
+ ],
+ "Pacific/Bougainville": [
+  "布干維爾",
+  "PG",
+  "1"
+ ],
+ "Pacific/Chatham": [
+  "查坦",
+  "NZ",
+  "1"
+ ],
+ "Pacific/Chuuk": [
+  "楚克",
+  "FM",
+  "1"
+ ],
+ "Pacific/Easter": [
+  "復活島",
+  "CL",
+  "1"
+ ],
+ "Pacific/Efate": [
+  "埃法特",
+  "VU",
+  "1"
+ ],
+ "Pacific/Enderbury": [
+  "坎頓島",
+  "KI",
+  "0"
+ ],
+ "Pacific/Fakaofo": [
+  "法考福",
+  "TK",
+  "1"
+ ],
+ "Pacific/Fiji": [
+  "斐濟",
+  "FJ",
+  "1"
+ ],
+ "Pacific/Funafuti": [
+  "富那富提",
+  "TV",
+  "1"
+ ],
+ "Pacific/Galapagos": [
+  "加拉巴哥群島",
+  "EC",
+  "1"
+ ],
+ "Pacific/Gambier": [
+  "甘比爾群島",
+  "PF",
+  "1"
+ ],
+ "Pacific/Guadalcanal": [
+  "瓜達康納爾島",
+  "SB",
+  "1"
+ ],
+ "Pacific/Guam": [
+  "關島",
+  "GU",
+  "1"
+ ],
+ "Pacific/Honolulu": [
+  "檀香山",
+  "US",
+  "1"
+ ],
+ "Pacific/Kanton": [
+  "坎頓島",
+  "KI",
+  "1"
+ ],
+ "Pacific/Kiritimati": [
+  "基里地馬地島",
+  "KI",
+  "1"
+ ],
+ "Pacific/Kosrae": [
+  "科斯瑞",
+  "FM",
+  "1"
+ ],
+ "Pacific/Kwajalein": [
+  "瓜加林島",
+  "MH",
+  "1"
+ ],
+ "Pacific/Majuro": [
+  "馬朱諾",
+  "MH",
+  "1"
+ ],
+ "Pacific/Marquesas": [
+  "馬可薩斯島",
+  "PF",
+  "1"
+ ],
+ "Pacific/Midway": [
+  "中途島",
+  "UM",
+  "1"
+ ],
+ "Pacific/Nauru": [
+  "諾魯",
+  "NR",
+  "1"
+ ],
+ "Pacific/Niue": [
+  "紐埃島",
+  "NU",
+  "1"
+ ],
+ "Pacific/Norfolk": [
+  "諾福克",
+  "NF",
+  "1"
+ ],
+ "Pacific/Noumea": [
+  "諾美亞",
+  "NC",
+  "1"
+ ],
+ "Pacific/Pago_Pago": [
+  "巴哥巴哥",
+  "AS",
+  "1"
+ ],
+ "Pacific/Palau": [
+  "帛琉",
+  "PW",
+  "1"
+ ],
+ "Pacific/Pitcairn": [
+  "皮特肯群島",
+  "PN",
+  "1"
+ ],
+ "Pacific/Pohnpei": [
+  "波納佩",
+  "FM",
+  "1"
+ ],
+ "Pacific/Ponape": [
+  "波納佩",
+  "FM",
+  "0"
+ ],
+ "Pacific/Port_Moresby": [
+  "莫士比港",
+  "PG",
+  "1"
+ ],
+ "Pacific/Rarotonga": [
+  "拉羅湯加",
+  "CK",
+  "1"
+ ],
+ "Pacific/Saipan": [
+  "塞班",
+  "MP",
+  "1"
+ ],
+ "Pacific/Tahiti": [
+  "大溪地",
+  "PF",
+  "1"
+ ],
+ "Pacific/Tarawa": [
+  "塔拉瓦",
+  "KI",
+  "1"
+ ],
+ "Pacific/Tongatapu": [
+  "東加塔布島",
+  "TO",
+  "1"
+ ],
+ "Pacific/Truk": [
+  "楚克",
+  "FM",
+  "0"
+ ],
+ "Pacific/Wake": [
+  "威克",
+  "UM",
+  "1"
+ ],
+ "Pacific/Wallis": [
+  "瓦利斯",
+  "WF",
+  "1"
+ ],
+ "UTC": [
+  "UTC",
+  "",
+  "0"
+ ]
+}
