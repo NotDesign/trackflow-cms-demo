@@ -227,10 +227,11 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 /* Column labels and values share an anchor; header tools use fixed adjacent slots. */
 .table-v2 { --cms-header-tools: 80px; }
 .table-v2 .th-content {
-  display: grid; grid-template-columns: max-content 24px 26px; align-items: center;
+  display: flex; align-items: center;
   column-gap: 6px; width: max-content; max-width: none; margin: 0;
 }
-.table-v2 th.numeric .th-content { grid-template-columns: minmax(max-content,1fr) 24px 26px; width: 100%; }
+.table-v2 th.numeric .th-content { width: 100%; }
+.table-v2 th.numeric .cms-column-sort { flex: 1; min-width: max-content; }
 .table-v2 .th-content > .cms-column-sort {
   display: grid; grid-template-columns: minmax(max-content,1fr) 12px; align-items: center;
   gap: 6px; min-height: 28px; padding: 0; margin: 0; border: 0; background: none;
@@ -245,3 +246,19 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 }
 .table-v2 .th-content > .cms-column-trigger:hover { background: var(--accent-dim); color: var(--accent); }
 .table-v2 td.numeric > .cms-cell-value { display: block; padding-right: var(--cms-header-tools); text-align: right; white-space: nowrap; }
+
+/* Plain daily-value tables use the same date-left / number-right convention. */
+.cms-chart-details :is(th,td){padding-inline:16px;white-space:nowrap;text-align:left}
+.cms-chart-details :is(th,td).numeric{text-align:right}
+.cms-chart-details table{min-width:max-content}
+.table-v2 td.numeric .row-link{display:inline;text-align:inherit}
+/* Date shortcuts are shared by global filters and client report date ranges. */
+.cms-date-presets{margin-bottom:20px;min-width:0}
+.cms-date-preset-options{display:flex;flex-wrap:wrap;gap:8px}
+.cms-date-preset-options>button{min-height:40px;padding:8px 14px;border:1px solid var(--border);border-radius:9px;background:var(--bg);color:var(--subtle);font:inherit;white-space:nowrap;cursor:pointer}
+.cms-date-preset-options>button:hover{border-color:var(--accent);color:var(--text)}
+.cms-date-preset-options>button[aria-pressed=true]{background:var(--action);border-color:var(--action);color:var(--on-action);font-weight:600}
+.cms-date-preset-options>button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.cms-date-preset-options>button:disabled{opacity:.5;cursor:default}
+.cms-date-presets .demo-note{margin:10px 0 0}
+@media(max-width:600px){.cms-date-preset-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.cms-date-preset-options>button{padding-inline:6px}}
