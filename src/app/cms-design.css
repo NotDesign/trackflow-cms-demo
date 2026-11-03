@@ -247,6 +247,14 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 .table-v2 .th-content > .cms-column-trigger:hover { background: var(--accent-dim); color: var(--accent); }
 .table-v2 td.numeric > .cms-cell-value { display: block; padding-right: var(--cms-header-tools); text-align: right; white-space: nowrap; }
 
+/* Actions travel with their own column; they cannot cover another column. */
+.table-v2 .cms-table-actions{position:static;text-align:center;white-space:nowrap;box-shadow:none}
+.table-v2 .cms-table-row-actions{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+.table-v2 .selection-cell{position:static}
+.table-v2 .selection-cell.frozen-selection{position:sticky;left:0;z-index:3}
+.table-v2 thead .selection-cell.frozen-selection{z-index:5}
+.table-v2 .table-scroll{scroll-behavior:auto}
+
 /* Plain daily-value tables use the same date-left / number-right convention. */
 .cms-chart-details :is(th,td){padding-inline:16px;white-space:nowrap;text-align:left}
 .cms-chart-details :is(th,td).numeric{text-align:right}
