@@ -224,28 +224,18 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 /* Keep summary cards scrollable without displaying a native scrollbar. */
 .cms-info-carousel-viewport::-webkit-scrollbar{display:none;width:0;height:0}
 
-/* Column labels and values share an anchor; header tools use fixed adjacent slots. */
-.table-v2 { --cms-header-tools: 80px; }
-.table-v2 .th-content {
-  display: flex; align-items: center;
-  column-gap: 6px; width: max-content; max-width: none; margin: 0;
-}
-.table-v2 th.numeric .th-content { width: 100%; }
-.table-v2 th.numeric .cms-column-sort { flex: 1; min-width: max-content; }
-.table-v2 .th-content > .cms-column-sort {
-  display: grid; grid-template-columns: minmax(max-content,1fr) 12px; align-items: center;
-  gap: 6px; min-height: 28px; padding: 0; margin: 0; border: 0; background: none;
-  color: inherit; font: inherit; white-space: nowrap; text-align: left;
-}
-.table-v2 th.numeric .cms-column-label { text-align: right; }
-.table-v2 .cms-header-help { display: flex; align-items: center; justify-content: center; width: 24px; height: 28px; }
-.table-v2 .cms-header-help .metric-label { font-size: 0; }
-.table-v2 .th-content > .cms-column-trigger {
-  display: grid; place-items: center; flex: none; width: 26px; min-width: 26px; height: 28px; min-height: 28px;
-  margin: 0; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--muted);
-}
-.table-v2 .th-content > .cms-column-trigger:hover { background: var(--accent-dim); color: var(--accent); }
-.table-v2 td.numeric > .cms-cell-value { display: block; padding-right: var(--cms-header-tools); text-align: right; white-space: nowrap; }
+/* One visible start line for each label, scope total and row value. */
+.table-v2 :is(th,td){text-align:left;padding-inline:16px}
+.table-v2 :is(.panel-heading,.table-toolbar,.cms-table-status,.cms-table-total-note,.pagination),.cms-shell .table-v2 :is(.panel-heading,.table-toolbar,.cms-table-status,.cms-table-total-note,.pagination){padding-inline:16px}
+.table-v2 .th-content,.table-v2 th.numeric .th-content{display:inline-flex;align-items:center;justify-content:flex-start;gap:6px;width:max-content;max-width:none;margin:0;white-space:nowrap}
+.table-v2 .th-content>.cms-column-sort{display:inline-flex;align-items:center;gap:6px;flex:none;min-height:28px;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;white-space:nowrap;text-align:left}
+.table-v2 .cms-column-label{display:inline-block;text-align:left;white-space:nowrap}
+.table-v2 .cms-column-sort>svg{flex:none}
+.table-v2 .cms-header-help{display:inline-flex;align-items:center;justify-content:center;width:24px;height:28px;flex:none}
+.table-v2 .cms-header-help .metric-label{font-size:0}
+.table-v2 .th-content>.cms-column-trigger{display:grid;place-items:center;flex:none;width:26px;min-width:26px;height:28px;min-height:28px;margin:0;padding:0;border:0;border-radius:6px;background:none;color:var(--muted)}
+.table-v2 .th-content>.cms-column-trigger:hover{background:var(--accent-dim);color:var(--accent)}
+.table-v2 td.numeric>.cms-cell-value{display:block;padding:0;text-align:left;white-space:nowrap;font-variant-numeric:tabular-nums}
 
 /* Actions travel with their own column; they cannot cover another column. */
 .table-v2 .cms-table-actions{position:static;text-align:center;white-space:nowrap;box-shadow:none}
@@ -257,7 +247,7 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 
 /* Plain daily-value tables use the same date-left / number-right convention. */
 .cms-chart-details :is(th,td){padding-inline:16px;white-space:nowrap;text-align:left}
-.cms-chart-details :is(th,td).numeric{text-align:right}
+.cms-chart-details :is(th,td).numeric{text-align:left}
 .cms-chart-details table{min-width:max-content}
 .table-v2 td.numeric .row-link{display:inline;text-align:inherit}
 /* Date shortcuts are shared by global filters and client report date ranges. */
