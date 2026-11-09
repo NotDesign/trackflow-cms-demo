@@ -1,4 +1,5 @@
 "use client";
+import {openOnePageBuilder} from "./onepage-studio";
 import {APP_VERSION} from "@/lib/release";
 import {useEffect,useState} from "react";
 import Link from "next/link";
@@ -88,7 +89,7 @@ function AppShell({route}:{route:string}){
    <WorkspaceTabs pages={navigation.flatMap(g=>g.items)} onNew={()=>setCommand(true)}/>
    <main id="cms-content" tabIndex={-1} aria-busy={w.isPending}>
     {!m?<div className="empty-state"><h1>Page not found</h1><Button onClick={()=>w.go("/overview")}>Go to overview</Button></div>:<>
-     {!route.includes("/")&&<div className="page-heading"><div><span className="eyebrow"><PageIcon size={14}/>{m.eyebrow}</span><h1>{m.title}</h1><p>{m.description}</p></div><div className="cms-page-actions"><label className="cms-table-search"><Search size={15}/><input aria-label="Search current table" placeholder="Search this table…" value={w.query} onChange={e=>w.setQuery(e.target.value)}/></label>{action?<Button onClick={()=>w.setEditor({type:action.type})}><Plus size={16}/>{action.label}</Button>:page==="overview"?<Button variant="outline" onClick={()=>w.go("/reports")}><Download size={15}/>Export report</Button>:null}</div></div>}
+     {!route.includes("/")&&<div className="page-heading"><div><span className="eyebrow"><PageIcon size={14}/>{m.eyebrow}</span><h1>{m.title}</h1><p>{m.description}</p></div><div className="cms-page-actions"><label className="cms-table-search"><Search size={15}/><input aria-label="Search current table" placeholder="Search this table…" value={w.query} onChange={e=>w.setQuery(e.target.value)}/></label>{page==="creatives"&&<Button variant="outline" onClick={()=>w.protect(openOnePageBuilder)}><Globe2 size={16}/>建立一頁式網頁</Button>}{action?<Button onClick={()=>w.setEditor({type:action.type})}><Plus size={16}/>{action.label}</Button>:page==="overview"?<Button variant="outline" onClick={()=>w.go("/reports")}><Download size={15}/>Export report</Button>:null}</div></div>}
      {!["agents","review-inbox","settings"].includes(page)&&<GlobalFilters dateOpen={dateOpen} onDateOpen={setDateOpen}/>}
      <div className="cms-content-stack" role="tabpanel" id="workspace-panel" aria-labelledby={"workspace-tab-"+w.pathname.replaceAll("/","-")} onClickCapture={e=>{if(!w.dirty||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const anchor=(e.target as HTMLElement).closest("a[href]");const href=anchor?.getAttribute("href");if(href?.startsWith("/")){e.preventDefault();e.stopPropagation();w.protect(()=>w.router.push(href))}}}>{content}</div>
     </>}

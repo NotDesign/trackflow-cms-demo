@@ -28,5 +28,6 @@ import "../app/cms-tabs.css";
 import "../app/cms-info-cards.css";
 import "../app/cms-controls.css";
 import "../app/cms-dialogs.css";
+import "../app/onepage-studio.css";
 function App(){const pathname=usePathname();return <LocaleProvider><TextSizeProvider><DemoAuthProvider><Dashboard route={pathname.replace(/^\//,"")||"overview"}/></DemoAuthProvider></TextSizeProvider></LocaleProvider>}
 createRoot(document.getElementById("root")!).render(<App/>);
