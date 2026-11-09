@@ -11,3 +11,5 @@ console.log('PASS: six distinct layouts, local assets, export URLs, escaping, un
 global.FileReader=class{readAsDataURL(blob){blob.arrayBuffer().then(bytes=>{this.result='data:'+blob.type+';base64,'+Buffer.from(bytes).toString('base64');this.onload()}).catch(()=>this.onerror())}};
 global.fetch=async url=>{const file=new URL(url).pathname.split('/cms/')[1];return new Response(fs.readFileSync(path.join('public',file)),{headers:{'Content-Type':file.endsWith('.jpg')?'image/jpeg':'image/png'}})};
 (async()=>{const exporter=load('src/lib/onepage/export.ts');for(const template of m.PAGE_TEMPLATES){const page=m.pageFromTemplate(template);const output=await exporter.exportPageHTML(page,'https://demo.example/cms/');assert(!output.externalMedia);assert(output.html.includes('data:image/'));assert(!output.html.includes('https://demo.example/cms/demo-creatives/'));assert(output.html.includes(page.title));}console.log('PASS: all six HTML exports embed their three distinct default images.');})().catch(e=>{console.error(e);process.exitCode=1});
+
+assert(r.renderPage(m.pageFromTemplate(m.PAGE_TEMPLATES[0]),'https://demo.example/',true).includes('<base href="about:srcdoc">'));

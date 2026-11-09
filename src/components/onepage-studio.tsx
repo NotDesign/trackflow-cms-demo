@@ -13,7 +13,7 @@ const EVENT='trackflow-create-onepage';
 export const openOnePageBuilder=()=>window.dispatchEvent(new Event(EVENT));
 const assetBase=()=>new URL(import.meta.env.BASE_URL,window.location.origin).href;
 function Miniature({page,label}:{page:GamePage;label:string}){
- const ref=useRef<HTMLDivElement>(null),[width,setWidth]=useState(320),html=useMemo(()=>renderPage(page,assetBase()),[page]);
+ const ref=useRef<HTMLDivElement>(null),[width,setWidth]=useState(320),html=useMemo(()=>renderPage(page,assetBase(),true),[page]);
  useEffect(()=>{if(!ref.current)return;const observer=new ResizeObserver(([entry])=>setWidth(entry.contentRect.width));observer.observe(ref.current);return()=>observer.disconnect()},[]);
  return <div className="onepage-miniature" ref={ref} aria-hidden="true"><iframe tabIndex={-1} title={label+' 縮圖'} srcDoc={html} sandbox="" loading="lazy" style={{transform:`scale(${width/1280})`}}/></div>;
 }
@@ -24,7 +24,7 @@ function MediaField({label,value,onChange,kind='image'}:{label:string;value:stri
  return <div className="onepage-media-field"><span className="onepage-field-label">{label}</span>{kind==='image'&&safeUrl(value,'image')&&<img className="onepage-media-thumb" src={value.startsWith('demo-creatives/')?new URL(value,assetBase()).href:safeUrl(value,'image')} alt={label+'預覽'}/>}<div className="onepage-media-input"><input aria-label={label+'網址'} type="url" value={isFile?'':value} placeholder={isFile?'已選用本機檔案，可重新上傳或貼上網址':kind==='video'?'YouTube、Vimeo 或 MP4 / WebM 網址':'https://… 或上傳本機圖片'} onChange={e=>{onChange(e.target.value);setError('')}}/><label className="button button-outline onepage-upload">{kind==='video'?<Video size={15}/>:<Upload size={15}/>}<span>{busy?'讀取中…':'上傳'}</span><input aria-label={'上傳'+label} type="file" accept={kind==='image'?'image/png,image/jpeg,image/webp,image/gif,image/avif':'video/mp4,video/webm,video/ogg'} disabled={busy} onChange={e=>{const file=e.currentTarget.files?.[0];e.currentTarget.value='';void upload(file)}}/></label></div><div className="onepage-media-help"><small>{isFile?'已嵌入本機檔案。':kind==='image'?'PNG / JPG / WebP / GIF / AVIF，單張 5 MB 內。':'MP4 / WebM / Ogg，單支 30 MB 內。'}</small>{value&&<button type="button" onClick={()=>onChange('')}>移除</button>}</div>{error&&<p className="form-error" role="alert">{error}</p>}</div>;
 }
 function PagePreview({page,device}:{page:GamePage;device:'desktop'|'mobile'}){
- const deferred=useDeferredValue(page),html=useMemo(()=>renderPage(deferred,assetBase()),[deferred]);
+ const deferred=useDeferredValue(page),html=useMemo(()=>renderPage(deferred,assetBase(),true),[deferred]);
  return <div className={'onepage-preview-scroll '+(device==='mobile'?'is-mobile':'is-desktop')}><iframe title="一頁式網頁即時預覽" sandbox="allow-scripts allow-presentation allow-popups" srcDoc={html}/></div>;
 }
 export function OnePageStudio({visible,onActivate,campaignId}:{visible:boolean;onActivate:()=>void;campaignId?:string}){
