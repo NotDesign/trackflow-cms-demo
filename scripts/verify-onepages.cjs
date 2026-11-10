@@ -19,3 +19,7 @@ const legacy=m.pageFromTemplate(m.PAGE_TEMPLATES[0]);delete legacy.content;legac
 const orders=new Set();for(const template of m.PAGE_TEMPLATES){const page=m.pageFromTemplate(template),markup=r.renderPage(page,'https://demo.example/cms/');orders.add([...markup.matchAll(/data-section="(.*?)"/g)].map(x=>x[1]).join(','));assert.equal(page.content.showcase.length,3);assert.equal(page.content.modes.length,3);assert.equal(page.content.news.length,3);assert.equal(page.content.faq.length,3);assert(markup.length>30000);page.content.news[0].title='<script>alert(1)</script>';page.content.showcase[0].name='<img onerror=alert(1)>';const escaped=r.renderPage(page,'https://demo.example/');assert(!escaped.includes('<script>'));assert(escaped.includes('&lt;script&gt;'));assert(escaped.includes('&lt;img onerror'));}assert.equal(orders.size,6);
 const imagePage=m.pageFromTemplate(m.PAGE_TEMPLATES[0]);imagePage.content.news[0].image='javascript:alert(1)';assert(m.validatePage(imagePage).length>0);
 console.log('PASS: six different content orders; rich section defaults; saved draft migration; rich content escaping and media validation.');
+
+// Template CSS is rendered from a TS string, so Vite does not parse it during the app build.
+for(const template of m.PAGE_TEMPLATES){const markup=r.renderPage(m.pageFromTemplate(template),'https://demo.example/');require('postcss').parse(markup.match(/<style>([\s\S]*?)<\/style>/)[1]);}
+console.log('PASS: CSS in every exported template parses without unclosed blocks.');
