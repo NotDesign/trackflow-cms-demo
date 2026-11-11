@@ -1,0 +1,98 @@
+{
+  "retrievedAt": "2026-11-11",
+  "assets": [
+    {
+      "file": "explore-official-hero.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/55/72/8e557205-b1b4-5862-07a8-ee6c2108d4db/EN-1.jpg/1600x900bb.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/genshin-impact/id1517783697",
+      "rights": "Copyright © COGNOSPHERE. All Rights Reserved.",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 442533,
+      "rightsSource": "https://apps.apple.com/us/app/genshin-impact/id1517783697",
+      "publisher": "COGNOSPHERE PTE. LTD."
+    },
+    {
+      "file": "explore-official-01.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/97/2c/c8972c73-1c2d-e4eb-8a96-eca72830b3ec/bb6c4f66-e823-44fa-a5bc-57a02a573516_EN-2.jpg/1600x900bb.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/genshin-impact/id1517783697",
+      "rights": "Copyright © COGNOSPHERE. All Rights Reserved.",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 384898,
+      "rightsSource": "https://apps.apple.com/us/app/genshin-impact/id1517783697",
+      "publisher": "COGNOSPHERE PTE. LTD."
+    },
+    {
+      "file": "explore-official-02.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4c/1f/7a/4c1f7aa7-5209-0368-2ecb-815adba4c1dc/eeadfb7c-4aa9-4f15-8f72-bc3b57fef769_EN-2.jpg/1600x900bb.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/genshin-impact/id1517783697",
+      "rights": "Copyright © COGNOSPHERE. All Rights Reserved.",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 369416,
+      "rightsSource": "https://apps.apple.com/us/app/genshin-impact/id1517783697",
+      "publisher": "COGNOSPHERE PTE. LTD."
+    },
+    {
+      "file": "tactical-official-hero.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/12/44/11/124411bd-7435-f006-e5b7-6203ada37693/0.jpg/1600x900bb.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/pubg-mobile/id1330123889",
+      "rights": "© Shenzhen Tencent Computer Systems Company Limited",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 455411,
+      "rightsSource": "https://apps.apple.com/us/app/pubg-mobile/id1330123889",
+      "publisher": "Tencent Mobile International Limited",
+      "additionalGameRights": "© 2026 KRAFTON, Inc.; © 2019–2026 Proxima Beta Pte. Limited."
+    },
+    {
+      "file": "tactical-official-01.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dc/aa/25/dcaa2579-ab04-d605-900e-3225f7f6950e/1.jpg/1600x900bb.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/pubg-mobile/id1330123889",
+      "rights": "© Shenzhen Tencent Computer Systems Company Limited",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 458117,
+      "rightsSource": "https://apps.apple.com/us/app/pubg-mobile/id1330123889",
+      "publisher": "Tencent Mobile International Limited",
+      "additionalGameRights": "© 2026 KRAFTON, Inc.; © 2019–2026 Proxima Beta Pte. Limited."
+    },
+    {
+      "file": "tactical-official-02.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b0/e3/13/b0e3138d-3a72-291c-1d5e-ee7cb015601e/2.jpg/1600x900bb.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/pubg-mobile/id1330123889",
+      "rights": "© Shenzhen Tencent Computer Systems Company Limited",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 475447,
+      "rightsSource": "https://apps.apple.com/us/app/pubg-mobile/id1330123889",
+      "publisher": "Tencent Mobile International Limited",
+      "additionalGameRights": "© 2026 KRAFTON, Inc.; © 2019–2026 Proxima Beta Pte. Limited."
+    },
+    {
+      "file": "racing-official-hero.jpg",
+      "sourceUrl": "https://asphalt9.assets.gameloft.com/assets/Banner_Key_Art_Shadow_96819b8c02.jpg",
+      "sourcePage": "https://asphaltlegends.com/",
+      "rights": "© 2026 Gameloft. Asphalt and Gameloft are trademarks of Gameloft. Manufacturers, cars, brands and associated imagery belong to their respective owners.",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 189893,
+      "rightsSource": "https://asphaltlegends.com/",
+      "publisher": "Gameloft"
+    },
+    {
+      "file": "racing-official-01.jpg",
+      "sourceUrl": "https://asphalt9.assets.gameloft.com/assets/ALU_Homepage_About_Game_Thumbnail_1_bf34c40e25.jpg",
+      "sourcePage": "https://asphaltlegends.com/",
+      "rights": "© 2026 Gameloft. Asphalt and Gameloft are trademarks of Gameloft. Manufacturers, cars, brands and associated imagery belong to their respective owners.",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 393494,
+      "rightsSource": "https://asphaltlegends.com/",
+      "publisher": "Gameloft"
+    },
+    {
+      "file": "racing-official-02.jpg",
+      "sourceUrl": "https://asphalt9.assets.gameloft.com/assets/ALU_Homepage_About_Game_Thumbnail_2_e96a2be187.jpg",
+      "sourcePage": "https://asphaltlegends.com/",
+      "rights": "© 2026 Gameloft. Asphalt and Gameloft are trademarks of Gameloft. Manufacturers, cars, brands and associated imagery belong to their respective owners.",
+      "purpose": "非官方版型展示；素材權利屬原權利人",
+      "bytes": 367323,
+      "rightsSource": "https://asphaltlegends.com/",
+      "publisher": "Gameloft"
+    }
+  ]
+}

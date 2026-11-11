@@ -1,0 +1,76 @@
+{
+  "createdAt": "2026-11-11",
+  "note": "Original fictional game artwork generated for layout demos. Original PNGs retained outside this repository; JPEG copies optimized only for delivery.",
+  "images": [
+    {
+      "id": "wuxia",
+      "prompt": "Use case: stylized-concept. Create a wide 16:9 original wuxia game environment key art for a restrained editorial game website. In-game art direction, realistic ink-wash influenced textures and tactile weathered materials, not a glossy AI fantasy poster. A lone adult traveler in rain-dark robes seen from behind crossing a narrow wooden bridge toward an ancient Chinese mountain town, pale mist, muted moss, aged rice-paper warm whites and charcoal ink, one small vermilion lantern accent. Deep layered landscape, asymmetrical calm composition with significant quiet sky on left, believable human scale and architecture. No dragons, no glowing magic, no floating ornaments, no text, no logo, no watermark. Crisp purposeful shapes and controlled detail, subtle painted edges, natural lighting.",
+      "output": "public/demo-creatives/wuxia-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-c6bbd401-d81d-4821-a84e-8bb94ba3b84c.png"
+    },
+    {
+      "id": "survival",
+      "prompt": "A grounded original survival video game environment screenshot: an abandoned ranger station beside a flooded pine forest road, an adult survivor with a worn backpack walking toward it, hand-placed supplies, weathered signs with no legible text, cold overcast light, moss olive and industrial orange, 35mm eye-level landscape, gritty authored game art with natural materials, restrained contrast, no fantasy glow. Use case: stylized-concept. Wide 16:9 artwork for a fictional game website. Strong coherent game art direction, purposeful composition, distinct materials, no generic glossy AI concept-poster look, no centered giant character portrait. No text, no logo, no watermark, no collage, no interface overlay.",
+      "output": "public/demo-creatives/survival-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-8c29088f-6fb7-4211-b86e-12abd37c9e10.png"
+    },
+    {
+      "id": "horror",
+      "prompt": "An original restrained psychological horror video game environment: empty 1980s motel reception at midnight, narrow corridor receding behind desk, a single fluorescent lamp, analog monitor glow and abandoned room keys, olive black monochrome with one dim red indicator, cinematic fixed game camera, tactile grain and imperfect materials, tension from empty space, no person, no monster, no gore. Use case: stylized-concept. Wide 16:9 artwork for a fictional game website. Strong coherent game art direction, purposeful composition, distinct materials, no generic glossy AI concept-poster look, no centered giant character portrait. No text, no logo, no watermark, no collage, no interface overlay.",
+      "output": "public/demo-creatives/horror-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-19b046f5-74cc-4c99-91f9-e6568120eb80.png"
+    },
+    {
+      "id": "pixel",
+      "prompt": "Original meticulously authored 2D pixel-art game environment. A side-scrolling mountain village at dawn, tiny adult adventurer with a red scarf on a stone bridge, timber houses, waterfall, discrete square pixel clusters, limited 24-color palette of teal slate cream terracotta, clean readable tile construction, wide layered parallax hills, charming actual game screenshot composition, absolutely no 3D rendering, no smooth painterly blur, no UI text. Use case: stylized-concept. Wide 16:9 artwork for a fictional game website. Strong coherent game art direction, purposeful composition, distinct materials, no generic glossy AI concept-poster look, no centered giant character portrait. No text, no logo, no watermark, no collage, no interface overlay.",
+      "output": "public/demo-creatives/pixel-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-7f8f4ece-9390-43b9-8430-cff10e012dba.png"
+    },
+    {
+      "id": "cozy",
+      "prompt": "Original cozy farming game artwork, hand-painted gouache and colored-pencil edges. Isometric village allotment garden with an adult gardener carrying a wicker basket, warm cottage with sage doors, organized vegetable beds, hens, linen bunting, a small stream, morning sunlight. Cream paper, leaf green, tomato red, butter yellow. Thoughtful simple illustrated shapes, slightly imperfect hand-drawn outlines, legible game environment rather than cute generic 3D render. Use case: stylized-concept. Wide 16:9 artwork for a fictional game website. Purposeful art direction. No text, no interface, no typography, no logo, no watermark, no collage.",
+      "output": "public/demo-creatives/cozy-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-a4938fb5-e476-4805-8aa6-94e2d0974b94.png"
+    },
+    {
+      "id": "roguelike",
+      "prompt": "Original 2D dark fantasy roguelike game key art in a distinctive graphic woodcut and screen-print direction. An adult cloaked traveler facing a tall ancient door below a ruined underground sun temple, jagged black stone, ochre fire, bone white motifs, rust-red cloak, angular ink silhouettes and thick dry-brush edges. Asymmetric dramatic negative space, richly designed but limited palette, no glossy 3D materials, no decorative tarot text, no recognizable existing game characters. Use case: stylized-concept. Wide 16:9 artwork for a fictional game website. Purposeful art direction. No text, no interface, no typography, no logo, no watermark, no collage.",
+      "output": "public/demo-creatives/roguelike-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-90097003-b5e7-470f-b04a-36278d70084d.png"
+    },
+    {
+      "id": "space",
+      "prompt": "Original hard-science space exploration video game environment, a small utilitarian white survey ship landed on an ochre moon, adult astronaut in the near foreground inspecting a geological instrument, a huge pale blue ringed planet rising over the horizon. Believable engineered details, long low sunlight, navy and muted cyan with warm rock, NASA field photography feel translated into authored realistic game art, clean atmospheric distance, quiet deliberate composition, no magical portals, no neon city. Use case: stylized-concept. Wide 16:9 artwork for a fictional game website. Purposeful art direction. No text, no interface, no typography, no logo, no watermark, no collage.",
+      "output": "public/demo-creatives/space-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-f612cc45-faa6-47d2-928d-15624416cd6e.png"
+    },
+    {
+      "id": "mecha",
+      "prompt": "Original industrial mecha action game environment: a massive utilitarian humanoid combat machine standing in an aircraft maintenance hangar, an adult engineer below giving a sense of scale, articulated mechanical joints, hydraulic lines, weathered ceramic white and gunmetal panels, muted safety-orange accents, hard overhead work lamps, restrained gray blue atmosphere, believable construction and purposeful design, real-time game engine photography look. Asymmetric machine fills right side, workshop benches left. No heroic anime pose, no glowing sword, no excessive greebles. Use case: stylized-concept. Wide 16:9 game website artwork. No text, no logo, no watermark, no collage, no UI overlays.",
+      "output": "public/demo-creatives/mecha-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-04183428-06a4-4551-a839-f7e63e9854f2.png"
+    },
+    {
+      "id": "rhythm",
+      "prompt": "Original Japanese rhythm arcade game illustration with strong 2D graphic art direction: three adult performers on a compact rooftop stage in a sunlit city, bold navy ink outlines, flat saturated coral, cyan, yellow, cream, halftone print texture, kinetic asymmetric diagonal framing, electric guitar and drum kit, festival poster energy, readable silhouettes, purposeful limited color blocks. Not glossy 3D, not photoreal, not magical idols, no childish proportions. Use case: stylized-concept. Wide 16:9 game website artwork. No text, no logo, no watermark, no collage, no UI overlays.",
+      "output": "public/demo-creatives/rhythm-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-c8f0de2e-06b7-4151-b7b1-8d1891a770f5.png"
+    },
+    {
+      "id": "sports",
+      "prompt": "Original realistic basketball video game key art: an adult female basketball player in a simple cream and orange uniform driving past a defender toward an outdoor urban court at late afternoon, strong grounded athletic anatomy, authentic ball handling, scuffed concrete, bleachers and chain-link fence, documentary sports photography translated into modern game-engine art, burnt orange, off-white and deep charcoal, natural contrast, cropped editorial composition. No existing team logos, no readable jersey names, no celebrity likeness. Use case: stylized-concept. Wide 16:9 game website artwork. No text, no logo, no watermark, no collage, no UI overlays.",
+      "output": "public/demo-creatives/sports-hero.jpg",
+      "mode": "imagegen-original",
+      "original": "exec-78a735de-868f-4b49-99e4-6cac2a6cf358.png"
+    }
+  ]
+}
