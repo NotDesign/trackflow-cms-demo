@@ -10,11 +10,11 @@ import {appStoreBadge,googlePlayBadge} from './store-badges';
 export const escapeHTML=(s:string)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 
 export function renderPage(input:GamePage,base:string,preview=false):string{
- const p=normalizePage(input),c=p.content,e=escapeHTML,t=PAGE_TEMPLATES.find(t=>t.id===p.templateId)||PAGE_TEMPLATES[0];
+ const normalized=normalizePage(input),p=/官方網站|官網/.test(normalized.ctaLabel)?{...normalized,ctaLabel:'探索遊戲',ctaUrl:'#explore'}:normalized,c=p.content,e=escapeHTML,t=PAGE_TEMPLATES.find(t=>t.id===p.templateId)||PAGE_TEMPLATES[0];
  const url=(v:string)=>{const s=safeUrl(v,'image');return s.startsWith('demo-creatives/')?new URL(s,base).href:s};
  const pic=(value:string,alt:string,cls='',eager=false)=>url(value)?`<img class="${cls}" src="${e(url(value))}" alt="${e(alt)}" ${eager?'fetchpriority="high"':'loading="lazy"'} decoding="async">`:`<div class="media-placeholder" role="img" aria-label="${e(alt)}"></div>`;
  const target=safeUrl(p.ctaUrl)||'#explore';
- const link=(label=p.ctaLabel)=>`<a class="button" href="${e(target)}" target="_blank" rel="noopener noreferrer">${e(label||'探索遊戲')} <span aria-hidden="true">↗</span></a>`;
+ const link=(label=p.ctaLabel)=>`<a class="button" href="${e(target)}" ${target.startsWith('#')?'':'target="_blank" rel="noopener noreferrer"'}>${e(label||'探索遊戲')} <span aria-hidden="true">${target.startsWith('#')?'↓':'↗'}</span></a>`;
  const storeBadges=()=>`<div class="store-badges" role="group" aria-label="下載遊戲">${([{key:'app-store',url:p.appStoreUrl,label:'在 App Store 下載',image:appStoreBadge,width:108.85157,height:40},{key:'google-play',url:p.googlePlayUrl,label:'在 Google Play 下載',image:googlePlayBadge,width:646,height:250}]).map(store=>{const href=safeUrl(store.url),art=`<img src="${store.image}" alt="${store.label}" width="${store.width}" height="${store.height}" decoding="async">`;return href?`<a class="store-badge store-badge--${store.key}" href="${e(href)}" target="_blank" rel="noopener noreferrer" aria-label="${store.label}（另開分頁）">${art}</a>`:`<span class="store-badge store-badge--${store.key}" aria-disabled="true" title="請先設定下載連結">${art}</span>`}).join('')}</div>`;
  const resolved={...p,templateId:t.id},kit={e,pic,link,storeBadges,target};
  const content=renderCore(resolved,kit)??renderEditorial(resolved,kit)??renderAction(resolved,kit)??'';

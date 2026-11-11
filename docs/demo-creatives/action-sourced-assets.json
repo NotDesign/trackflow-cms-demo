@@ -1,0 +1,385 @@
+{
+  "verifiedAt": "2026-11-11",
+  "note": "Official game website or publisher-supplied App Store screenshots. Existing promotional artwork is referenced for CMS landing-page demonstrations; no current event or numeric performance claim is inferred.",
+  "assets": [
+    {
+      "game": "roguelike",
+      "file": "demo-creatives/roguelike-official-hero.jpg",
+      "sourceUrl": "https://www.megacrit.com/images/sts-cover.jpg",
+      "sourcePage": "https://www.megacrit.com/press-kits/slay-the-spire/",
+      "bytes": 314854,
+      "width": 1554,
+      "height": 731,
+      "sha256": "65a09f368d27103bc31c5752d50711c0f4a9339626acd5f1bba5da0a1de4830d",
+      "format": "JPEG"
+    },
+    {
+      "game": "roguelike",
+      "file": "demo-creatives/roguelike-official-01.jpg",
+      "sourceUrl": "https://www.megacrit.com/images/ss8.jpg",
+      "sourcePage": "https://www.megacrit.com/press-kits/slay-the-spire/",
+      "bytes": 507623,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "ddeac12e57e3410b12027e46a1d2be57cb694b636e393b562e1d1b33d10ab27d",
+      "format": "JPEG"
+    },
+    {
+      "game": "roguelike",
+      "file": "demo-creatives/roguelike-official-02.jpg",
+      "sourceUrl": "https://www.megacrit.com/images/ss4.jpg",
+      "sourcePage": "https://www.megacrit.com/press-kits/slay-the-spire/",
+      "bytes": 375457,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "4a3891b97d853dda2e9376c29e07a52493db45a915a44c000329361551ec7e77",
+      "format": "JPEG"
+    },
+    {
+      "game": "roguelike",
+      "file": "demo-creatives/roguelike-official-03.jpg",
+      "sourceUrl": "https://www.megacrit.com/images/ss26.jpg",
+      "sourcePage": "https://www.megacrit.com/press-kits/slay-the-spire/",
+      "bytes": 498027,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "e8165142cd86a9cf6b667a158207d4ac631f430b7853c9a4bc856b33b9fe2473",
+      "format": "JPEG"
+    },
+    {
+      "game": "roguelike",
+      "file": "demo-creatives/roguelike-official-04.jpg",
+      "sourceUrl": "https://www.megacrit.com/images/ss23.jpg",
+      "sourcePage": "https://www.megacrit.com/press-kits/slay-the-spire/",
+      "bytes": 529230,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "6106019cba45efa85eab60c845562e21e872378e2104a724c610d6b15d2b0947",
+      "format": "JPEG"
+    },
+    {
+      "game": "mecha",
+      "file": "demo-creatives/mecha-official-hero.png",
+      "sourceUrl": "https://gundam-uce.ggame.jp/assets/img/top/img_top_ss01.png",
+      "sourcePage": "https://gundam-uce.ggame.jp/",
+      "bytes": 283300,
+      "width": 1160,
+      "height": 653,
+      "sha256": "cfd81e354146c95620e054c1dead09a08ca51e25a856fd2308881533e7b63a66",
+      "format": "PNG"
+    },
+    {
+      "game": "mecha",
+      "file": "demo-creatives/mecha-official-01.png",
+      "sourceUrl": "https://gundam-uce.ggame.jp/assets/img/top/img_top_ss02.png",
+      "sourcePage": "https://gundam-uce.ggame.jp/",
+      "bytes": 311650,
+      "width": 1160,
+      "height": 653,
+      "sha256": "240b3e20b3d84e91b37cc5c8df672030198838e76531c3119581d41549103d9d",
+      "format": "PNG"
+    },
+    {
+      "game": "mecha",
+      "file": "demo-creatives/mecha-official-02.png",
+      "sourceUrl": "https://gundam-uce.ggame.jp/assets/img/top/img_top_ss03.png",
+      "sourcePage": "https://gundam-uce.ggame.jp/",
+      "bytes": 296396,
+      "width": 1160,
+      "height": 653,
+      "sha256": "fd27501d6a3f9ca255e4c40461276e931b98c2e1b572d7eea179b75130306e10",
+      "format": "PNG"
+    },
+    {
+      "game": "mecha",
+      "file": "demo-creatives/mecha-official-03.png",
+      "sourceUrl": "https://gundam-uce.ggame.jp/assets/img/top/img_top_ss04.png",
+      "sourcePage": "https://gundam-uce.ggame.jp/",
+      "bytes": 303075,
+      "width": 1160,
+      "height": 653,
+      "sha256": "dd9563ebd1dfaf549bf6468d2fe5bc7225be786834688f4905ebca39cd89e35d",
+      "format": "PNG"
+    },
+    {
+      "game": "mecha",
+      "file": "demo-creatives/mecha-official-04.png",
+      "sourceUrl": "https://gundam-uce.ggame.jp/assets/img/top/img_top_ss05.png",
+      "sourcePage": "https://gundam-uce.ggame.jp/",
+      "bytes": 447359,
+      "width": 1160,
+      "height": 653,
+      "sha256": "7102aec63d5bfa674750144ded5f4c5737b8887de4a7bccfe802808caa36b4e6",
+      "format": "PNG"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-hero.webp",
+      "sourceUrl": "https://colorfulstage.com/img/mv_sp_ver03.webp",
+      "sourcePage": "https://colorfulstage.com/",
+      "bytes": 144098,
+      "width": 980,
+      "height": 764,
+      "sha256": "db63bb0b235cd7ed5606df6e988e91017ab4997f27a8f4598a7a556da50d15d5",
+      "format": "WEBP"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-01.jpg",
+      "sourceUrl": "https://colorfulstage.com/img/top_bnr1_sp_ver02.jpg",
+      "sourcePage": "https://colorfulstage.com/",
+      "bytes": 644377,
+      "width": 1500,
+      "height": 1200,
+      "sha256": "296cd8afdb9b3f1ebe42c588183ed3e327bb21af20b1a0ce7e3bd80a47e7aa35",
+      "format": "JPEG"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-02.jpg",
+      "sourceUrl": "https://colorfulstage.com/img/top_bnr2_sp_ver02.jpg",
+      "sourcePage": "https://colorfulstage.com/",
+      "bytes": 623912,
+      "width": 1500,
+      "height": 1200,
+      "sha256": "ed7025d104b7aa93ddc5458fc97630745f6e8372ccb52e270ea702fc29503553",
+      "format": "JPEG"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-03.jpg",
+      "sourceUrl": "https://colorfulstage.com/img/top_bnr3_sp_ver02.jpg",
+      "sourcePage": "https://colorfulstage.com/",
+      "bytes": 550511,
+      "width": 1500,
+      "height": 1200,
+      "sha256": "f69b7356e8b2319194ebf2f2200fae895f0efbb7794689f7f4d395882c6f9876",
+      "format": "JPEG"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-04.jpg",
+      "sourceUrl": "https://colorfulstage.com/img/play_img03.jpg",
+      "sourcePage": "https://colorfulstage.com/aboutgame/gameplay/",
+      "bytes": 107844,
+      "width": 1240,
+      "height": 750,
+      "sha256": "e8b55ad7ccb3d6f8a0c81a68b14381f73b5eeba56bf4cc5da9587af12a6ab7e1",
+      "format": "JPEG"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-05.jpg",
+      "sourceUrl": "https://colorfulstage.com/img/play_img04.jpg",
+      "sourcePage": "https://colorfulstage.com/aboutgame/gameplay/",
+      "bytes": 123968,
+      "width": 1240,
+      "height": 750,
+      "sha256": "433a0c84b27d5e4162be04487788874dd381861da2b7cdece5ac72a3a3ea847e",
+      "format": "JPEG"
+    },
+    {
+      "game": "space",
+      "file": "demo-creatives/space-official-hero.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/48/bc/e5/48bce57e-b3d7-559c-0edf-60390e94ec37/EN-2622_U00d71206-0-4.7KV.jpg/1286x578bb-60.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/honkai-star-rail/id1599719154",
+      "bytes": 219755,
+      "width": 1257,
+      "height": 578,
+      "sha256": "aa5b747c406f4ab47977c35ef6f869381d8b4123bccde3b06d167266c86076aa",
+      "format": "JPEG"
+    },
+    {
+      "game": "space",
+      "file": "demo-creatives/space-official-01.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/4c/d4/ea4cd491-010c-5949-7997-68b4d5893db8/EN-2622_U00d71206-1-_U963f_U54c8_U7279_U6b8a.jpg/1286x578bb-60.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/honkai-star-rail/id1599719154",
+      "bytes": 136992,
+      "width": 1257,
+      "height": 578,
+      "sha256": "500434ddd4a32a87d960c8c5d7f5c890b2f09f31bb803693d433f32dbc31a772",
+      "format": "JPEG"
+    },
+    {
+      "game": "space",
+      "file": "demo-creatives/space-official-02.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/5b/b2/865bb2a1-fc05-af39-cbf2-adb9b8f9c11f/EN-2622_U00d71206-2-SP_U7802_U91d1.jpg/1286x578bb-60.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/honkai-star-rail/id1599719154",
+      "bytes": 191709,
+      "width": 1257,
+      "height": 578,
+      "sha256": "cbadebfbc22fa4dfd79b3cf7047a3b99c9147eb05890dc8fdc4db5d994f10ab4",
+      "format": "JPEG"
+    },
+    {
+      "game": "sports",
+      "file": "demo-creatives/sports-official-hero.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/2d/27/172d27a3-f91f-afc9-803e-4b4b2fe0bbf2/2K_NBA-Mobile_S9_App-Screens_2622x1206_1.jpg/1286x578bb-60.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/nba-2k-mobile-basketball-game/id1252850847",
+      "bytes": 164673,
+      "width": 1257,
+      "height": 578,
+      "sha256": "7e21071871e182a7ca767a1dccf7b3baf943a8626d44eb1ed29b7087f3d1b7bd",
+      "format": "JPEG"
+    },
+    {
+      "game": "sports",
+      "file": "demo-creatives/sports-official-01.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e5/9e/15/e59e1567-2fbc-9bd4-1464-6b037af245aa/2K_NBA-Mobile_S9_App-Screens_2622x1206_2.jpg/1286x578bb-60.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/nba-2k-mobile-basketball-game/id1252850847",
+      "bytes": 208498,
+      "width": 1257,
+      "height": 578,
+      "sha256": "2e64f52e180ed38075fe5c00f4b51de2a08606631531ab9e8e9bc7f3ee269a7d",
+      "format": "JPEG"
+    },
+    {
+      "game": "sports",
+      "file": "demo-creatives/sports-official-02.jpg",
+      "sourceUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/a8/f3/7da8f321-e192-8255-4e90-56659e17676a/2K_NBA-Mobile_S9_App-Screens_2622x1206_3.jpg/1286x578bb-60.jpg",
+      "sourcePage": "https://apps.apple.com/us/app/nba-2k-mobile-basketball-game/id1252850847",
+      "bytes": 171301,
+      "width": 1257,
+      "height": 578,
+      "sha256": "9d6b258051658909abb084db81c80884e42e017a234434454186d7f5bc947ec8",
+      "format": "JPEG"
+    },
+    {
+      "game": "space",
+      "file": "demo-creatives/space-official-world-0.jpg",
+      "sourceUrl": "https://fastcdn.hoyoverse.com/content-v2/hkrpg/122138/142b8ee261becf57c6e5063a1e95cfbd_8366740472851000697.jpg",
+      "sourcePage": "https://hsr.hoyoverse.com/en-us/home",
+      "bytes": 3771062,
+      "width": 2560,
+      "height": 1440,
+      "sha256": "dcee7c9680cfa0dc7e7e638e5b0b09d1d575e586ad475c70eb1a9e1dec00a2f8",
+      "format": "JPEG",
+      "verifiedContentAPI": "https://sg-public-api-static.hoyoverse.com/content_v2_user/app/113fe6d3b4514cdd/getContentList?iChanId=247&iPageSize=20&iPage=1&sLangKey=en-us"
+    },
+    {
+      "game": "space",
+      "file": "demo-creatives/space-official-world-1.jpg",
+      "sourceUrl": "https://webstatic.hoyoverse.com/upload/op-public/2022/09/29/158ac8c73a58f66996c3f4ce0ca09bf8_5920746153598533943.jpg",
+      "sourcePage": "https://hsr.hoyoverse.com/en-us/home",
+      "bytes": 2675307,
+      "width": 2560,
+      "height": 1440,
+      "sha256": "6e603675c1a10e10133c47f89b4d5dc1f08ac6e7f0b59d056f8193bd5df73caf",
+      "format": "JPEG",
+      "verifiedContentAPI": "https://sg-public-api-static.hoyoverse.com/content_v2_user/app/113fe6d3b4514cdd/getContentList?iChanId=247&iPageSize=20&iPage=1&sLangKey=en-us"
+    },
+    {
+      "game": "space",
+      "file": "demo-creatives/space-official-world-2.jpg",
+      "sourceUrl": "https://webstatic.hoyoverse.com/upload/op-public/2022/05/14/9ddc7723623821b85495ea04701540ba_6626867930099759481.jpg",
+      "sourcePage": "https://hsr.hoyoverse.com/en-us/home",
+      "bytes": 4571404,
+      "width": 2560,
+      "height": 1440,
+      "sha256": "35a5d4bb383b0787189043c88cf0cf6bc200feb28aad709c0173793cad5d888d",
+      "format": "JPEG",
+      "verifiedContentAPI": "https://sg-public-api-static.hoyoverse.com/content_v2_user/app/113fe6d3b4514cdd/getContentList?iChanId=247&iPageSize=20&iPage=1&sLangKey=en-us"
+    },
+    {
+      "game": "space",
+      "file": "demo-creatives/space-official-world-3.jpg",
+      "sourceUrl": "https://webstatic.hoyoverse.com/upload/op-public/2022/04/13/7395bfc136980a09a150901ab1bd24a2_368111683594260366.jpg",
+      "sourcePage": "https://hsr.hoyoverse.com/en-us/home",
+      "bytes": 333837,
+      "width": 2560,
+      "height": 1440,
+      "sha256": "940c2d86de78ca056ea9408d20219c90088e2a397fbffaabdc0311d591488ba0",
+      "format": "JPEG",
+      "verifiedContentAPI": "https://sg-public-api-static.hoyoverse.com/content_v2_user/app/113fe6d3b4514cdd/getContentList?iChanId=247&iPageSize=20&iPage=1&sLangKey=en-us"
+    },
+    {
+      "game": "mecha",
+      "file": "demo-creatives/mecha-official-unit-0.png",
+      "sourceUrl": "https://gundam-uce.ggame.jp/assets/img/mobile-suit/engage/img_mbs_engage-gundam_pc.png",
+      "sourcePage": "https://gundam-uce.ggame.jp/mobile-suit/",
+      "bytes": 460050,
+      "width": 1600,
+      "height": 1602,
+      "sha256": "5677386598fc49d1af2555824fca683b5445bf1203734f5fe59f3142f0983cd1",
+      "format": "PNG"
+    },
+    {
+      "game": "mecha",
+      "file": "demo-creatives/mecha-official-unit-1.png",
+      "sourceUrl": "https://gundam-uce.ggame.jp/assets/img/mobile-suit/img_mbs_f91_pc.png",
+      "sourcePage": "https://gundam-uce.ggame.jp/mobile-suit/",
+      "bytes": 252753,
+      "width": 853,
+      "height": 1822,
+      "sha256": "3cef0f1d4a320ccf62499d7250c4ae9f112eb0baea885207dc546dfcbabe7d26",
+      "format": "PNG"
+    },
+    {
+      "game": "mecha",
+      "file": "demo-creatives/mecha-official-unit-2.png",
+      "sourceUrl": "https://gundam-uce.ggame.jp/assets/img/mobile-suit/img_mbs_unicorn-hmr_pc.png",
+      "sourcePage": "https://gundam-uce.ggame.jp/mobile-suit/",
+      "bytes": 400632,
+      "width": 1329,
+      "height": 1777,
+      "sha256": "e4cbd6415a6ef63f6eb88b23a60047279b3460c5c0d1d9fb22a7b9a5d13478eb",
+      "format": "PNG"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-play-0.jpg",
+      "sourceUrl": "https://colorfulstage.com/img/play_img02_ver02.jpg",
+      "sourcePage": "https://colorfulstage.com/aboutgame/gameplay/",
+      "bytes": 229485,
+      "width": 1600,
+      "height": 900,
+      "sha256": "c9ff7ee69af4b08c13eeb63aa809934f02636f7e227d9c0c5623fe59a8284f7e",
+      "format": "JPEG"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-play-1.jpg",
+      "sourceUrl": "https://colorfulstage.com/img/play_img02-02_ver02.jpg",
+      "sourcePage": "https://colorfulstage.com/aboutgame/gameplay/",
+      "bytes": 408091,
+      "width": 1600,
+      "height": 900,
+      "sha256": "674ab612b477dda6d89dcc04908990282df001cdea6bec107bc56ebbfa2c8ba9",
+      "format": "JPEG"
+    },
+    {
+      "game": "rhythm",
+      "file": "demo-creatives/rhythm-official-play-2.jpg",
+      "sourceUrl": "https://colorfulstage.com/img/play_img01_ver02.jpg",
+      "sourcePage": "https://colorfulstage.com/aboutgame/gameplay/",
+      "bytes": 660442,
+      "width": 2560,
+      "height": 800,
+      "sha256": "7960629a876fb45eab4406385ee121b8ea284cdfc484ffedd2c348e121bdb897",
+      "format": "JPEG"
+    }
+  ],
+  "contentSources": {
+    "roguelike": [
+      "https://www.megacrit.com/press-kits/slay-the-spire/"
+    ],
+    "space": [
+      "https://hsr.hoyoverse.com/en-us/home",
+      "https://sg-public-api-static.hoyoverse.com/content_v2_user/app/113fe6d3b4514cdd/getContentList?iChanId=247&iPageSize=20&iPage=1&sLangKey=en-us",
+      "https://apps.apple.com/us/app/honkai-star-rail/id1599719154"
+    ],
+    "mecha": [
+      "https://gundam-uce.ggame.jp/",
+      "https://gundam-uce.ggame.jp/mobile-suit/"
+    ],
+    "rhythm": [
+      "https://colorfulstage.com/characters/",
+      "https://colorfulstage.com/aboutgame/gameplay/",
+      "https://colorfulstage.com/aboutgame/story/"
+    ],
+    "sports": [
+      "https://apps.apple.com/us/app/nba-2k-mobile-basketball-game/id1252850847",
+      "https://newsroom.2k.com/games/nba-2k-mobile"
+    ]
+  }
+}

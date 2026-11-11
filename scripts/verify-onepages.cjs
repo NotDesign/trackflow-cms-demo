@@ -9,14 +9,23 @@ console.log('PASS: sixteen distinct layouts, local assets, export URLs, escaping
 
 // Verify exported files carry the template media, not deployment-only paths.
 global.FileReader=class{readAsDataURL(blob){blob.arrayBuffer().then(bytes=>{this.result='data:'+blob.type+';base64,'+Buffer.from(bytes).toString('base64');this.onload()}).catch(()=>this.onerror())}};
-global.fetch=async url=>{const file=new URL(url).pathname.split('/cms/')[1];return new Response(fs.readFileSync(path.join('public',file)),{headers:{'Content-Type':file.endsWith('.jpg')?'image/jpeg':'image/png'}})};
-(async()=>{const exporter=load('src/lib/onepage/export.ts');for(const template of m.PAGE_TEMPLATES){const page=m.pageFromTemplate(template);const output=await exporter.exportPageHTML(page,'https://demo.example/cms/');assert(!output.externalMedia);assert(output.html.includes('data:image/'));assert(!output.html.includes('https://demo.example/cms/demo-creatives/'));assert(output.html.includes(page.title));assert.equal((output.html.match(/class="store-badge store-badge--/g)||[]).length,2);assert(output.html.includes('data:image/svg+xml;base64,'));assert(output.html.includes('data:image/png;base64,'));}console.log('PASS: all sixteen HTML exports embed their available default images.');})().catch(e=>{console.error(e);process.exitCode=1});
+global.fetch=async(url,options)=>{assert.equal(options.credentials,'same-origin');const file=new URL(url).pathname.split('/cms/')[1];return new Response(fs.readFileSync(path.join('public',file)),{headers:{'Content-Type':file.endsWith('.jpg')?'image/jpeg':'image/png'}})};
+(async()=>{const exporter=load('src/lib/onepage/export.ts');for(const template of m.PAGE_TEMPLATES){const page=m.pageFromTemplate(template);const output=await exporter.exportPageHTML(page,'https://demo.example/cms/');assert(!output.externalMedia);assert(output.html.includes('data:image/'));assert(!output.html.includes('https://demo.example/cms/demo-creatives/'));assert(output.html.includes(page.title));assert.equal((output.html.match(/class="store-badge store-badge--/g)||[]).length,2);assert(output.html.includes('data:image/svg+xml;base64,'));assert(output.html.includes('data:image/png;base64,'));}const media=load('src/lib/onepage/media.ts'),source=m.pageFromTemplate(m.PAGE_TEMPLATES[0]);
+ const embedded=await media.embedPageMedia(source,'https://private-site.example/cms/');
+ const preview=r.renderPage(embedded.page,'https://private-site.example/cms/',true);
+ assert(!preview.includes('https://private-site.example/cms/demo-creatives/'));
+ assert(source.heroImage.startsWith('demo-creatives/'),'embedding must not mutate saved drafts');
+ const originalFetch=global.fetch;global.fetch=async()=>new Response('<html>sign in</html>',{headers:{'Content-Type':'text/html'}});
+ await assert.rejects(()=>media.embedPageMedia(source,'https://auth-rejection.example/cms/'),/圖片回應格式/);
+ global.fetch=originalFetch;
+ const ui=fs.readFileSync('src/components/onepage-studio.tsx','utf8');assert(!ui.includes('allow-same-origin'));assert(!ui.includes('allow-scripts'));
+ console.log('PASS: sixteen self-contained HTML exports, authenticated preview media, rejected login HTML and isolated script-free iframe.');})().catch(e=>{console.error(e);process.exitCode=1});
 
 assert(r.renderPage(m.pageFromTemplate(m.PAGE_TEMPLATES[0]),'https://demo.example/',true).includes('<base href="about:srcdoc">'));
 
 // Existing saved drafts gain new sections without losing their own content or disabled sections.
-const legacy=m.pageFromTemplate(m.PAGE_TEMPLATES[0]);delete legacy.content;legacy.title='保留我的標題';legacy.sections={features:false,gallery:true,video:true,cta:true};const migrated=m.normalizePage(legacy);assert.equal(migrated.title,'保留我的標題');assert.equal(migrated.sections.features,false);assert.equal(migrated.content.showcase.length,3);
-const orders=new Set();for(const template of m.PAGE_TEMPLATES){const page=m.pageFromTemplate(template),markup=r.renderPage(page,'https://demo.example/cms/');orders.add([...markup.matchAll(/data-section="(.*?)"/g)].map(x=>x[1]).join(','));assert.equal(page.content.showcase.length,3);assert.equal(page.content.modes.length,3);assert.equal(page.content.news.length,3);assert.equal(page.content.faq.length,3);assert(markup.length>30000);page.content.news[0].title='<script>alert(1)</script>';page.content.showcase[0].name='<img onerror=alert(1)>';const escaped=r.renderPage(page,'https://demo.example/');assert(!escaped.includes('<script>'));assert(escaped.includes('&lt;script&gt;'));assert(escaped.includes('&lt;img onerror'));}assert(orders.size>=10,'new templates need genuinely different content rhythms');
+const legacy=m.pageFromTemplate(m.PAGE_TEMPLATES[0]);delete legacy.content;legacy.title='保留我的標題';legacy.sections={features:false,gallery:true,video:true,cta:true};const migrated=m.normalizePage(legacy);assert.equal(migrated.title,'保留我的標題');assert.equal(migrated.sections.features,false);assert(migrated.content.showcase.length>=3);
+const orders=new Set();for(const template of m.PAGE_TEMPLATES){const page=m.pageFromTemplate(template),markup=r.renderPage(page,'https://demo.example/cms/');orders.add([...markup.matchAll(/data-section="(.*?)"/g)].map(x=>x[1]).join(','));assert(page.content.showcase.length>=3);assert(page.content.modes.length>=3);assert(page.content.news.length>=3);assert(page.content.faq.length>=3);assert(markup.length>30000);page.content.news[0].title='<script>alert(1)</script>';page.content.showcase[0].name='<img onerror=alert(1)>';const escaped=r.renderPage(page,'https://demo.example/');assert(!escaped.includes('<script>'));assert(escaped.includes('&lt;script&gt;'));assert(escaped.includes('&lt;img onerror'));}assert(orders.size>=10,'new templates need genuinely different content rhythms');
 const imagePage=m.pageFromTemplate(m.PAGE_TEMPLATES[0]);imagePage.content.news[0].image='javascript:alert(1)';assert(m.validatePage(imagePage).length>0);
 console.log('PASS: varied content orders; rich section defaults; saved draft migration; rich content escaping and media validation.');
 
@@ -65,7 +74,7 @@ for(const template of m.PAGE_TEMPLATES){
 assert.equal(skeletons.size,16,'Each template must have a different DOM skeleton.');
 console.log('PASS: 16 distinct DOM skeletons, local rich media, every section toggle and 48 long-title / 0-1-6-item edge cases.');
 if(process.argv.includes('--fixtures')){
- const dir=path.resolve('qa/v0.5.0');fs.mkdirSync(dir,{recursive:true});
+ const dir=path.resolve('qa/v0.6.0');fs.mkdirSync(dir,{recursive:true});
  const base='http://127.0.0.1:4174/trackflow-cms-demo/';
  for(const t of m.PAGE_TEMPLATES){
   const page=m.pageFromTemplate(t);fs.writeFileSync(path.join(dir,t.id+'.html'),r.renderPage(page,base));
@@ -78,3 +87,8 @@ if(process.argv.includes('--fixtures')){
  fs.writeFileSync(path.join(dir,'index.html'),'<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Track Flow 16 款版型檢查</title><style>body{font:18px system-ui;padding:40px;background:#101820;color:white}ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}a{color:#8bbaff}</style><h1>16 款遊戲版型</h1><ul>'+m.PAGE_TEMPLATES.map(t=>'<li><a href="'+t.id+'.html">'+t.name+'</a> '+t.genre+'</li>').join('')+'</ul><h2>長文與六項內容</h2><ul>'+m.PAGE_TEMPLATES.map(t=>'<li><a href="long-'+t.id+'.html">'+t.name+' 長文測試</a></li>').join('')+'</ul></html>');
  console.log('QA fixtures: '+dir);
 }
+
+// Legacy default official-site CTAs become in-page exploration without changing drafts.
+const oldCTA=m.pageFromTemplate(m.PAGE_TEMPLATES[1]);oldCTA.ctaLabel='前往官方網站';oldCTA.ctaUrl='https://www.pubgmobile.com/';
+const cleanCTA=r.renderPage(oldCTA,'https://demo.example/');assert(!cleanCTA.includes('前往官方網站'));assert(cleanCTA.includes('href="#explore"'));assert.equal(oldCTA.ctaLabel,'前往官方網站');
+assert.equal(m.safeUrl('#explore'),'#explore');assert.equal(m.safeUrl('#untrusted'),'');
