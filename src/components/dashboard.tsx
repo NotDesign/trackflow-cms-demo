@@ -1,5 +1,5 @@
 "use client";
-import {openOnePageBuilder} from "./onepage-studio";
+import {openOnePageBuilder} from "./onepage-events";
 import {APP_VERSION} from "@/lib/release";
 import {useEffect,useState} from "react";
 import Link from "next/link";

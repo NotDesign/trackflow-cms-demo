@@ -37,3 +37,10 @@ for(const template of m.PAGE_TEMPLATES){
  page.appStoreUrl='javascript:alert(1)';page.googlePlayUrl='https://user:secret@example.com';const bad=r.renderPage(page,'https://demo.example/');assert(!bad.includes('javascript:'));assert(!bad.includes('user:secret'));assert.equal((bad.match(/aria-disabled="true"/g)||[]).length,2);assert(m.validatePage(page).length>=2);
 }
 console.log('PASS: all six layouts include accessible, independent store links; legacy defaults; unsafe download destinations disabled.');
+
+// A create request made before the lazy editor loads must reach it exactly once.
+const requests=load('src/components/onepage-events.ts');global.window=new EventTarget();
+assert.equal(requests.consumeOnePageRequest(),false);requests.openOnePageBuilder();assert.equal(requests.consumeOnePageRequest(),true);assert.equal(requests.consumeOnePageRequest(),false);
+let openCount=0;const receive=()=>{if(requests.consumeOnePageRequest())openCount++};window.addEventListener(requests.ONE_PAGE_EVENT,receive);requests.openOnePageBuilder();assert.equal(openCount,1);assert.equal(requests.consumeOnePageRequest(),false);window.removeEventListener(requests.ONE_PAGE_EVENT,receive);
+for(const file of ['cms-design.css','cms-dialogs.css','onepage-studio.css'])require('postcss').parse(fs.readFileSync('src/app/'+file,'utf8'));
+console.log('PASS: editor create requests survive deferred loading; shared table, dialog and preview CSS parses.');

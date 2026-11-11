@@ -224,7 +224,8 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 /* Keep summary cards scrollable without displaying a native scrollbar. */
 .cms-info-carousel-viewport::-webkit-scrollbar{display:none;width:0;height:0}
 
-/* One visible start line for each label, scope total and row value. */
+.table-v2{--numeric-tools-width:80px}
+/* Text starts at one anchor; numeric labels, totals and values share a right anchor. */
 .table-v2 :is(th,td){text-align:left;padding-inline:16px}
 .table-v2 :is(.panel-heading,.table-toolbar,.cms-table-status,.cms-table-total-note,.pagination),.cms-shell .table-v2 :is(.panel-heading,.table-toolbar,.cms-table-status,.cms-table-total-note,.pagination){padding-inline:16px}
 .table-v2 .th-content,.table-v2 th.numeric .th-content{display:inline-flex;align-items:center;justify-content:flex-start;gap:6px;width:max-content;max-width:none;margin:0;white-space:nowrap}
@@ -236,6 +237,14 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 .table-v2 .th-content>.cms-column-trigger{display:grid;place-items:center;flex:none;width:26px;min-width:26px;height:28px;min-height:28px;margin:0;padding:0;border:0;border-radius:6px;background:none;color:var(--muted)}
 .table-v2 .th-content>.cms-column-trigger:hover{background:var(--accent-dim);color:var(--accent)}
 .table-v2 td.numeric>.cms-cell-value{display:block;padding:0;text-align:left;white-space:nowrap;font-variant-numeric:tabular-nums}
+.table-v2 th.numeric .th-content{display:grid;grid-template-columns:minmax(max-content,1fr) 24px 26px;gap:6px;width:100%}
+.table-v2 th.numeric .cms-column-sort{grid-column:1;display:grid;grid-template-columns:minmax(max-content,1fr) 12px;gap:6px;width:100%;text-align:right}
+.table-v2 th.numeric .cms-column-label{justify-self:end;text-align:right}
+.table-v2 th.numeric .cms-column-sort>svg{width:12px;min-width:12px}
+.table-v2 th.numeric .cms-header-help{grid-column:2}
+.table-v2 th.numeric .cms-column-trigger{grid-column:3}
+.table-v2 td.numeric{padding-right:calc(16px + var(--numeric-tools-width));text-align:right}
+.table-v2 td.numeric>.cms-cell-value{text-align:right}
 
 /* Actions travel with their own column; they cannot cover another column. */
 .table-v2 .cms-table-actions{position:static;text-align:center;white-space:nowrap;box-shadow:none}
@@ -247,7 +256,7 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 
 /* Plain daily-value tables use the same date-left / number-right convention. */
 .cms-chart-details :is(th,td){padding-inline:16px;white-space:nowrap;text-align:left}
-.cms-chart-details :is(th,td).numeric{text-align:left}
+.cms-chart-details :is(th,td).numeric{text-align:right}
 .cms-chart-details table{min-width:max-content}
 .table-v2 td.numeric .row-link{display:inline;text-align:inherit}
 /* Date shortcuts are shared by global filters and client report date ranges. */
