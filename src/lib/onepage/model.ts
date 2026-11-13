@@ -4,14 +4,14 @@ import {ACTION_GAME_PRESETS} from './action-game-data';
 export type TemplateId='explore'|'tactical'|'racing'|'urban'|'strategy'|'party'|'wuxia'|'survival'|'horror'|'pixel'|'cozy'|'roguelike'|'space'|'mecha'|'rhythm'|'sports';
 export type PageSection='features'|'gallery'|'video'|'cta'|'showcase'|'modes'|'news'|'faq';
 export type ShowcaseItem={name:string;tag:string;description:string;image:string};
-export type ModeItem={title:string;tag:string;description:string};
+export type ModeItem={title:string;tag:string;description:string;image?:string};
 export type NewsItem={title:string;category:string;date:string;description:string;image:string};
-export type PageContent={showcaseTitle:string;showcaseIntro:string;showcase:ShowcaseItem[];modesTitle:string;modes:ModeItem[];newsTitle:string;news:NewsItem[];faqTitle:string;faq:{question:string;answer:string}[];galleryIntro:string;galleryCaptions:string[];platforms:string[];ctaNote:string};
+export type PageContent={showcaseTitle:string;showcaseIntro:string;showcase:ShowcaseItem[];modesTitle:string;modes:ModeItem[];newsTitle:string;news:NewsItem[];faqTitle:string;faqImage?:string;faq:{question:string;answer:string}[];galleryIntro:string;galleryCaptions:string[];platforms:string[];ctaNote:string};
 export type GamePage={
  schema:1;id:string;name:string;templateId:TemplateId;isTemplate:boolean;campaignId:string;
  brand:string;eyebrow:string;title:string;subtitle:string;description:string;introTitle:string;featuresTitle:string;galleryTitle:string;videoTitle:string;
- heroImage:string;galleryImages:string[];videoUrl:string;videoPoster:string;
- ctaLabel:string;ctaUrl:string;appStoreUrl:string;googlePlayUrl:string;accent:string;features:{title:string;body:string}[];
+ heroImage:string;heroMobileImage?:string;deviceFrameImage?:string;introImage?:string;galleryImages:string[];videoUrl:string;videoPoster:string;
+ ctaLabel:string;ctaUrl:string;appStoreUrl:string;googlePlayUrl:string;accent:string;features:{title:string;body:string;image?:string}[];
  sections:Record<PageSection,boolean>;content:PageContent;updatedAt:string;
 };
 export type PageTemplate={id:TemplateId;name:string;genre:string;reference:string;layout:string;image:string;heroImage?:string;ctaLabel?:string;attribution?:string;accent:string;brand:string;title:string;subtitle:string;description:string;features:{title:string;body:string}[]};
@@ -21,7 +21,7 @@ export const templateHero=(template:PageTemplate)=>template.heroImage||'demo-cre
 export const DEFAULT_STORE_LINKS={appStoreUrl:'https://apps.apple.com/',googlePlayUrl:'https://play.google.com/store/games'};
 export function pageFromTemplate(template:PageTemplate,campaignId=''):GamePage{
  const preset=GAME_PRESETS.find(entry=>entry.template.id===template.id);
- return {schema:1,id:crypto.randomUUID(),name:template.name+'・網頁',templateId:template.id,isTemplate:false,campaignId,brand:template.brand,eyebrow:'遊戲介紹',title:template.title,subtitle:template.subtitle,description:template.description,introTitle:'遊戲介紹',featuresTitle:'遊戲特色',galleryTitle:'遊戲畫面',videoTitle:'',heroImage:templateHero(template),galleryImages:[templateHero(template)],videoUrl:'',videoPoster:'',ctaLabel:template.ctaLabel||'探索遊戲',ctaUrl:'#explore',...DEFAULT_STORE_LINKS,accent:template.accent,features:structuredClone(template.features),...structuredClone(preset?.page||{}),sections:{features:true,gallery:true,video:false,cta:true,showcase:true,modes:true,news:true,faq:true},content:defaultContent(template.id),updatedAt:new Date().toISOString()};
+ return normalizePage({schema:1,id:crypto.randomUUID(),name:template.name+'・網頁',templateId:template.id,isTemplate:false,campaignId,brand:template.brand,eyebrow:'遊戲介紹',title:template.title,subtitle:template.subtitle,description:template.description,introTitle:'遊戲介紹',featuresTitle:'遊戲特色',galleryTitle:'遊戲畫面',videoTitle:'',heroImage:templateHero(template),galleryImages:[templateHero(template)],videoUrl:'',videoPoster:'',ctaLabel:template.ctaLabel||'探索遊戲',ctaUrl:'#explore',...DEFAULT_STORE_LINKS,accent:template.accent,features:structuredClone(template.features),...structuredClone(preset?.page||{}),sections:{features:true,gallery:true,video:false,cta:true,showcase:true,modes:true,news:true,faq:true},content:defaultContent(template.id),updatedAt:new Date().toISOString()});
 }
 export function safeUrl(value:string,kind:'image'|'video'|'link'='link'):string{
  const v=value.trim();if(!v)return '';
@@ -40,7 +40,7 @@ export function videoSource(value:string):{kind:'embed'|'file';url:string}|null{
  if(['vimeo.com','www.vimeo.com','player.vimeo.com'].includes(host)){const match=u.pathname.match(/(?:^\/|\/video\/)(\d+)/);if(match)return {kind:'embed',url:'https://player.vimeo.com/video/'+match[1]}}
  return /\.(mp4|webm|ogg)$/i.test(u.pathname)?{kind:'file',url:safe}:null;
 }
-export function validatePage(p:GamePage):string[]{const e:string[]=[];if(!p.name.trim())e.push('請輸入網頁名稱。');if(!p.brand.trim()||!p.title.trim())e.push('請填寫遊戲名稱與主標題。');if(!safeUrl(p.heroImage,'image'))e.push('請上傳主視覺或輸入有效的圖片網址。');if(!p.ctaLabel.trim()||!safeUrl(p.ctaUrl))e.push('請填寫按鈕文字與有效的 HTTP／HTTPS 連結，或 #explore 頁內導覽。');const downloads=normalizePage(p);if(!safeUrl(downloads.appStoreUrl))e.push('請填寫有效的 App Store HTTP／HTTPS 下載連結。');if(!safeUrl(downloads.googlePlayUrl))e.push('請填寫有效的 Google Play HTTP／HTTPS 下載連結。');if(p.galleryImages.some(v=>!safeUrl(v,'image')))e.push('遊戲圖集含有無效的圖片網址。');for(const item of [...(p.content?.showcase||[]),...(p.content?.news||[])])if(item.image&&!safeUrl(item.image,'image'))e.push('內容區塊含有無效的圖片網址。');return e}
+export function validatePage(p:GamePage):string[]{const e:string[]=[];if(!p.name.trim())e.push('請輸入網頁名稱。');if(!p.brand.trim()||!p.title.trim())e.push('請填寫遊戲名稱與主標題。');if(!safeUrl(p.heroImage,'image'))e.push('請上傳主視覺或輸入有效的圖片網址。');if(!p.ctaLabel.trim()||!safeUrl(p.ctaUrl))e.push('請填寫按鈕文字與有效的 HTTP／HTTPS 連結，或 #explore 頁內導覽。');const downloads=normalizePage(p);if(!safeUrl(downloads.appStoreUrl))e.push('請填寫有效的 App Store HTTP／HTTPS 下載連結。');if(!safeUrl(downloads.googlePlayUrl))e.push('請填寫有效的 Google Play HTTP／HTTPS 下載連結。');if(p.galleryImages.some(v=>!safeUrl(v,'image')))e.push('遊戲圖集含有無效的圖片網址。');for(const item of [...p.features,...(p.content?.modes||[]),...(p.content?.showcase||[]),...(p.content?.news||[]),{image:p.introImage},{image:p.heroMobileImage},{image:p.deviceFrameImage},{image:p.content?.faqImage}])if(item.image&&!safeUrl(item.image,'image'))e.push('內容區塊含有無效的圖片網址。');return e}
 export function clonePage(p:GamePage,isTemplate=false):GamePage{return {...structuredClone(p),id:crypto.randomUUID(),name:p.name+(isTemplate?'・模板':'・副本'),isTemplate,updatedAt:new Date().toISOString()}}
 
 export function defaultContent(id:TemplateId):PageContent{
@@ -49,6 +49,8 @@ export function defaultContent(id:TemplateId):PageContent{
  return structuredClone(preset.page.content);
 }
 export function normalizePage(page:GamePage):GamePage{
- const defaults=defaultContent(page.templateId);
- return {...DEFAULT_STORE_LINKS,...page,content:{...defaults,...page.content},sections:Object.assign({features:true,gallery:true,video:false,cta:true,showcase:true,modes:true,news:true,faq:true},page.sections)};
+ const defaults=defaultContent(page.templateId),content={...defaults,...page.content},gallery=[...new Set([...page.galleryImages,...content.showcase.map(s=>s.image),...content.news.map(n=>n.image),page.heroImage].filter(Boolean))];
+ // Old drafts keep their copy, explicit images and hidden sections; absent media gains game-specific imagery.
+ const imageAt=(i:number)=>gallery[i%gallery.length]||page.heroImage;
+ return {...DEFAULT_STORE_LINKS,...page,heroMobileImage:page.heroMobileImage??(page.templateId==='strategy'?'demo-creatives/strategy-ashe.png':page.templateId==='mecha'?'demo-creatives/mecha-official-unit-1.png':page.heroImage),deviceFrameImage:page.deviceFrameImage??'demo-creatives/device-android-frame.png',introImage:page.introImage??imageAt(0),features:page.features.map((f,i)=>({...f,image:f.image??imageAt(i+1)})),content:{...content,faqImage:content.faqImage??imageAt(gallery.length-1),modes:content.modes.map((m,i)=>({...m,image:m.image??imageAt(i)}))},sections:Object.assign({features:true,gallery:true,video:false,cta:true,showcase:true,modes:true,news:true,faq:true},page.sections)};
 }

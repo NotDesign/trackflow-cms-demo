@@ -92,3 +92,15 @@ if(process.argv.includes('--fixtures')){
 const oldCTA=m.pageFromTemplate(m.PAGE_TEMPLATES[1]);oldCTA.ctaLabel='前往官方網站';oldCTA.ctaUrl='https://www.pubgmobile.com/';
 const cleanCTA=r.renderPage(oldCTA,'https://demo.example/');assert(!cleanCTA.includes('前往官方網站'));assert(cleanCTA.includes('href="#explore"'));assert.equal(oldCTA.ctaLabel,'前往官方網站');
 assert.equal(m.safeUrl('#explore'),'#explore');assert.equal(m.safeUrl('#untrusted'),'');
+
+// Every game gains editable imagery, including old drafts, without replacing explicit uploads.
+for(const template of m.PAGE_TEMPLATES){
+ const page=m.pageFromTemplate(template),markup=r.renderPage(page,'https://demo.example/cms/');
+ for(const image of [page.heroMobileImage,page.introImage,page.content.faqImage,page.deviceFrameImage,...page.features.map(f=>f.image),...page.content.modes.map(f=>f.image)])assert(image&&fs.existsSync('public/'+image),template.id+' missing content media: '+image);
+ for(const section of ['intro','features','modes','faq','cta']){const match=markup.match(new RegExp('<section[^>]*data-section="'+section+'"[\\s\\S]*?</section>'));assert(match&&match[0].includes('<img'),template.id+' '+section+' needs game imagery');}
+ assert(markup.includes('game-mobile-hero')&&markup.includes('game-phone-frame'));
+ page.content.modes[0].image='data:image/png;base64,AAAA';page.features[0].image='data:image/png;base64,AAAA';
+ const migrated=m.normalizePage(page);assert.equal(migrated.content.modes[0].image,page.content.modes[0].image);assert.equal(migrated.features[0].image,page.features[0].image);
+ page.content.modes[0].image='javascript:alert(1)';assert(m.validatePage(page).length);assert(!r.renderPage(page,'https://demo.example/').includes('src="javascript:'));
+}
+console.log('PASS: all 16 templates have local feature, mode, intro, FAQ, mobile hero and real-device imagery; explicit uploaded images survive normalization; unsafe mode media rejected.');

@@ -20,11 +20,13 @@ export async function embedPageMedia(page:GamePage,base:string):Promise<{page:Ga
   }
   return embeddedImages.get(url)!;
  };
- const [hero,gallery,showcase,news]=await Promise.all([
-  embed(clone.heroImage),Promise.all(clone.galleryImages.map(embed)),
+ const [hero,mobile,device,intro,gallery,features,modes,faq,showcase,news]=await Promise.all([
+  embed(clone.heroImage),embed(clone.heroMobileImage||''),embed(clone.deviceFrameImage||''),embed(clone.introImage||''),Promise.all(clone.galleryImages.map(embed)),
+  Promise.all(clone.features.map(async item=>({...item,image:await embed(item.image||'')}))),
+  Promise.all(clone.content.modes.map(async item=>({...item,image:await embed(item.image||'')}))),embed(clone.content.faqImage||''),
   Promise.all(clone.content.showcase.map(async item=>({...item,image:await embed(item.image)}))),
   Promise.all(clone.content.news.map(async item=>({...item,image:await embed(item.image)})))
  ]);
- clone.heroImage=hero;clone.galleryImages=gallery;clone.content.showcase=showcase;clone.content.news=news;
+ clone.heroImage=hero;clone.heroMobileImage=mobile;clone.deviceFrameImage=device;clone.introImage=intro;clone.galleryImages=gallery;clone.features=features;clone.content.modes=modes;clone.content.faqImage=faq;clone.content.showcase=showcase;clone.content.news=news;
  return {page:clone,externalMedia};
 }
