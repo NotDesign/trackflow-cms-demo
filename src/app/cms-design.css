@@ -174,6 +174,9 @@ select,.cms-shell select,.dialog-content select,.agent-portal select,.cms-shell 
 .cms-info-carousel-controls button{display:grid;place-items:center;width:28px;height:26px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--muted)}
 .cms-info-carousel-viewport{width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;touch-action:pan-x pan-y;cursor:grab;padding:2px 0 6px}
 .cms-info-carousel-viewport:active{cursor:grabbing}
+.cms-info-carousel-track{display:flex;gap:12px;width:max-content;min-width:100%}
+.cms-info-carousel-track>.cms-info-grid{flex:none;width:max-content}
+.cms-info-carousel-viewport{scroll-behavior:auto;overflow-anchor:none}
 .cms-info-carousel .cms-info-grid{display:flex!important;flex-wrap:nowrap;gap:12px!important;align-items:stretch;grid-template-columns:none!important}
 .cms-nested-info-grid,.cms-info-carousel .audience-cards{display:contents!important}
 .cms-info-carousel .cms-info-card,.cms-shell .cms-info-carousel .cms-info-card,.dialog-content .cms-info-carousel .cms-info-card{flex:0 0 var(--metric-card-width);height:auto;min-height:136px;padding:16px;gap:8px;border-radius:12px}
