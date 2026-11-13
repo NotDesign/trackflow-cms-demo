@@ -4,7 +4,7 @@ import {Localize} from "./localization";
 const groups=[
  {id:"personal",title:"Personal profile",description:"Profile and sign-in preferences",icon:UserRound,tabs:["Profile","Security"]},
  {id:"team",title:"Team accounts",description:"Administrators, agents and roles",icon:Users,tabs:["Users","Permissions"]},
- {id:"workspace",title:"Workspace setup",description:"General settings and tracking connections",icon:Settings2,tabs:["General","Tracking","Domains","Postback"]},
+ {id:"workspace",title:"Workspace setup",description:"General settings and tracking connections",icon:Settings2,tabs:["General","AdPlatforms","Tracking","Domains","Postback"]},
 ];
 export function SettingsNavigation({tab,onChange}:{tab:string;onChange:(tab:string)=>void}){
  const active=groups.find(g=>g.tabs.includes(tab))||groups[0];

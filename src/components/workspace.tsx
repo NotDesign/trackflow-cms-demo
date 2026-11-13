@@ -26,7 +26,7 @@ export function useWorkspaceState(){
  const [storedCampaigns,setCampaigns]=useStored("trackflow-v2-campaigns",A.seedCampaigns);
  const campaigns=useMemo(()=>storedCampaigns.map(c=>({...c,platforms:A.normalizePlatforms(c.platforms)})),[storedCampaigns]);
  const [storedLinks,setLinks]=useStored("trackflow-v2-links",A.seedLinks);
- const links=useMemo(()=>storedLinks.map(l=>({...l,...A.normalizeTraffic(l),landingPageId:l.landingPageId??"unassigned"})),[storedLinks]);
+ const links=useMemo(()=>storedLinks.map(l=>{const seed=A.seedLinks.find(s=>s.id===l.id),oldPage=seedLandingPages.find(p=>p.url===l.destination);return {...l,...A.normalizeTraffic(l),...(seed&&!l.flowVersion&&oldPage?{destination:seed.destination,flowVersion:1}:{}),landingPageId:l.landingPageId??"unassigned"}}),[storedLinks]);
  const [creatives,setCreatives]=useStored("trackflow-v2-creatives",A.seedCreatives);
  const [agents,setAgents]=useStored("trackflow-agents-v8",seedAgents);
  const [agentTasks,setAgentTasks]=useStored("trackflow-agent-tasks-v8",seedAgentTasks);

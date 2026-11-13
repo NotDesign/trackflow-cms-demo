@@ -1,5 +1,8 @@
 /** Presentation copy only; source datasets, IDs and metric definitions are preserved. */
 export const cmsCopy:Record<string,string>={
+ "AdPlatforms":"廣告平台",
+ "Postback":"導流事件回傳",
+
  "Edit tracking link":"編輯追蹤連結",
  "Updating this task changes its workflow state only.":"更新此事項僅會調整處理狀態。",
  "Promotion intelligence":"遊戲廣告成效平台",

@@ -1,3 +1,4 @@
+import './diversions.css';
 import { TextSizeProvider } from "@/components/text-size";
 import { DemoAuthProvider } from "@/components/demo-auth";
 import "./login.css";

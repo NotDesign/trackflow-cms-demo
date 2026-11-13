@@ -13,11 +13,11 @@ export type Visit=Dimensions & {id:string;visitorId:string;time:string;date:stri
 export type Event=Dimensions & {id:string;visitorId:string;visitId:string;time:string;date:string;type:"Register"|"FTD"|"Deposit"|"Revenue";amount:number;revenue:number;commission:number;status:"Approved"|"Pending"|"Rejected"};
 export type Metrics={clicks:number;unique:number;register:number;ftd:number;deposits:number;revenue:number;commission:number;cvr:number;epc:number};
 export type Campaign=catalog.Campaign & {gameId?:string;platforms?:string[]};
-export type TrackingLink=catalog.TrackingLink & {campaignId?:string;creativeId?:string;affiliateId?:string;landingPageId?:string;platform?:string;trafficType?:string};
+export type TrackingLink=catalog.TrackingLink & {flowVersion?:number;campaignId?:string;creativeId?:string;affiliateId?:string;landingPageId?:string;platform?:string;trafficType?:string};
 export type Creative=catalog.Creative & {campaignId?:string;created?:string};
 export const seedCampaigns:Campaign[]=catalog.campaigns.map((c,i)=>({...c,platforms:[],created:`2026-08-${String(i+1).padStart(2,"0")}`}));
 export const seedCreatives:Creative[]=catalog.creatives.map((c,i)=>({...c,campaignId:seedCampaigns[i].id,created:"2026-08-10"}));
-export const seedLinks:TrackingLink[]=catalog.trackingLinks.map((l,i)=>({...l,...normalizeTraffic(l),campaignId:seedCampaigns[i%12].id,creativeId:seedCreatives[i%12].id,creative:seedCreatives[i%12].name,affiliateId:catalog.affiliates[i%8].id,landingPageId:landingForCampaign(seedCampaigns[i%12].id),destination:seedLandingPages.find(p=>p.campaignId===seedCampaigns[i%12].id)?.url||l.destination,created:"2026-08-17"}));
+export const seedLinks:TrackingLink[]=catalog.trackingLinks.map((l,i)=>({...l,...normalizeTraffic(l),campaignId:seedCampaigns[i%12].id,creativeId:seedCreatives[i%12].id,creative:seedCreatives[i%12].name,affiliateId:catalog.affiliates[i%8].id,landingPageId:landingForCampaign(seedCampaigns[i%12].id),flowVersion:1,destination:i%3===0?"https://example.com/game/"+seedCampaigns[i%12].id:i%3===1?"https://apps.apple.com/app/id1517783697":"https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact",created:"2026-08-17"}));
 export const affiliates=catalog.affiliates;
 export const countries=catalog.countries;
 export const sources=trafficSources;

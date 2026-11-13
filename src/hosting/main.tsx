@@ -31,3 +31,5 @@ import "../app/cms-dialogs.css";
 import "../app/onepage-studio.css";
 function App(){const pathname=usePathname();return <LocaleProvider><TextSizeProvider><DemoAuthProvider><Dashboard route={pathname.replace(/^\//,"")||"overview"}/></DemoAuthProvider></TextSizeProvider></LocaleProvider>}
 createRoot(document.getElementById("root")!).render(<App/>);
+
+import '../app/diversions.css';

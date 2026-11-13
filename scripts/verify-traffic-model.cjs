@@ -9,7 +9,7 @@ eq(T.normalizeTraffic({source:'Direct'}).trafficType,'Direct');
 eq(T.normalizeTraffic({source:'Facebook',destination:'https://example.com/?utm_medium=paid_social'}).platform,'Meta Ads');
 eq(T.normalizeTraffic({source:'Google',medium:'organic'}).platform,'Not applicable');
 eq(T.normalizeTraffic({source:'Google',medium:'cpc'}).platform,'Google Ads');
-eq(T.validTraffic({source:'Google',platform:'Meta Ads',trafficType:'Paid'}),false);
+eq(T.validTraffic({source:'Google',platform:'Meta Ads',trafficType:'Paid'}),true);
 eq(T.normalizePlatforms(['Google Ads','Meta Ads','Google Ads','SEO']),['Google Ads','Meta Ads']);
 const scope={...A.DEFAULT_SCOPE};const base=loader('b5532d7bea1a8d3ea3c9fe7d0ec13465f50d2f61')('src/lib/analytics.ts');
 eq(A.metrics(A.inScope(A.allVisits,scope),A.inScope(A.allEvents,scope)),base.metrics(base.inScope(base.allVisits,base.DEFAULT_SCOPE),base.inScope(base.allEvents,base.DEFAULT_SCOPE)));

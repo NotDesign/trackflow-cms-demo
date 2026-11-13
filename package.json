@@ -1,6 +1,6 @@
 {
   "name": "trackflow-prototype",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "scripts": {
     "dev": "vite --host 127.0.0.1",
@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "test:timezones": "node scripts/verify-timezones.cjs",
     "test:onepages": "node scripts/verify-onepages.cjs",
-    "export:templates": "node scripts/export-onepage-templates.cjs"
+    "export:templates": "node scripts/export-onepage-templates.cjs",
+    "test:redirects": "node scripts/verify-diversions.cjs"
   },
   "dependencies": {
     "@fontsource-variable/noto-sans-tc": "^5.3.1",
